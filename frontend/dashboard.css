@@ -5822,3 +5822,639 @@ body {
         width: 100%;
     }
 }
+/* =========================================
+   ATTACK LOGS - FINAL EPISODE ROW FIX
+   ========================================= */
+
+.episode-row {
+    grid-template-columns:
+        58px
+        minmax(200px, 1fr)
+        115px
+        100px
+        75px
+        75px;
+
+    gap: 18px;
+    align-items: center;
+}
+
+/* Trigger */
+.episode-trigger span {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.episode-trigger strong {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Severity */
+.episode-row .severity {
+    width: fit-content;
+    padding: 5px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Delete and Edit */
+.episode-row .delete-episode-button,
+.episode-row .edit-episode-button {
+    width: 75px;
+    height: 34px;
+    padding: 0;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 7px;
+}
+
+/* Delete */
+.episode-row .delete-episode-button {
+    color: #c9534e;
+    background: #ffffff;
+    border: 1px solid #efd3d1;
+}
+
+/* Edit */
+.episode-row .edit-episode-button {
+    color: var(--primary);
+    background: #ffffff;
+    border: 1px solid #dce8e6;
+}
+/* Severity */
+.episode-severity {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.episode-severity span {
+    color: var(--text-light);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.episode-severity strong {
+    color: var(--text-primary);
+    font-size: 12px;
+    font-weight: 600;
+}
+/* =========================================
+   MEDICATIONS - FINAL ROW POLISH
+   ========================================= */
+
+.medication-row {
+    grid-template-columns:
+        48px
+        minmax(200px, 1fr)
+        90px
+        105px
+        235px;
+    gap: 18px;
+}
+
+/* Dosage and Schedule */
+.medication-dose span,
+.medication-time span {
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.medication-dose strong,
+.medication-time strong {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* Status */
+.medication-row > .medication-adherence {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.medication-row > .medication-adherence > span {
+    color: var(--text-light);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+}
+
+.medication-row > .medication-adherence > strong {
+    color: var(--text-primary);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Action buttons */
+.medication-actions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 6px;
+}
+
+.medication-actions button {
+    height: 32px;
+    min-width: 52px;
+    padding: 0 9px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: #ffffff;
+    color: var(--text-secondary);
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+/* Taken */
+.medication-actions button:first-child {
+    color: #328457;
+    border-color: #c9e8d6;
+    background: #f5fbf7;
+}
+
+/* Missed */
+.medication-actions button:nth-child(2) {
+    color: #c6534d;
+    border-color: #efd1cd;
+    background: #fff8f7;
+}
+
+/* Delete */
+.medication-actions .delete-medication-btn {
+    color: #c6534d;
+    border-color: #efd3d1;
+    background: #ffffff;
+}
+
+/* Edit */
+.medication-actions .edit-medication-btn {
+    color: var(--primary);
+    border-color: #dce8e6;
+    background: #ffffff;
+}
+/* =========================================
+   MEDICATION ACTIONS - CLEAN LAYOUT
+   ========================================= */
+
+.medication-row {
+    grid-template-columns:
+        48px
+        minmax(180px, 1fr)
+        85px
+        105px
+        90px
+        auto;
+
+    gap: 16px;
+    align-items: center;
+}
+
+/* Status */
+.medication-adherence {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.medication-adherence > span {
+    color: var(--text-light);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+}
+
+.medication-adherence > strong {
+    color: var(--text-primary);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Action buttons */
+.medication-actions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.medication-actions button {
+    height: 32px;
+    padding: 0 9px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: #ffffff;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+/* Taken */
+.medication-actions button:first-child {
+    color: #328457;
+    background: #f5fbf7;
+    border-color: #c9e8d6;
+}
+
+/* Missed */
+.medication-actions button:nth-child(2) {
+    color: #c6534d;
+    background: #fff8f7;
+    border-color: #efd1cd;
+}
+
+/* Delete */
+.medication-actions .delete-medication-btn {
+    color: #c6534d;
+}
+
+/* Edit */
+.medication-actions .edit-medication-btn {
+    color: var(--primary);
+}
+/* =========================================
+   MEDICATIONS - FINAL CLEAN ROW
+   ========================================= */
+
+.medication-row {
+    min-height: 125px;
+
+    display: grid;
+
+    grid-template-columns:
+        48px
+        minmax(200px, 1fr)
+        90px
+        120px
+        90px;
+
+    column-gap: 18px;
+    row-gap: 8px;
+
+    align-items: center;
+
+    padding: 16px 0;
+}
+
+
+/* Medication information */
+
+.medication-info {
+    min-width: 0;
+}
+
+.medication-info h3 {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.medication-info p {
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+
+/* Dosage */
+
+.medication-dose {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.medication-dose span {
+    color: var(--text-light);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+}
+
+.medication-dose strong {
+    color: var(--text-primary);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* Schedule */
+
+.medication-time {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.medication-time span {
+    color: var(--text-light);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+}
+
+.medication-time strong {
+    color: var(--text-primary);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.medication-time small {
+    color: var(--text-secondary);
+    font-size: 10px;
+    font-weight: 500;
+}
+
+
+/* Status */
+
+.medication-adherence {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.medication-adherence > span {
+    color: var(--text-light);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+}
+
+.medication-adherence > strong {
+    color: var(--text-primary);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+   ========================================= */
+
+.medication-actions {
+    grid-column: 2 / -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    padding-top: 3px;
+}
+
+.medication-actions button {
+    height: 32px;
+
+    padding: 0 12px;
+
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* Taken */
+
+.medication-actions button:first-child {
+    background: #f5fbf7;
+    border-color: #c9e8d6;
+    color: #328457;
+}
+
+
+/* Missed */
+
+.medication-actions button:nth-child(2) {
+    background: #fff8f7;
+    border-color: #efd1cd;
+    color: #c6534d;
+}
+
+
+/* Delete */
+
+.medication-actions .delete-medication-btn {
+    color: #c6534d;
+}
+
+
+/* Edit */
+
+.medication-actions .edit-medication-btn {
+    color: var(--primary);
+}
+
+
+/* Hover */
+
+.medication-actions button:hover {
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   SMALLER SCREENS
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .medication-row {
+        grid-template-columns:
+            45px
+            minmax(150px, 1fr)
+            80px
+            100px;
+
+        min-height: 130px;
+    }
+
+    .medication-actions {
+        grid-column: 2 / -1;
+        justify-content: flex-start;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 650px) {
+
+    .medication-row {
+        grid-template-columns:
+            45px
+            1fr;
+
+        row-gap: 10px;
+    }
+
+    .medication-dose,
+    .medication-time {
+        display: none;
+    }
+
+    .medication-adherence {
+        grid-column: 2;
+    }
+
+    .medication-actions {
+        grid-column: 2;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+}
+/* =========================================
+   MEDICATIONS - FINAL CLEAN LAYOUT
+   ========================================= */
+
+.medication-row {
+    min-height: 118px;
+
+    grid-template-columns:
+        48px
+        minmax(220px, 1fr)
+        90px
+        125px
+        90px;
+
+    column-gap: 18px;
+    row-gap: 8px;
+    align-items: center;
+}
+
+
+/* Schedule on one line */
+
+.medication-time {
+    display: block;
+}
+
+.medication-time span {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+}
+
+.medication-time strong,
+.medication-time small {
+    display: inline;
+}
+
+.medication-time strong {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.medication-time small {
+    font-size: 10px;
+    margin-left: 3px;
+}
+
+.medication-time small::before {
+    content: "· ";
+}
+
+
+/* Status */
+
+.medication-adherence {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.medication-adherence > span {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+}
+
+.medication-adherence > strong {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* Buttons directly underneath the medication data */
+
+.medication-actions {
+    grid-column: 2 / -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 8px;
+
+    padding-top: 2px;
+}
+
+
+/* Buttons */
+
+.medication-actions button {
+    height: 32px;
+    padding: 0 12px;
+
+    border-radius: 7px;
+
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+/* Taken */
+
+.medication-actions button:first-child {
+    background: #f5fbf7;
+    border: 1px solid #c9e8d6;
+    color: #328457;
+}
+
+
+/* Missed */
+
+.medication-actions button:nth-child(2) {
+    background: #fff8f7;
+    border: 1px solid #efd1cd;
+    color: #c6534d;
+}
+
+
+/* Delete */
+
+.medication-actions .delete-medication-btn {
+    color: #c6534d;
+}
+
+
+/* Edit */
+
+.medication-actions .edit-medication-btn {
+    color: var(--primary);
+}

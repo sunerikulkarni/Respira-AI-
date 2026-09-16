@@ -917,21 +917,13 @@ function renderMedications(
 
                     <svg viewBox="0 0 24 24">
 
-                        <path
-                            d="M8 4h8v16H8z"
-                        />
+                        <path d="M8 4h8v16H8z"/>
 
-                        <path
-                            d="M8 8h8"
-                        />
+                        <path d="M8 8h8"/>
 
-                        <path
-                            d="M12 8v8"
-                        />
+                        <path d="M12 8v8"/>
 
-                        <path
-                            d="M10 12h4"
-                        />
+                        <path d="M10 12h4"/>
 
                     </svg>
 
@@ -983,12 +975,12 @@ function renderMedications(
 
                     ${
                         medication.time
-                            ? `
-                                <small>
-                                    ${medication.time}
-                                </small>
-                              `
-                            : ""
+                        ? `
+                            <small>
+                                ${medication.time}
+                            </small>
+                        `
+                        : ""
                     }
 
                 </div>
@@ -1004,67 +996,53 @@ function renderMedications(
                         ${status}
                     </strong>
 
+                </div>
 
-                    <div
-                        style="
-                            display:flex;
-                            gap:8px;
-                            margin-top:8px;
-                        "
+
+                <div class="medication-actions">
+
+                    <button
+                        type="button"
+                        onclick="updateAdherence(
+                            '${medication._id}',
+                            'Taken'
+                        )"
                     >
-
-                        <button
-                            type="button"
-                            onclick="updateAdherence(
-                                '${medication._id}',
-                                'Taken'
-                            )"
-                            style="
-                                padding:6px 10px;
-                                border:0;
-                                border-radius:6px;
-                                cursor:pointer;
-                            "
-                        >
-                            Taken
-                        </button>
+                        Taken
+                    </button>
 
 
-                        <button
-                            type="button"
-                            onclick="updateAdherence(
-                                '${medication._id}',
-                                'Missed'
-                            )"
-                            style="
-                                padding:6px 10px;
-                                border:0;
-                                border-radius:6px;
-                                cursor:pointer;
-                            "
-                        >
-                            Missed
-                        </button>
-                        <button
-                            type="button"
-                            onclick="deleteMedication(
-                                '${medication._id}'
-                            )"
-                            class="delete-medication-btn"
-                        >
-                            Delete
-                        </button>
-                        <button
-                            type="button"
-                            onclick="editMedication(
-                                '${medication._id}'
-                            )"
-                            class="edit-medication-btn"
-                        >
-                            Edit
-                        </button>
+                    <button
+                        type="button"
+                        onclick="updateAdherence(
+                            '${medication._id}',
+                            'Missed'
+                        )"
+                    >
+                        Missed
+                    </button>
 
-                    </div>
+
+                    <button
+                        type="button"
+                        onclick="deleteMedication(
+                            '${medication._id}'
+                        )"
+                        class="delete-medication-btn"
+                    >
+                        Delete
+                    </button>
+
+
+                    <button
+                        type="button"
+                        onclick="editMedication(
+                            '${medication._id}'
+                        )"
+                        class="edit-medication-btn"
+                    >
+                        Edit
+                    </button>
 
                 </div>
 

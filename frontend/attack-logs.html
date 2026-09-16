@@ -315,8 +315,8 @@
                     0
                 </h3>
 
-                <p class="card-description">
-                    Episodes in August
+                <p class="card-description" id="thisMonthLabel">
+                    Episodes this month
                 </p>
 
             </div>
@@ -1403,7 +1403,20 @@ function displayAttackLogs(
             monthlyEpisodes.length;
 
     }
+    const thisMonthLabel =
+        document.getElementById("thisMonthLabel");
 
+    if (thisMonthLabel) {
+
+        const currentMonthName =
+            now.toLocaleString("en-US", {
+                month: "long"
+            });
+
+        thisMonthLabel.textContent =
+            `Episodes in ${currentMonthName}`;
+
+    }
 
     // ========================================
     // LAST EPISODE
@@ -1648,9 +1661,10 @@ function displayAttackLogs(
                 </div>
 
 
-                <span class="severity">
-                    ${severity}
-                </span>
+                <div class="episode-severity">
+                    <span>Severity</span>
+                    <strong>${severity}</strong>
+                </div>
 
 
                 <button
