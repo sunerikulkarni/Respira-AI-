@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <title>Respira - Create Account</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <!-- Respira Logo -->
+        <div class="logo">
+            <img src="images/respira-logo.png" alt="Respira Logo">
+        </div>
+
+
+        <!-- Branding -->
+        <h1>Respira</h1>
+
+        <p class="tagline">
+            Create your account
+        </p>
+
+
+        <!-- Register Form -->
+        <form id="registerForm">
+
+            <!-- Full Name -->
+            <div class="input-group">
+
+                <label for="fullName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Enter your full name"
+                    required>
+
+            </div>
+
+
+            <!-- Email -->
+            <div class="input-group">
+
+                <label for="registerEmail">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="Enter your email"
+                    required>
+
+            </div>
+
+
+            <!-- Password -->
+            <div class="input-group">
+
+                <label for="registerPassword">
+                    Password
+                </label>
+
+                <div class="password-container">
+
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Create a password"
+                        required>
+
+                    <button
+                        type="button"
+                        id="toggleRegisterPassword"
+                        class="eye-button"
+                        aria-label="Show password">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true">
+
+                            <path
+                                d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z" />
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="2.5" />
+
+                        </svg>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Confirm Password -->
+            <div class="input-group">
+
+                <label for="confirmPassword">
+                    Confirm Password
+                </label>
+
+                <div class="password-container">
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm your password"
+                        required>
+
+                    <button
+                        type="button"
+                        id="toggleConfirmPassword"
+                        class="eye-button"
+                        aria-label="Show password">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true">
+
+                            <path
+                                d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z" />
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="2.5" />
+
+                        </svg>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Register Button -->
+            <button
+                type="submit"
+                class="login-button">
+
+                Register
+
+            </button>
+
+        </form>
+
+
+        <!-- Login Link -->
+        <p class="register-text">
+
+            Already have an account?
+
+            <a href="index.html">
+                Login
+            </a>
+
+        </p>
+
+    </div>
+
+
+    <script src="script.js"></script>
+    
+
+</body>
+
+</html>

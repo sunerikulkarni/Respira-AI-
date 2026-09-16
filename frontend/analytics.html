@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <title>Respira - Analytics</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <div class="sidebar-brand">
+
+                <img src="images/respira-logo.png" alt="Respira Logo">
+
+                <span>Respira</span>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="7" height="7" rx="1"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1"/>
+                            <rect x="14" y="14" width="7" height="7" rx="1"/>
+                        </svg>
+                    </span>
+                    Dashboard
+                </a>
+
+
+                <a href="attack-logs.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16v16H4z"/>
+                            <path d="M8 2v4"/>
+                            <path d="M16 2v4"/>
+                            <path d="M4 10h16"/>
+                        </svg>
+                    </span>
+                    Attack Logs
+                </a>
+
+
+                <a href="medications.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 3h12"/>
+                            <path d="M7 3v4"/>
+                            <path d="M17 3v4"/>
+                            <path d="M5 7h14v14H5z"/>
+                            <path d="M8 12h8"/>
+                            <path d="M8 16h5"/>
+                        </svg>
+                    </span>
+                    Medications
+                </a>
+
+
+                <a href="air-quality.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3v18"/>
+                            <path d="M3 12h18"/>
+                            <circle cx="12" cy="12" r="9"/>
+                        </svg>
+                    </span>
+                    Air Quality
+                </a>
+
+
+                <a href="calendar.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="4" y="5" width="16" height="16" rx="2"/>
+                            <path d="M8 3v4"/>
+                            <path d="M16 3v4"/>
+                            <path d="M4 10h16"/>
+                        </svg>
+                    </span>
+                    Calendar
+                </a>
+
+
+                <a href="analytics.html" class="nav-item active">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 19V5"/>
+                            <path d="M4 19h17"/>
+                            <path d="M7 16l4-5 3 2 5-7"/>
+                        </svg>
+                    </span>
+                    Analytics
+                </a>
+
+
+                <a href="ai-assistant.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3a8 8 0 0 0-8 8"/>
+                            <path d="M12 3a8 8 0 0 1 8 8"/>
+                            <path d="M4 11c0 4 2 6 4 7"/>
+                            <path d="M20 11c0 4-2 6-4 7"/>
+                            <path d="M8 21h8"/>
+                            <path d="M9 18h6"/>
+                        </svg>
+                    </span>
+                    AI Assistant
+                </a>
+
+
+                <a href="emergency.html" class="nav-item emergency-nav">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3l9 18H3L12 3z"/>
+                            <path d="M12 9v5"/>
+                            <circle cx="12" cy="17" r="0.7"/>
+                        </svg>
+                    </span>
+                    Emergency SOS
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="profile.html" class="nav-item">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="8" r="4"/>
+                        <path d="M4 21c0-4 3-7 8-7s8 3 8 7"/>
+                    </svg>
+                </span>
+                Profile
+            </a>
+
+
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 17l5-5-5-5"/>
+                        <path d="M15 12H3"/>
+                        <path d="M21 4v16"/>
+                    </svg>
+                </span>
+                Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <p class="welcome-label">
+                    HEALTH INSIGHTS
+                </p>
+
+                <h1>
+                    Analytics
+                </h1>
+
+                <p class="header-subtitle">
+                    Understand your respiratory patterns and health trends.
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="notification-button"
+                    aria-label="Notifications">
+
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+                        <path d="M10 21h4"/>
+                    </svg>
+
+                </button>
+
+
+                <button class="profile-button">
+                    U
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- SUMMARY -->
+
+        <section class="overview-grid analytics-summary">
+
+            <div class="health-card">
+
+                <span class="card-label">
+                    ATTACKS THIS MONTH
+                </span>
+
+                <h3>
+                    4
+                </h3>
+
+                <p class="card-description">
+                    Recorded respiratory episodes
+                </p>
+
+            </div>
+
+
+            <div class="health-card">
+
+                <span class="card-label">
+                    AVERAGE SEVERITY
+                </span>
+
+                <h3>
+                    2.3
+                    <small>/ 5</small>
+                </h3>
+
+                <p class="card-description">
+                    Based on recent records
+                </p>
+
+            </div>
+
+
+            <div class="health-card">
+
+                <span class="card-label">
+                    MEDICATION ADHERENCE
+                </span>
+
+                <h3 id="analyticsMedicationAdherence">
+                    0%
+                </h3>
+
+                <p class="card-description">
+                    Current adherence rate
+                </p>
+
+            </div>
+
+
+            <div class="health-card">
+
+                <span class="card-label">
+                    HEALTH TREND
+                </span>
+
+                <h3>
+                    Stable
+                </h3>
+
+                <p class="card-description">
+                    Based on recent activity
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ATTACK TREND -->
+
+        <section class="dashboard-card analytics-chart-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Respiratory Episodes
+                    </h2>
+
+                    <p>
+                        Number of recorded episodes over the past 7 days
+                    </p>
+
+                </div>
+
+
+                <select class="analytics-select" id="trendPeriod">
+
+                    <option value="7">
+                        Last 7 days
+                    </option>
+
+                    <option value="30">
+                        Last 30 days
+                    </option>
+
+                    <option value="90">
+                        Last 3 months
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="analytics-chart">
+
+                <div class="chart-y-axis">
+
+                    <span>5</span>
+                    <span>4</span>
+                    <span>3</span>
+                    <span>2</span>
+                    <span>1</span>
+                    <span>0</span>
+
+                </div>
+
+
+                <div class="chart-area">
+
+                    <div class="chart-grid-lines">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+
+                    <div class="chart-bars">
+
+                        <div class="chart-column">
+
+                            <div
+                                class="chart-bar"
+                                style="height: 20%;">
+                            </div>
+
+                            <span>Mon</span>
+
+                        </div>
+
+
+                        <div class="chart-column">
+
+                            <div
+                                class="chart-bar"
+                                style="height: 40%;">
+                            </div>
+
+                            <span>Tue</span>
+
+                        </div>
+
+
+                        <div class="chart-column">
+
+                            <div
+                                class="chart-bar"
+                                style="height: 20%;">
+                            </div>
+
+                            <span>Wed</span>
+
+                        </div>
+
+
+                        <div class="chart-column">
+
+                            <div
+                                class="chart-bar"
+                                style="height: 60%;">
+                            </div>
+
+                            <span>Thu</span>
+
+                        </div>
+
+
+                        <div class="chart-column">
+
+                            <div
+                                class="chart-bar"
+                                style="height: 20%;">
+                            </div>
+
+                            <span>Fri</span>
+
+                        </div>
+
+
+                        <div class="chart-column">
+
+                            <div
+                                class="chart-bar"
+                                style="height: 40%;">
+                            </div>
+
+                            <span>Sat</span>
+
+                        </div>
+
+
+                        <div class="chart-column">
+
+                            <div
+                                class="chart-bar"
+                                style="height: 20%;">
+                            </div>
+
+                            <span>Sun</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECONDARY ANALYTICS -->
+
+        <section class="analytics-two-column">
+
+
+            <!-- SEVERITY -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Episode Severity
+                        </h2>
+
+                        <p>
+                            Recent severity distribution
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="severity-list">
+
+                    <div class="severity-item">
+
+                        <div class="severity-label">
+                            <span>Mild</span>
+                            <strong>50%</strong>
+                        </div>
+
+                        <div class="severity-progress">
+                            <span style="width: 50%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="severity-item">
+
+                        <div class="severity-label">
+                            <span>Moderate</span>
+                            <strong>35%</strong>
+                        </div>
+
+                        <div class="severity-progress">
+                            <span style="width: 35%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="severity-item">
+
+                        <div class="severity-label">
+                            <span>Severe</span>
+                            <strong>15%</strong>
+                        </div>
+
+                        <div class="severity-progress">
+                            <span style="width: 15%;"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MEDICATION -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Medication Adherence
+                        </h2>
+
+                        <p>
+                            Recent medication pattern
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="adherence-display">
+
+                    <div class="adherence-circle">
+
+                        <strong id="analyticsAdherenceCircle">
+                            0%
+                        </strong>
+
+                        <span>
+                            Adherence
+                        </span>
+
+                    </div>
+
+
+                    <div class="adherence-info">
+
+                        <div>
+                            <span>Scheduled</span>
+                            <strong id="analyticsScheduled">
+                                0
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Taken</span>
+                            <strong id="analyticsTaken">
+                                0
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Missed</span>
+                            <strong id="analyticsMissed">
+                                0
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HEALTH INSIGHT -->
+
+        <section class="dashboard-card analytics-insight">
+
+            <div class="insight-icon">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 3a9 9 0 1 0 9 9"/>
+                    <path d="M12 7v5l3 2"/>
+                </svg>
+
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Respiratory Health Insight
+                </h2>
+
+                <p>
+                    Your recent records show relatively stable respiratory
+                    activity. Continue recording episodes consistently so
+                    that Respira can identify meaningful patterns over time.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script>
+
+// ========================================
+// RESPIRA ANALYTICS
+// ========================================
+let analyticsAttackLogs = [];
+
+let selectedTrendPeriod = 7;
+async function loadAnalytics() {
+
+    // Get logged-in user
+
+    const savedUser =
+        localStorage.getItem(
+            "respiraUser"
+        );
+
+
+    if (!savedUser) {
+
+        alert(
+            "Please login again."
+        );
+
+        window.location.href =
+            "index.html";
+
+        return;
+
+    }
+
+
+    const user =
+        JSON.parse(savedUser);
+
+
+    try {
+
+    // ========================================
+    // GET ATTACK LOGS
+    // ========================================
+
+    const attackResponse =
+        await fetch(
+            "http://localhost:5000/api/attack-logs/" +
+            encodeURIComponent(
+                user.email
+            )
+        );
+
+
+    const attackData =
+        await attackResponse.json();
+
+
+    if (!attackData.success) {
+
+        alert(
+            attackData.message ||
+            "Unable to load attack analytics."
+        );
+
+        return;
+
+    }
+
+
+    // ========================================
+    // GET MEDICATIONS
+    // ========================================
+
+    const medicationResponse =
+        await fetch(
+            "http://localhost:5000/api/medications/" +
+            encodeURIComponent(
+                user.email
+            )
+        );
+
+
+    const medicationData =
+        await medicationResponse.json();
+
+
+    if (!medicationData.success) {
+
+        alert(
+            medicationData.message ||
+            "Unable to load medication analytics."
+        );
+
+        return;
+
+    }
+
+
+    // ========================================
+    // SEND REAL DATA TO ANALYTICS
+    // ========================================
+
+    updateAnalytics(
+        attackData.attackLogs,
+        medicationData.medications
+    );
+
+
+} catch (error) {
+
+    console.error(
+        "Analytics loading error:",
+        error
+    );
+
+
+    alert(
+        "Unable to connect to the Respira server."
+    );
+
+}
+
+}
+
+
+// ========================================
+// UPDATE ANALYTICS
+// ========================================
+
+function updateAnalytics(
+    attackLogs,
+    medications
+) {
+
+    analyticsAttackLogs =
+        attackLogs;
+    
+    // ========================================
+// MEDICATION ADHERENCE
+// ========================================
+
+let takenCount = 0;
+let missedCount = 0;
+
+
+medications.forEach(
+    function (medication) {
+
+        if (
+            medication.adherenceStatus ===
+            "Taken"
+        ) {
+
+            takenCount++;
+
+        }
+
+        else if (
+            medication.adherenceStatus ===
+            "Missed"
+        ) {
+
+            missedCount++;
+
+        }
+
+    }
+);
+
+
+const completedDoses =
+    takenCount +
+    missedCount;
+
+
+let medicationAdherence = 0;
+
+
+if (completedDoses > 0) {
+
+    medicationAdherence =
+        Math.round(
+            (takenCount /
+                completedDoses) *
+            100
+        );
+
+}
+
+
+// ========================================
+// UPDATE ANALYTICS CARD
+// ========================================
+
+const adherenceElement =
+    document.getElementById(
+        "analyticsMedicationAdherence"
+    );
+
+
+if (adherenceElement) {
+
+    adherenceElement.textContent =
+        `${medicationAdherence}%`;
+
+}
+// ========================================
+// UPDATE MEDICATION ADHERENCE DETAILS
+// ========================================
+
+const adherenceCircle =
+    document.getElementById(
+        "analyticsAdherenceCircle"
+    );
+
+const scheduledElement =
+    document.getElementById(
+        "analyticsScheduled"
+    );
+
+const takenElement =
+    document.getElementById(
+        "analyticsTaken"
+    );
+
+const missedElement =
+    document.getElementById(
+        "analyticsMissed"
+    );
+
+
+if (adherenceCircle) {
+
+    adherenceCircle.textContent =
+        `${medicationAdherence}%`;
+
+}
+
+
+if (scheduledElement) {
+
+    scheduledElement.textContent =
+        medications.length;
+
+}
+
+
+if (takenElement) {
+
+    takenElement.textContent =
+        takenCount;
+
+}
+
+
+if (missedElement) {
+
+    missedElement.textContent =
+        missedCount;
+
+}
+
+    console.log(
+        "Analytics attack logs:",
+        attackLogs
+    );
+
+
+    // ========================================
+    // ATTACKS THIS MONTH
+    // ========================================
+
+    const now =
+        new Date();
+
+
+    const currentMonth =
+        now.getMonth();
+
+
+    const currentYear =
+        now.getFullYear();
+
+
+    const thisMonthLogs =
+        attackLogs.filter(
+            function (log) {
+
+                const date =
+                    new Date(
+                        log.date
+                    );
+
+
+                return (
+                    date.getMonth() ===
+                        currentMonth &&
+
+                    date.getFullYear() ===
+                        currentYear
+                );
+
+            }
+        );
+
+
+    const attacksThisMonth =
+        document.querySelector(
+            ".analytics-summary .health-card:nth-child(1) h3"
+        );
+
+
+    if (attacksThisMonth) {
+
+        attacksThisMonth.textContent =
+            thisMonthLogs.length;
+
+    }
+
+
+    // ========================================
+    // AVERAGE SEVERITY
+    // ========================================
+
+    const severityValues = {
+
+        Mild: 1,
+
+        Moderate: 3,
+
+        Severe: 5
+
+    };
+
+
+    let severityTotal = 0;
+
+    let severityCount = 0;
+
+
+    attackLogs.forEach(
+        function (log) {
+
+            if (
+                severityValues[
+                    log.severity
+                ]
+            ) {
+
+                severityTotal +=
+                    severityValues[
+                        log.severity
+                    ];
+
+                severityCount++;
+
+            }
+
+        }
+    );
+
+
+    let averageSeverity = 0;
+
+
+    if (severityCount > 0) {
+
+        averageSeverity =
+            (
+                severityTotal /
+                severityCount
+            ).toFixed(1);
+
+    }
+
+
+    const averageSeverityElement =
+        document.querySelector(
+            ".analytics-summary .health-card:nth-child(2) h3"
+        );
+
+
+    if (averageSeverityElement) {
+
+        averageSeverityElement.innerHTML =
+            `${averageSeverity} <small>/ 5</small>`;
+
+    }
+
+
+    // ========================================
+    // HEALTH TREND
+    // ========================================
+
+    const healthTrend =
+        document.querySelector(
+            ".analytics-summary .health-card:nth-child(4) h3"
+        );
+
+
+    if (healthTrend) {
+
+        if (attackLogs.length === 0) {
+
+            healthTrend.textContent =
+                "Stable";
+
+        }
+        else if (attackLogs.length === 1) {
+
+            healthTrend.textContent =
+                "Stable";
+
+        }
+        else {
+
+            healthTrend.textContent =
+                "Needs Attention";
+
+        }
+
+    }
+
+
+    // ========================================
+    // UPDATE CHART
+    // ========================================
+
+    updateTrendChart(
+        attackLogs,
+        selectedTrendPeriod
+    );
+
+
+    // ========================================
+    // UPDATE SEVERITY
+    // ========================================
+
+    updateSeverityDistribution(
+        attackLogs
+    );
+
+}
+
+
+// ========================================
+// START ANALYTICS
+// ========================================
+// ========================================
+// UPDATE RESPIRATORY EPISODE CHART
+// ========================================
+
+function updateTrendChart(
+    attackLogs,
+    days
+) {
+
+    const chartColumns =
+        document.querySelectorAll(
+            ".chart-column"
+        );
+
+
+    if (!chartColumns.length) {
+
+        return;
+
+    }
+
+
+    const now =
+        new Date();
+
+
+    const startDate =
+        new Date(now);
+
+
+    startDate.setDate(
+        now.getDate() - days + 1
+    );
+
+
+    // ========================================
+    // CREATE 7 TIME PERIODS
+    // ========================================
+
+    const bucketSize =
+        days / 7;
+
+
+    const buckets = [];
+
+
+    for (
+        let i = 0;
+        i < 7;
+        i++
+    ) {
+
+        const bucketStart =
+            new Date(startDate);
+
+
+        bucketStart.setDate(
+            startDate.getDate() +
+            Math.floor(
+                i * bucketSize
+            )
+        );
+
+
+        const bucketEnd =
+            new Date(startDate);
+
+
+        bucketEnd.setDate(
+            startDate.getDate() +
+            Math.floor(
+                (i + 1) * bucketSize
+            )
+        );
+
+
+        buckets.push({
+
+            start:
+                bucketStart,
+
+            end:
+                bucketEnd,
+
+            count:
+                0
+
+        });
+
+    }
+
+
+    // ========================================
+    // COUNT ATTACKS
+    // ========================================
+
+    attackLogs.forEach(
+        function (log) {
+
+            const logDate =
+                new Date(
+                    log.date
+                );
+
+
+            buckets.forEach(
+                function (bucket) {
+
+                    if (
+                        logDate >=
+                            bucket.start &&
+
+                        logDate <
+                            bucket.end
+                    ) {
+
+                        bucket.count++;
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+    // ========================================
+    // FIND MAXIMUM
+    // ========================================
+
+    let maxCount =
+        0;
+
+
+    buckets.forEach(
+        function (bucket) {
+
+            if (
+                bucket.count >
+                maxCount
+            ) {
+
+                maxCount =
+                    bucket.count;
+
+            }
+
+        }
+    );
+
+
+    if (maxCount === 0) {
+
+        maxCount = 1;
+
+    }
+
+
+    // ========================================
+    // UPDATE BARS
+    // ========================================
+
+    buckets.forEach(
+        function (
+            bucket,
+            index
+        ) {
+
+            const column =
+                chartColumns[index];
+
+
+            const bar =
+                column.querySelector(
+                    ".chart-bar"
+                );
+
+
+            const label =
+                column.querySelector(
+                    "span"
+                );
+
+
+            if (
+                !bar ||
+                !label
+            ) {
+
+                return;
+
+            }
+
+
+            const height =
+                (bucket.count / 5) * 100;
+
+
+            bar.style.height =
+                `${height}%`;
+
+
+            // ========================================
+            // UPDATE LABEL
+            // ========================================
+
+            if (days === 7) {
+
+                label.textContent =
+                    bucket.start.toLocaleDateString(
+                        "en-US",
+                        {
+                            weekday:
+                                "short"
+                        }
+                    );
+
+            }
+
+            else if (days === 30) {
+
+                label.textContent =
+                    bucket.start.toLocaleDateString(
+                        "en-US",
+                        {
+                            day:
+                                "numeric",
+
+                            month:
+                                "short"
+                        }
+                    );
+
+            }
+
+            else {
+
+                label.textContent =
+                    bucket.start.toLocaleDateString(
+                        "en-US",
+                        {
+                            month:
+                                "short",
+
+                            day:
+                                "numeric"
+                        }
+                    );
+
+            }
+
+        }
+    );
+
+}
+// ========================================
+// UPDATE EPISODE SEVERITY
+// ========================================
+
+function updateSeverityDistribution(
+    attackLogs
+) {
+    console.log(
+        "SEVERITY DATA:",
+        attackLogs
+    );
+
+    const severityItems =
+        document.querySelectorAll(
+            ".severity-item"
+        );
+
+
+    if (severityItems.length < 3) {
+
+        return;
+
+    }
+
+
+    // ========================================
+    // COUNT EACH SEVERITY
+    // ========================================
+
+    let mildCount = 0;
+
+    let moderateCount = 0;
+
+    let severeCount = 0;
+
+
+    attackLogs.forEach(
+        function (log) {
+
+            const severity =
+                (log.severity || "")
+                    .toLowerCase();
+
+
+            if (severity === "mild") {
+
+                mildCount++;
+
+            }
+
+            else if (
+                severity === "moderate"
+            ) {
+
+                moderateCount++;
+
+            }
+
+            else if (
+                severity === "severe"
+            ) {
+
+                severeCount++;
+
+            }
+
+        }
+    );
+
+
+    const total =
+        mildCount +
+        moderateCount +
+        severeCount;
+
+
+    // ========================================
+    // CALCULATE PERCENTAGES
+    // ========================================
+
+    let mildPercentage = 0;
+
+    let moderatePercentage = 0;
+
+    let severePercentage = 0;
+
+
+    if (total > 0) {
+
+        mildPercentage =
+            Math.round(
+                (mildCount / total) * 100
+            );
+
+
+        moderatePercentage =
+            Math.round(
+                (moderateCount / total) * 100
+            );
+
+
+        severePercentage =
+            Math.round(
+                (severeCount / total) * 100
+            );
+
+    }
+
+
+    // ========================================
+    // UPDATE MILD
+    // ========================================
+
+    const mildItem =
+        severityItems[0];
+
+
+    mildItem.querySelector(
+        "strong"
+    ).textContent =
+        `${mildPercentage}%`;
+
+
+    mildItem.querySelector(
+        ".severity-progress span"
+    ).style.width =
+        `${mildPercentage}%`;
+
+
+    // ========================================
+    // UPDATE MODERATE
+    // ========================================
+
+    const moderateItem =
+        severityItems[1];
+
+
+    moderateItem.querySelector(
+        "strong"
+    ).textContent =
+        `${moderatePercentage}%`;
+
+
+    moderateItem.querySelector(
+        ".severity-progress span"
+    ).style.width =
+        `${moderatePercentage}%`;
+
+
+    // ========================================
+    // UPDATE SEVERE
+    // ========================================
+
+    const severeItem =
+        severityItems[2];
+
+
+    severeItem.querySelector(
+        "strong"
+    ).textContent =
+        `${severePercentage}%`;
+
+
+    severeItem.querySelector(
+        ".severity-progress span"
+    ).style.width =
+        `${severePercentage}%`;
+
+}
+// ========================================
+// TREND PERIOD DROPDOWN
+// ========================================
+
+const trendPeriod =
+    document.getElementById(
+        "trendPeriod"
+    );
+
+
+if (trendPeriod) {
+
+    trendPeriod.addEventListener(
+        "change",
+        function () {
+
+            selectedTrendPeriod =
+                Number(
+                    trendPeriod.value
+                );
+
+
+            updateTrendChart(
+                analyticsAttackLogs,
+                selectedTrendPeriod
+            );
+            updateSeverityDistribution(
+                analyticsAttackLogs
+            );
+
+        }
+    );
+
+}
+loadAnalytics();
+
+</script>
+
+</body>
+
+</html>

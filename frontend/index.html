@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <title>Respira - Login</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <!-- Respira Logo -->
+        <div class="logo">
+            <img src="images/respira-logo.png" alt="Respira Logo">
+        </div>
+
+
+        <!-- Branding -->
+        <h1>Respira</h1>
+
+        <p class="tagline">
+            Breathe Easy, Live Easy
+        </p>
+
+
+        <!-- Login Form -->
+        <form id="loginForm">
+
+            <!-- Email -->
+            <div class="input-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required>
+
+            </div>
+
+
+            <!-- Password -->
+            <div class="input-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <div class="password-container">
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required>
+
+                    <button
+                        type="button"
+                        id="togglePassword"
+                        class="eye-button"
+                        aria-label="Show password">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true">
+
+                            <path
+                                d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z" />
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="2.5" />
+
+                        </svg>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Login Options -->
+            <div class="login-options">
+
+                <label class="remember">
+
+                    <input
+                        type="checkbox"
+                        id="rememberMe">
+
+                    <span>
+                        Remember me
+                    </span>
+
+                </label>
+
+
+                <a
+                    href="#"
+                    id="forgotPassword">
+
+                    Forgot Password?
+
+                </a>
+
+            </div>
+
+
+            <!-- Login Button -->
+            <button
+                type="submit"
+                class="login-button">
+
+                Login
+
+            </button>
+
+        </form>
+
+
+        <!-- Register -->
+        <p class="register-text">
+
+            Don't have an account?
+
+            <a
+                href="register.html"
+                id="registerLink">
+
+                Register
+
+            </a>
+
+        </p>
+
+    </div>
+
+
+    <script src="script.js"></script>
+    
+
+</body>
+
+</html>

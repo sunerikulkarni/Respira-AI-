@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <title>Respira - Medications</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <div class="sidebar-brand">
+
+                <img
+                    src="images/respira-logo.png"
+                    alt="Respira Logo">
+
+                <span>Respira</span>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="7" height="7" rx="1"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1"/>
+                            <rect x="14" y="14" width="7" height="7" rx="1"/>
+                        </svg>
+                    </span>
+
+                    Dashboard
+
+                </a>
+
+
+                <a href="attack-logs.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16v16H4z"/>
+                            <path d="M8 2v4"/>
+                            <path d="M16 2v4"/>
+                            <path d="M4 10h16"/>
+                        </svg>
+                    </span>
+
+                    Attack Logs
+
+                </a>
+
+
+                <a href="medications.html"
+                   class="nav-item active">
+
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 3h12"/>
+                            <path d="M7 3v4"/>
+                            <path d="M17 3v4"/>
+                            <path d="M5 7h14v14H5z"/>
+                            <path d="M8 12h8"/>
+                            <path d="M8 16h5"/>
+                        </svg>
+                    </span>
+
+                    Medications
+
+                </a>
+
+
+                <a href="air-quality.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3v18"/>
+                            <path d="M3 12h18"/>
+                            <circle cx="12" cy="12" r="9"/>
+                        </svg>
+                    </span>
+
+                    Air Quality
+
+                </a>
+
+
+                <a href="calendar.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="4" y="5"
+                                  width="16"
+                                  height="16"
+                                  rx="2"/>
+                            <path d="M8 3v4"/>
+                            <path d="M16 3v4"/>
+                            <path d="M4 10h16"/>
+                        </svg>
+                    </span>
+
+                    Calendar
+
+                </a>
+
+
+                <a href="analytics.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 19V5"/>
+                            <path d="M4 19h17"/>
+                            <path d="M7 16l4-5 3 2 5-7"/>
+                        </svg>
+                    </span>
+
+                    Analytics
+
+                </a>
+
+
+                <a href="ai-assistant.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3a8 8 0 0 0-8 8"/>
+                            <path d="M12 3a8 8 0 0 1 8 8"/>
+                            <path d="M4 11c0 4 2 6 4 7"/>
+                            <path d="M20 11c0 4-2 6-4 7"/>
+                            <path d="M8 21h8"/>
+                            <path d="M9 18h6"/>
+                        </svg>
+                    </span>
+
+                    AI Assistant
+
+                </a>
+
+
+                <a href="emergency.html" class="nav-item emergency-nav">
+
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3l9 18H3L12 3z"/>
+                            <path d="M12 9v5"/>
+                            <circle cx="12" cy="17" r="0.7"/>
+                        </svg>
+                    </span>
+
+                    Emergency SOS
+
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="profile.html" class="nav-item">
+
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="8" r="4"/>
+                        <path d="M4 21c0-4 3-7 8-7s8 3 8 7"/>
+                    </svg>
+                </span>
+
+                Profile
+
+            </a>
+
+
+            <a href="index.html" class="nav-item">
+
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 17l5-5-5-5"/>
+                        <path d="M15 12H3"/>
+                        <path d="M21 4v16"/>
+                    </svg>
+                </span>
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <p class="welcome-label">
+                    MEDICATION MANAGEMENT
+                </p>
+
+                <h1>
+                    Medications
+                </h1>
+
+                <p class="header-subtitle">
+                    Keep track of your prescribed medications and schedule.
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="notification-button"
+                    aria-label="Notifications">
+
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+                        <path d="M10 21h4"/>
+                    </svg>
+
+                </button>
+
+
+                <button class="profile-button">
+                    U
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- INTRO -->
+
+        <section class="logs-intro">
+
+            <div>
+
+                <h2>
+                    Your Medication Plan
+                </h2>
+
+                <p>
+                    View your current medications and keep your treatment
+                    schedule organized.
+                </p>
+
+            </div>
+
+
+            <button
+                class="primary-action"
+                id="addMedicationButton">
+
+                <span>+</span>
+                Add Medication
+
+            </button>
+
+        </section>
+
+
+        <!-- SUMMARY -->
+
+        <section class="overview-grid medication-summary">
+
+            <div class="health-card">
+
+                <span class="card-label">
+                    ACTIVE MEDICATIONS
+                </span>
+
+                <h3 id="activeMedicationCount">
+                    0
+                </h3>
+
+                <p class="card-description">
+                    Currently being tracked
+                </p>
+
+            </div>
+
+
+            <div class="health-card">
+
+                <span class="card-label">
+                    TODAY'S DOSES
+                </span>
+
+                <h3 id="todayDoseCount">
+                    0
+                </h3>
+
+                <p class="card-description">
+                    Scheduled for today
+                </p>
+
+            </div>
+
+
+            <div class="health-card">
+
+                <span class="card-label">
+                    NEXT DOSE
+                </span>
+
+                <h3 id="nextDoseTime">
+                    —
+                </h3>
+
+                <p
+                    class="card-description"
+                    id="nextDoseDescription"
+                >
+                    No upcoming dose
+                </p>
+
+            </div>
+
+
+            <div class="health-card">
+
+                <span class="card-label">
+                    ADHERENCE
+                </span>
+
+                <h3 id="adherenceValue">
+                    0%
+                </h3>
+
+                <p class="card-description">
+                    Recent medication record
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- MEDICATION LIST -->
+
+        <section class="dashboard-card medication-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Current Medications
+                    </h2>
+
+                    <p>
+                        Your active medication schedule
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="medication-list" id="medicationList">
+
+                <!-- Real medications will be loaded here -->
+
+            </div>
+
+        </section>
+
+
+        <!-- ADD MEDICATION FORM -->
+
+        <section
+            class="dashboard-card new-medication-card"
+            id="medicationFormCard">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Add Medication
+                    </h2>
+
+                    <p>
+                        Add a medication to your personal schedule.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form id="medicationForm">
+
+                <div class="medication-form-grid">
+
+
+                    <div class="form-field">
+
+                        <label for="medicationName">
+                            Medication Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="medicationName"
+                            placeholder="Enter medication name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="medicationDose">
+                            Dosage
+                        </label>
+
+                        <input
+                            type="text"
+                            id="medicationDose"
+                            placeholder="e.g. 1 dose"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="medicationSchedule">
+                            Schedule
+                        </label>
+
+                        <select
+                            id="medicationSchedule"
+                            required>
+
+                            <option value="">
+                                Select schedule
+                            </option>
+
+                            <option value="Morning">
+                                Morning
+                            </option>
+
+                            <option value="Afternoon">
+                                Afternoon
+                            </option>
+
+                            <option value="Evening">
+                                Evening
+                            </option>
+
+                            <option value="As needed">
+                                As needed
+                            </option>
+
+                        </select>
+
+                    </div>
+                    <div class="form-field">
+                        <label for="medicationTime">
+                            Time
+                        </label>
+
+                        <input
+                            type="time"
+                            id="medicationTime">
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="medicationNotes">
+                            Notes
+                        </label>
+
+                        <input
+                            type="text"
+                            id="medicationNotes"
+                            placeholder="Optional notes">
+
+                    </div>
+                    <div class="form-field">
+                        <label for="medicationExpiry">
+                            Expiry Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="medicationExpiry">
+                    </div>
+                    <div class="form-field">
+                        <label for="medicationQuantity">
+                            Quantity
+                        </label>
+
+                        <input
+                            type="number"
+                            id="medicationQuantity"
+                            placeholder="Enter quantity"
+                            min="0">
+                    </div>
+
+                </div>
+
+
+                <div class="form-buttons">
+
+                    <button
+                        type="reset"
+                        class="secondary-action">
+
+                        Clear
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="primary-action">
+
+                        Save Medication
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script>
+
+const addMedicationButton =
+    document.getElementById("addMedicationButton");
+
+const medicationFormCard =
+    document.getElementById("medicationFormCard");
+
+const medicationForm =
+    document.getElementById("medicationForm");
+
+
+addMedicationButton.addEventListener(
+    "click",
+    function () {
+
+        medicationFormCard.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }
+);
+
+
+medicationForm.addEventListener(
+    "submit",
+    async function (event) {
+
+        event.preventDefault();
+
+
+        // Get logged-in user
+        const savedUser =
+            localStorage.getItem(
+                "respiraUser"
+            );
+
+
+        if (!savedUser) {
+
+            alert(
+                "Please login again."
+            );
+
+            window.location.href =
+                "index.html";
+
+            return;
+
+        }
+
+
+        const user =
+            JSON.parse(
+                savedUser
+            );
+
+
+        // Get form values
+        const name =
+            document.getElementById(
+                "medicationName"
+            ).value.trim();
+
+
+        const dosage =
+            document.getElementById(
+                "medicationDose"
+            ).value.trim();
+
+
+        const schedule =
+            document.getElementById(
+                "medicationSchedule"
+            ).value;
+        const time =
+            document.getElementById(
+                "medicationTime"
+            ).value;
+            console.log(
+                "TIME VALUE:",
+                time
+            );
+            
+
+        const notes =
+            document.getElementById(
+                "medicationNotes"
+            ).value.trim();
+            const expiryDate =
+                document.getElementById(
+                    "medicationExpiry"
+                ).value;
+
+
+            const quantity =
+                document.getElementById(
+                    "medicationQuantity"
+                ).value;
+
+
+        try {
+
+            const response =
+                await fetch(
+                    "http://localhost:5000/api/medications",
+                    {
+
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body:
+                            JSON.stringify({
+
+                                email:
+                                    user.email,
+
+                                name:
+                                    name,
+
+                                dosage:
+                                    dosage,
+
+                                schedule:
+                                    schedule,
+
+                                time:
+                                    time,
+
+                                notes:
+                                    notes,
+
+                                expiryDate:
+                                    expiryDate || null,
+
+                                quantity:
+                                    Number(quantity) || 0
+
+                            })
+
+                    }
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if (!data.success) {
+
+                alert(
+                    data.message ||
+                    "Unable to save medication."
+                );
+
+                return;
+
+            }
+
+
+            alert(
+                "Medication saved successfully."
+            );
+
+
+            medicationForm.reset();
+
+
+        } catch (error) {
+
+            console.error(
+                "Medication save error:",
+                error
+            );
+
+
+            alert(
+                "Unable to connect to the Respira server."
+            );
+
+        }
+
+    }
+);
+// ========================================
+// LOAD MEDICATIONS
+// ========================================
+
+async function loadMedications() {
+
+    const savedUser =
+        localStorage.getItem(
+            "respiraUser"
+        );
+
+
+    if (!savedUser) {
+
+        return;
+
+    }
+
+
+    const user =
+        JSON.parse(
+            savedUser
+        );
+
+
+    try {
+
+        const response =
+            await fetch(
+                "http://localhost:5000/api/medications/" +
+                encodeURIComponent(
+                    user.email
+                )
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!data.success) {
+
+            console.error(
+                data.message
+            );
+
+            return;
+
+        }
+
+        window.medicationsData =
+            data.medications;
+        renderMedications(
+            data.medications
+        );
+        updateMedicationSummary(
+            data.medications
+        );
+        updateAdherenceSummary(
+            data.medications
+        );
+
+    } catch (error) {
+
+        console.error(
+            "Medication loading error:",
+            error
+        );
+
+    }
+
+}
+// ========================================
+// DISPLAY MEDICATIONS
+// ========================================
+
+function renderMedications(
+    medications
+) {
+
+    const medicationList =
+        document.getElementById(
+            "medicationList"
+        );
+
+
+    if (!medicationList) {
+
+        return;
+
+    }
+
+
+    medicationList.innerHTML = "";
+
+
+    // No medications
+    if (
+        !medications ||
+        medications.length === 0
+    ) {
+
+        medicationList.innerHTML = `
+            <p>
+                No medications added yet.
+            </p>
+        `;
+
+        return;
+
+    }
+
+
+    // Create each medication row
+    medications.forEach(
+        function (medication) {
+
+            const row =
+                document.createElement(
+                    "div"
+                );
+
+
+            row.className =
+                "medication-row";
+
+
+            // Format expiry date
+            let expiryText =
+                "No expiry date";
+
+
+            if (medication.expiryDate) {
+
+                const expiry =
+                    new Date(
+                        medication.expiryDate
+                    );
+
+
+                expiryText =
+                    "Expires: " +
+                    expiry.toLocaleDateString(
+                        "en-US",
+                        {
+                            day: "2-digit",
+                            month: "short",
+                            year: "numeric"
+                        }
+                    );
+
+            }
+
+
+            // Current adherence status
+            const status =
+                medication.adherenceStatus ||
+                "Pending";
+
+
+            row.innerHTML = `
+
+                <div class="medication-icon">
+
+                    <svg viewBox="0 0 24 24">
+
+                        <path
+                            d="M8 4h8v16H8z"
+                        />
+
+                        <path
+                            d="M8 8h8"
+                        />
+
+                        <path
+                            d="M12 8v8"
+                        />
+
+                        <path
+                            d="M10 12h4"
+                        />
+
+                    </svg>
+
+                </div>
+
+
+                <div class="medication-info">
+
+                    <h3>
+                        ${medication.name}
+                    </h3>
+
+                    <p>
+                        ${medication.notes || "Prescribed medication"}
+                    </p>
+
+                    <p>
+                        Quantity:
+                        ${medication.quantity || 0}
+                        &nbsp; • &nbsp;
+                        ${expiryText}
+                    </p>
+
+                </div>
+
+
+                <div class="medication-dose">
+
+                    <span>
+                        DOSAGE
+                    </span>
+
+                    <strong>
+                        ${medication.dosage}
+                    </strong>
+
+                </div>
+
+
+                <div class="medication-time">
+
+                    <span>
+                        SCHEDULE
+                    </span>
+
+                    <strong>
+                        ${medication.schedule}
+                    </strong>
+
+                    ${
+                        medication.time
+                            ? `
+                                <small>
+                                    ${medication.time}
+                                </small>
+                              `
+                            : ""
+                    }
+
+                </div>
+
+
+                <div class="medication-adherence">
+
+                    <span>
+                        STATUS
+                    </span>
+
+                    <strong>
+                        ${status}
+                    </strong>
+
+
+                    <div
+                        style="
+                            display:flex;
+                            gap:8px;
+                            margin-top:8px;
+                        "
+                    >
+
+                        <button
+                            type="button"
+                            onclick="updateAdherence(
+                                '${medication._id}',
+                                'Taken'
+                            )"
+                            style="
+                                padding:6px 10px;
+                                border:0;
+                                border-radius:6px;
+                                cursor:pointer;
+                            "
+                        >
+                            Taken
+                        </button>
+
+
+                        <button
+                            type="button"
+                            onclick="updateAdherence(
+                                '${medication._id}',
+                                'Missed'
+                            )"
+                            style="
+                                padding:6px 10px;
+                                border:0;
+                                border-radius:6px;
+                                cursor:pointer;
+                            "
+                        >
+                            Missed
+                        </button>
+                        <button
+                            type="button"
+                            onclick="deleteMedication(
+                                '${medication._id}'
+                            )"
+                            class="delete-medication-btn"
+                        >
+                            Delete
+                        </button>
+                        <button
+                            type="button"
+                            onclick="editMedication(
+                                '${medication._id}'
+                            )"
+                            class="edit-medication-btn"
+                        >
+                            Edit
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+
+            medicationList.appendChild(
+                row
+            );
+
+        }
+    );
+
+}
+async function updateAdherence(
+    medicationId,
+    status
+) {
+
+    try {
+
+        const response =
+            await fetch(
+                `http://localhost:5000/api/medications/${medicationId}/adherence`,
+                {
+                    method: "PATCH",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:
+                        JSON.stringify({
+                            status: status
+                        })
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                data.message ||
+                "Unable to update adherence."
+            );
+
+        }
+
+
+        alert(
+            `Medication marked as ${status}.`
+        );
+
+
+        // Reload medications
+        loadMedications();
+
+
+    } catch (error) {
+
+        console.error(
+            "Adherence update error:",
+            error
+        );
+
+
+        alert(
+            "Unable to update medication adherence."
+        );
+
+    }
+
+}
+async function deleteMedication(
+    medicationId
+) {
+
+    const confirmed =
+        confirm(
+            "Are you sure you want to delete this medication?"
+        );
+
+
+    if (!confirmed) {
+        return;
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+                `http://localhost:5000/api/medications/${medicationId}`,
+                {
+                    method: "DELETE"
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                data.message ||
+                "Unable to delete medication."
+            );
+
+        }
+
+
+        alert(
+            "Medication deleted successfully."
+        );
+
+
+        // Reload the medication list
+        loadMedications();
+
+
+    } catch (error) {
+
+        console.error(
+            "Delete medication error:",
+            error
+        );
+
+
+        alert(
+            "Unable to delete medication."
+        );
+
+    }
+
+}
+async function editMedication(medicationId) {
+
+    const medication =
+        window.medicationsData.find(
+            function (medication) {
+                return medication._id === medicationId;
+            }
+        );
+
+
+    if (!medication) {
+
+        alert(
+            "Medication details not found."
+        );
+
+        return;
+
+    }
+
+
+    const name =
+        prompt(
+            "Medication name:",
+            medication.name || ""
+        );
+
+
+    if (name === null) {
+        return;
+    }
+
+
+    const dosage =
+        prompt(
+            "Dosage:",
+            medication.dosage || ""
+        );
+
+
+    if (dosage === null) {
+        return;
+    }
+
+
+    const schedule =
+        prompt(
+            "Schedule:",
+            medication.schedule || ""
+        );
+
+
+    if (schedule === null) {
+        return;
+    }
+
+
+    const time =
+        prompt(
+            "Time (HH:MM):",
+            medication.time || ""
+        );
+
+
+    if (time === null) {
+        return;
+    }
+
+
+    const notes =
+        prompt(
+            "Notes:",
+            medication.notes || ""
+        );
+
+
+    if (notes === null) {
+        return;
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+                `http://localhost:5000/api/medications/${medicationId}`,
+                {
+
+                    method: "PUT",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:
+                        JSON.stringify({
+
+                            name: name,
+
+                            dosage: dosage,
+
+                            schedule: schedule,
+
+                            time: time,
+
+                            notes: notes,
+
+                            expiryDate:
+                                medication.expiryDate,
+
+                            quantity:
+                                medication.quantity
+
+                        })
+
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                data.message ||
+                "Unable to update medication."
+            );
+
+        }
+
+
+        alert(
+            "Medication updated successfully."
+        );
+
+
+        loadMedications();
+
+
+    } catch (error) {
+
+        console.error(
+            "Edit medication error:",
+            error
+        );
+
+
+        alert(
+            "Unable to update medication."
+        );
+
+    }
+
+}
+// ========================================
+// UPDATE MEDICATION SUMMARY
+// ========================================
+
+function updateMedicationSummary(
+    medications
+) {
+
+    const activeCount =
+        document.getElementById(
+            "activeMedicationCount"
+        );
+
+    const todayDoseCount =
+        document.getElementById(
+            "todayDoseCount"
+        );
+
+    const nextDoseTime =
+        document.getElementById(
+            "nextDoseTime"
+        );
+        const nextDoseDescription =
+        document.getElementById(
+            "nextDoseDescription"
+        );
+
+
+    // ========================================
+    // ACTIVE MEDICATIONS
+    // ========================================
+
+    if (activeCount) {
+
+        activeCount.textContent =
+            medications.length;
+
+    }
+
+
+    // ========================================
+    // TODAY'S DOSES
+    // ========================================
+
+    const scheduledToday =
+        medications.filter(
+            function (medication) {
+
+                return (
+                    medication.schedule !==
+                    "As needed"
+                );
+
+            }
+        );
+
+
+    if (todayDoseCount) {
+
+        todayDoseCount.textContent =
+            scheduledToday.length;
+
+    }
+
+
+    // ========================================
+    // FIND NEXT DOSE
+    // ========================================
+
+    const timedMedications =
+        medications.filter(
+            function (medication) {
+
+                return (
+                    medication.time &&
+                    medication.schedule !==
+                    "As needed"
+                );
+
+            }
+        );
+
+
+    if (
+        !nextDoseTime ||
+        timedMedications.length === 0
+    ) {
+
+        if (nextDoseTime) {
+
+            nextDoseTime.textContent =
+                "—";
+
+        }
+        if (nextDoseDescription) {
+
+            nextDoseDescription.textContent =
+                "No upcoming dose";
+
+        }
+        return;
+
+    }
+
+
+    // ========================================
+    // CURRENT TIME
+    // ========================================
+
+    const now =
+        new Date();
+
+    const currentMinutes =
+        now.getHours() * 60 +
+        now.getMinutes();
+
+
+    // ========================================
+    // FIND UPCOMING DOSES
+    // ========================================
+
+    const upcomingMedications =
+        timedMedications.filter(
+            function (medication) {
+
+                const parts =
+                    medication.time.split(":");
+
+                const hour =
+                    parseInt(parts[0]);
+
+                const minute =
+                    parseInt(parts[1] || "0");
+
+
+                const medicationMinutes =
+                    hour * 60 +
+                    minute;
+
+
+                return (
+                    medicationMinutes >=
+                    currentMinutes
+                );
+
+            }
+        );
+
+
+    let nextMedication;
+    let isTomorrow = false;
+
+
+    // If there is a dose later today,
+    // use the earliest one.
+    if (
+        upcomingMedications.length > 0
+    ) {
+
+        upcomingMedications.sort(
+            function (a, b) {
+
+                return a.time.localeCompare(
+                    b.time
+                );
+
+            }
+        );
+
+
+        nextMedication =
+            upcomingMedications[0];
+
+    }
+
+    // If all today's doses have passed,
+    // use the earliest dose tomorrow.
+    else {
+
+    timedMedications.sort(
+        function (a, b) {
+
+            return a.time.localeCompare(
+                b.time
+            );
+
+        }
+    );
+
+
+    nextMedication =
+        timedMedications[0];
+
+
+    isTomorrow = true;
+
+}
+
+
+    // ========================================
+    // FORMAT TIME
+    // ========================================
+
+    const parts =
+        nextMedication.time.split(":");
+
+
+    let hour =
+        parseInt(parts[0]);
+
+
+    const minute =
+        parts[1] || "00";
+
+
+    const period =
+        hour >= 12
+            ? "PM"
+            : "AM";
+
+
+    hour =
+        hour % 12 || 12;
+
+
+    nextDoseTime.textContent =
+        `${hour}:${minute} ${period}`;
+    if (nextDoseDescription) {
+
+        const dayText =
+            isTomorrow
+                ? "Tomorrow"
+                : "Today";
+
+
+        nextDoseDescription.textContent =
+            `${dayText} • ${nextMedication.name}`;
+
+    }
+}
+function updateAdherenceSummary(
+    medications
+) {
+
+    const adherenceValue =
+        document.getElementById(
+            "adherenceValue"
+        );
+
+
+    if (!adherenceValue) {
+        return;
+    }
+
+
+    if (
+        !medications ||
+        medications.length === 0
+    ) {
+
+        adherenceValue.textContent =
+            "0%";
+
+        return;
+
+    }
+
+
+    const taken =
+        medications.filter(
+            function (medication) {
+
+                return (
+                    medication.adherenceStatus ===
+                    "Taken"
+                );
+
+            }
+        ).length;
+
+
+    const missed =
+        medications.filter(
+            function (medication) {
+
+                return (
+                    medication.adherenceStatus ===
+                    "Missed"
+                );
+
+            }
+        ).length;
+
+
+    const completedDoses =
+        taken + missed;
+
+
+    if (completedDoses === 0) {
+
+        adherenceValue.textContent =
+            "0%";
+
+        return;
+
+    }
+
+
+    const percentage =
+        Math.round(
+            (taken / completedDoses) * 100
+        );
+
+
+    adherenceValue.textContent =
+        percentage + "%";
+
+}
+
+// ========================================
+// LOAD MEDICATIONS WHEN PAGE OPENS
+// ========================================
+
+loadMedications();
+</script>
+
+</body>
+
+</html>

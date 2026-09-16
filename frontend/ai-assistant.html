@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <title>Respira - AI Assistant</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <div class="sidebar-brand">
+
+                <img src="images/respira-logo.png" alt="Respira Logo">
+
+                <span>Respira</span>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="7" height="7" rx="1"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1"/>
+                            <rect x="14" y="14" width="7" height="7" rx="1"/>
+                        </svg>
+                    </span>
+                    Dashboard
+                </a>
+
+
+                <a href="attack-logs.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16v16H4z"/>
+                            <path d="M8 2v4"/>
+                            <path d="M16 2v4"/>
+                            <path d="M4 10h16"/>
+                        </svg>
+                    </span>
+                    Attack Logs
+                </a>
+
+
+                <a href="medications.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 3h12"/>
+                            <path d="M7 3v4"/>
+                            <path d="M17 3v4"/>
+                            <path d="M5 7h14v14H5z"/>
+                            <path d="M8 12h8"/>
+                            <path d="M8 16h5"/>
+                        </svg>
+                    </span>
+                    Medications
+                </a>
+
+
+                <a href="air-quality.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3v18"/>
+                            <path d="M3 12h18"/>
+                            <circle cx="12" cy="12" r="9"/>
+                        </svg>
+                    </span>
+                    Air Quality
+                </a>
+
+
+                <a href="calendar.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="4" y="5" width="16" height="16" rx="2"/>
+                            <path d="M8 3v4"/>
+                            <path d="M16 3v4"/>
+                            <path d="M4 10h16"/>
+                        </svg>
+                    </span>
+                    Calendar
+                </a>
+
+
+                <a href="analytics.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 19V5"/>
+                            <path d="M4 19h17"/>
+                            <path d="M7 16l4-5 3 2 5-7"/>
+                        </svg>
+                    </span>
+                    Analytics
+                </a>
+
+
+                <a href="ai-assistant.html" class="nav-item active">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3a8 8 0 0 0-8 8"/>
+                            <path d="M12 3a8 8 0 0 1 8 8"/>
+                            <path d="M4 11c0 4 2 6 4 7"/>
+                            <path d="M20 11c0 4-2 6-4 7"/>
+                            <path d="M8 21h8"/>
+                            <path d="M9 18h6"/>
+                        </svg>
+                    </span>
+                    AI Assistant
+                </a>
+
+
+                <a href="emergency.html" class="nav-item emergency-nav">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3l9 18H3L12 3z"/>
+                            <path d="M12 9v5"/>
+                            <circle cx="12" cy="17" r="0.7"/>
+                        </svg>
+                    </span>
+                    Emergency SOS
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="profile.html" class="nav-item">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="8" r="4"/>
+                        <path d="M4 21c0-4 3-7 8-7s8 3 8 7"/>
+                    </svg>
+                </span>
+                Profile
+            </a>
+
+
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 17l5-5-5-5"/>
+                        <path d="M15 12H3"/>
+                        <path d="M21 4v16"/>
+                    </svg>
+                </span>
+                Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <p class="welcome-label">
+                    RESPIRA INTELLIGENCE
+                </p>
+
+                <h1>
+                    AI Assistant
+                </h1>
+
+                <p class="header-subtitle">
+                    Get assistance based on your recorded respiratory information.
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="notification-button"
+                    aria-label="Notifications">
+
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+                        <path d="M10 21h4"/>
+                    </svg>
+
+                </button>
+
+
+                <button class="profile-button">
+                    U
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- ASSISTANT INTRO -->
+
+        <section class="assistant-intro">
+
+            <div class="assistant-intro-icon">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 3a8 8 0 0 0-8 8"/>
+                    <path d="M12 3a8 8 0 0 1 8 8"/>
+                    <path d="M4 11c0 4 2 6 4 7"/>
+                    <path d="M20 11c0 4-2 6-4 7"/>
+                    <path d="M8 21h8"/>
+                    <path d="M9 18h6"/>
+                </svg>
+
+            </div>
+
+
+            <div>
+
+                <h2>
+                    How can I help?
+                </h2>
+
+                <p>
+                    Ask about your recorded respiratory activity,
+                    medications, air quality or health trends.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CHAT AREA -->
+
+        <section class="dashboard-card assistant-card">
+
+            <div class="chat-header">
+
+                <div>
+
+                    <h2>
+                        Respira Assistant
+                    </h2>
+
+                    <p>
+                        Personal health information assistant
+                    </p>
+
+                </div>
+
+
+                <span class="assistant-status">
+                    Available
+                </span>
+
+            </div>
+
+
+            <div
+                class="chat-messages"
+                id="chatMessages">
+
+                <div class="chat-message assistant-message">
+
+                    <div class="message-avatar">
+
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3a8 8 0 0 0-8 8"/>
+                            <path d="M12 3a8 8 0 0 1 8 8"/>
+                            <path d="M4 11c0 4 2 6 4 7"/>
+                            <path d="M20 11c0 4-2 6-4 7"/>
+                            <path d="M8 21h8"/>
+                            <path d="M9 18h6"/>
+                        </svg>
+
+                    </div>
+
+
+                    <div class="message-content">
+
+                        <span class="message-name">
+                            Respira Assistant
+                        </span>
+
+                        <p>
+                            Hello. I can help you understand the health
+                            information recorded in Respira. What would
+                            you like to know?
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUGGESTED QUESTIONS -->
+
+            <div class="suggested-questions">
+
+                <p>
+                    Suggested questions
+                </p>
+
+
+                <div class="question-buttons">
+
+                    <button
+                        class="question-button"
+                        data-question="How many respiratory episodes have I recorded recently?">
+
+                        Recent respiratory episodes
+
+                    </button>
+
+
+                    <button
+                        class="question-button"
+                        data-question="How has my respiratory activity changed recently?">
+
+                        Respiratory trend
+
+                    </button>
+
+
+                    <button
+                        class="question-button"
+                        data-question="What is my recent medication adherence?">
+
+                        Medication adherence
+
+                    </button>
+
+
+                    <button
+                        class="question-button"
+                        data-question="What is the current air quality?">
+
+                        Air quality
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- INPUT -->
+
+            <form
+                class="chat-input-area"
+                id="chatForm">
+
+                <input
+                    type="text"
+                    id="chatInput"
+                    placeholder="Type your question..."
+                    autocomplete="off"
+                    required>
+
+
+                <button
+                    type="submit"
+                    class="send-button"
+                    aria-label="Send">
+
+                    <svg viewBox="0 0 24 24">
+                        <path d="M22 2L11 13"/>
+                        <path d="M22 2l-7 20-4-9-9-4z"/>
+                    </svg>
+
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- SAFETY NOTE -->
+
+        <section class="dashboard-card assistant-note">
+
+            <div class="assistant-note-icon">
+
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M12 10v6"/>
+                    <circle cx="12" cy="7" r="0.7"/>
+                </svg>
+
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Important
+                </h2>
+
+                <p>
+                    Respira is designed to assist with health information
+                    and monitoring. It does not replace professional medical
+                    advice. For severe or rapidly worsening breathing
+                    difficulties, seek emergency medical assistance.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script>
+
+const chatForm =
+    document.getElementById("chatForm");
+
+const chatInput =
+    document.getElementById("chatInput");
+
+const chatMessages =
+    document.getElementById("chatMessages");
+
+const questionButtons =
+    document.querySelectorAll(".question-button");
+
+
+// ========================================
+// GET LOGGED-IN USER
+// ========================================
+
+const savedUser =
+    localStorage.getItem("respiraUser");
+
+if (!savedUser) {
+
+    alert("Please login again.");
+
+    window.location.href =
+        "index.html";
+
+}
+
+const user =
+    JSON.parse(savedUser);
+
+const userEmail =
+    user.email;
+
+
+// ========================================
+// HEALTH DATA
+// ========================================
+
+let attackLogs = [];
+let medications = [];
+let airQuality = null;
+
+
+// ========================================
+// LOAD ATTACK LOGS
+// ========================================
+
+async function loadAttackLogs() {
+
+    try {
+
+        const response =
+            await fetch(
+                `http://localhost:5000/api/attack-logs/${encodeURIComponent(userEmail)}`
+            );
+
+        const data =
+            await response.json();
+
+        if (data.success) {
+
+            attackLogs =
+                data.attackLogs || [];
+
+        }
+
+    } catch (error) {
+
+        console.error(
+            "Attack log loading error:",
+            error
+        );
+
+    }
+
+}
+
+
+// ========================================
+// LOAD MEDICATIONS
+// ========================================
+
+async function loadMedications() {
+
+    try {
+
+        const response =
+            await fetch(
+                `http://localhost:5000/api/medications/${encodeURIComponent(userEmail)}`
+            );
+
+        const data =
+            await response.json();
+
+        if (data.success) {
+
+            medications =
+                data.medications || [];
+
+        }
+
+    } catch (error) {
+
+        console.error(
+            "Medication loading error:",
+            error
+        );
+
+    }
+
+}
+
+
+// ========================================
+// LOAD AIR QUALITY
+// ========================================
+
+async function loadAirQuality() {
+
+    // If AQI has already been loaded, reuse it
+    if (airQuality) {
+        return airQuality;
+    }
+
+
+    return new Promise(function(resolve) {
+
+        if (!navigator.geolocation) {
+
+            resolve(null);
+
+            return;
+
+        }
+
+
+        navigator.geolocation.getCurrentPosition(
+
+            async function(position) {
+
+                try {
+
+                    const latitude =
+                        position.coords.latitude;
+
+                    const longitude =
+                        position.coords.longitude;
+
+
+                    const response =
+                        await fetch(
+                            `http://localhost:5000/api/air-quality?latitude=${latitude}&longitude=${longitude}`
+                        );
+
+
+                    const data =
+                        await response.json();
+
+
+                    if (data.success) {
+
+                        airQuality =
+                            data;
+
+                    }
+
+                } catch (error) {
+
+                    console.error(
+                        "Air quality loading error:",
+                        error
+                    );
+
+                }
+
+
+                resolve(airQuality);
+
+            },
+
+
+            function(error) {
+
+                console.log(
+                    "Location access not available."
+                );
+
+                resolve(null);
+
+            },
+
+            {
+                timeout: 5000,
+                maximumAge: 300000
+            }
+
+        );
+
+    });
+
+}
+
+
+// ========================================
+// LOAD ALL HEALTH DATA
+// ========================================
+
+async function loadHealthData() {
+
+    await Promise.all([
+
+        loadAttackLogs(),
+
+        loadMedications(),
+
+        loadAirQuality()
+
+    ]);
+
+}
+
+
+// ========================================
+// ADD MESSAGE TO CHAT
+// ========================================
+
+function addMessage(message, type) {
+
+    const messageWrapper =
+        document.createElement("div");
+
+
+    messageWrapper.className =
+        "chat-message " +
+        type +
+        "-message";
+
+
+    if (type === "assistant") {
+
+        messageWrapper.innerHTML = `
+
+            <div class="message-avatar">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path d="M12 3a8 8 0 0 0-8 8"/>
+
+                    <path d="M12 3a8 8 0 0 1 8 8"/>
+
+                    <path d="M4 11c0 4 2 6 4 7"/>
+
+                    <path d="M20 11c0 4-2 6-4 7"/>
+
+                    <path d="M8 21h8"/>
+
+                    <path d="M9 18h6"/>
+
+                </svg>
+
+            </div>
+
+
+            <div class="message-content">
+
+                <span class="message-name">
+                    Respira Assistant
+                </span>
+
+                <p>
+                    ${message}
+                </p>
+
+            </div>
+
+        `;
+
+    } else {
+
+        messageWrapper.innerHTML = `
+
+            <div class="message-content user-message-content">
+
+                <span class="message-name">
+                    You
+                </span>
+
+                <p>
+                    ${message}
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+
+    chatMessages.appendChild(
+        messageWrapper
+    );
+
+
+    chatMessages.scrollTop =
+        chatMessages.scrollHeight;
+
+}
+
+
+// ========================================
+// CALCULATE THIS MONTH'S ATTACKS
+// ========================================
+
+function getThisMonthAttacks() {
+
+    const now =
+        new Date();
+
+    const currentMonth =
+        now.getMonth();
+
+    const currentYear =
+        now.getFullYear();
+
+
+    return attackLogs.filter(
+        function(log) {
+
+            const date =
+                new Date(log.date);
+
+            return (
+                date.getMonth() === currentMonth &&
+                date.getFullYear() === currentYear
+            );
+
+        }
+    );
+
+}
+
+
+// ========================================
+// CALCULATE MEDICATION ADHERENCE
+// ========================================
+
+function getMedicationAdherence() {
+
+    if (medications.length === 0) {
+
+        return null;
+
+    }
+
+
+    const taken =
+        medications.filter(
+            function(medication) {
+
+                return medication.adherenceStatus === "Taken";
+
+            }
+        ).length;
+
+
+    const missed =
+        medications.filter(
+            function(medication) {
+
+                return medication.adherenceStatus === "Missed";
+
+            }
+        ).length;
+
+
+    const total =
+        taken + missed;
+
+
+    if (total === 0) {
+
+        return null;
+
+    }
+
+
+    return Math.round(
+        (taken / total) * 100
+    );
+
+}
+
+
+// ========================================
+// DETERMINE RESPIRATORY TREND
+// ========================================
+
+function getRespiratoryTrend() {
+
+    if (attackLogs.length === 0) {
+
+        return "There are not enough recorded episodes yet to determine a respiratory trend.";
+
+    }
+
+
+    const now =
+        new Date();
+
+
+    const sevenDaysAgo =
+        new Date();
+
+    sevenDaysAgo.setDate(
+        now.getDate() - 7
+    );
+
+
+    const fourteenDaysAgo =
+        new Date();
+
+    fourteenDaysAgo.setDate(
+        now.getDate() - 14
+    );
+
+
+    const recent =
+        attackLogs.filter(
+            function(log) {
+
+                const date =
+                    new Date(log.date);
+
+                return date >= sevenDaysAgo;
+
+            }
+        ).length;
+
+
+    const previous =
+        attackLogs.filter(
+            function(log) {
+
+                const date =
+                    new Date(log.date);
+
+                return (
+                    date >= fourteenDaysAgo &&
+                    date < sevenDaysAgo
+                );
+
+            }
+        ).length;
+
+
+    if (recent > previous) {
+
+        return `You recorded ${recent} episode${recent === 1 ? "" : "s"} in the last 7 days, compared with ${previous} in the previous 7 days. Your recent activity has increased.`;
+
+    }
+
+
+    if (recent < previous) {
+
+        return `You recorded ${recent} episode${recent === 1 ? "" : "s"} in the last 7 days, compared with ${previous} in the previous 7 days. Your recent activity has decreased.`;
+
+    }
+
+
+    return `You recorded ${recent} episode${recent === 1 ? "" : "s"} in each of the last two 7-day periods. Your recent activity is relatively stable.`;
+
+}
+
+// ========================================
+// AI / ML RISK PREDICTION
+// ========================================
+
+async function getAIRiskPrediction() {
+
+    const savedUser =
+        localStorage.getItem("respiraUser");
+
+    if (!savedUser) {
+        throw new Error("User not logged in.");
+    }
+
+    const user =
+        JSON.parse(savedUser);
+
+
+    // ----------------------------------------
+    // GET ATTACK LOGS
+    // ----------------------------------------
+
+    const attackResponse =
+        await fetch(
+            "http://localhost:5000/api/attack-logs/" +
+            encodeURIComponent(user.email)
+        );
+
+    const attackData =
+        await attackResponse.json();
+
+
+    if (!attackData.success) {
+        throw new Error(
+            "Unable to load attack records."
+        );
+    }
+
+
+    const attackLogs =
+        attackData.attackLogs || [];
+
+
+    // ----------------------------------------
+    // GET MEDICATIONS
+    // ----------------------------------------
+
+    const medicationResponse =
+        await fetch(
+            "http://localhost:5000/api/medications/" +
+            encodeURIComponent(user.email)
+        );
+
+    const medicationData =
+        await medicationResponse.json();
+
+
+    if (!medicationData.success) {
+        throw new Error(
+            "Unable to load medication records."
+        );
+    }
+
+
+    const medications =
+        medicationData.medications || [];
+
+
+    // ----------------------------------------
+    // RECENT ATTACKS
+    // Last 7 days
+    // ----------------------------------------
+
+    const now =
+        new Date();
+
+    const sevenDaysAgo =
+        new Date(now);
+
+    sevenDaysAgo.setDate(
+        now.getDate() - 7
+    );
+
+
+    const recentAttacks =
+        attackLogs.filter(
+            function (log) {
+
+                const attackDate =
+                    new Date(log.date);
+
+                return (
+                    attackDate >=
+                    sevenDaysAgo &&
+                    attackDate <=
+                    now
+                );
+
+            }
+        );
+
+
+    // ----------------------------------------
+    // AVERAGE SEVERITY
+    // ----------------------------------------
+
+    let severityTotal = 0;
+
+
+    recentAttacks.forEach(
+        function (log) {
+
+            if (
+                log.severity ===
+                "Mild"
+            ) {
+
+                severityTotal += 1;
+
+            }
+
+            else if (
+                log.severity ===
+                "Moderate"
+            ) {
+
+                severityTotal += 3;
+
+            }
+
+            else if (
+                log.severity ===
+                "Severe"
+            ) {
+
+                severityTotal += 5;
+
+            }
+
+        }
+    );
+
+
+    let averageSeverity = 0;
+
+
+    if (recentAttacks.length > 0) {
+
+        averageSeverity =
+            severityTotal /
+            recentAttacks.length;
+
+    }
+
+
+    // ----------------------------------------
+    // MEDICATION ADHERENCE
+    // ----------------------------------------
+
+    let takenCount = 0;
+    let missedCount = 0;
+
+
+    medications.forEach(
+        function (medication) {
+
+            if (
+                medication.adherenceStatus ===
+                "Taken"
+            ) {
+
+                takenCount++;
+
+            }
+
+            else if (
+                medication.adherenceStatus ===
+                "Missed"
+            ) {
+
+                missedCount++;
+
+            }
+
+        }
+    );
+
+
+    const completedDoses =
+        takenCount +
+        missedCount;
+
+
+    let medicationAdherence = 100;
+
+
+    if (completedDoses > 0) {
+
+        medicationAdherence =
+            Math.round(
+                (
+                    takenCount /
+                    completedDoses
+                ) * 100
+            );
+
+    }
+
+
+    // ----------------------------------------
+// GET CURRENT AQI
+// ----------------------------------------
+
+let aqi = 50;
+
+
+try {
+
+    // Reuse the AQI already loaded by loadAirQuality()
+    const currentAirQuality =
+        await loadAirQuality();
+
+
+    if (
+        currentAirQuality &&
+        currentAirQuality.aqi !== undefined
+    ) {
+
+        aqi =
+            Number(currentAirQuality.aqi);
+
+    }
+
+} catch (error) {
+
+    console.log(
+        "AQI unavailable. Using default value."
+    );
+
+}
+
+
+    // ----------------------------------------
+    // SEND DATA TO ML MODEL
+    // ----------------------------------------
+
+    const predictionResponse =
+        await fetch(
+            "http://localhost:5000/api/ai/predict",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type":
+                        "application/json"
+                },
+
+                body: JSON.stringify({
+
+                    recent_attacks:
+                        recentAttacks.length,
+
+                    average_severity:
+                        averageSeverity,
+
+                    medication_adherence:
+                        medicationAdherence,
+
+                    aqi:
+                        aqi
+
+                })
+            }
+        );
+
+
+    const predictionData =
+        await predictionResponse.json();
+
+
+    if (!predictionData.success) {
+
+        throw new Error(
+            predictionData.error ||
+            "AI prediction failed."
+        );
+
+    }
+
+
+    return {
+
+        ...predictionData,
+
+        inputData: {
+
+            recent_attacks:
+                recentAttacks.length,
+
+            average_severity:
+                Number(
+                    averageSeverity.toFixed(2)
+                ),
+
+            medication_adherence:
+                medicationAdherence,
+
+            aqi:
+                aqi
+
+        }
+
+    };
+
+}
+// ========================================
+// GENERATE ASSISTANT RESPONSE
+// ========================================
+
+function assistantResponse(question) {
+
+    const lowerQuestion =
+        question.toLowerCase();
+
+            // ========================================
+    // AI / ML RISK PREDICTION
+    // ========================================
+
+    if (
+        lowerQuestion.includes("risk") ||
+        lowerQuestion.includes("prediction") ||
+        lowerQuestion.includes("predict")
+    ) {
+
+        setTimeout(async function () {
+
+            try {
+
+                const prediction =
+                    await getAIRiskPrediction();
+
+
+                const response =
+                    `AI Risk Analysis: Your current recorded risk level is ${prediction.risk_level} with a prediction score of ${prediction.risk_score}%. ${prediction.recommendation}`;
+
+
+                addMessage(
+                    response,
+                    "assistant"
+                );
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "AI prediction error:",
+                    error
+                );
+
+
+                addMessage(
+                    "I was unable to generate your AI risk analysis right now. Please make sure the Respira server is running.",
+                    "assistant"
+                );
+
+            }
+
+        }, 500);
+
+
+        return;
+    }
+
+
+    let response =
+        "I can help you understand your recorded respiratory information, medications, and current environmental conditions.";
+
+    // ------------------------------------
+// LATEST ATTACK DETAILS
+// ------------------------------------
+
+if (
+    lowerQuestion.includes("latest attack") ||
+    lowerQuestion.includes("latest episode") ||
+    lowerQuestion.includes("what was my latest attack") ||
+    lowerQuestion.includes("what was my latest episode") ||
+    lowerQuestion.includes("attack like") ||
+    lowerQuestion.includes("episode like")
+) {
+
+    if (attackLogs.length === 0) {
+
+        response =
+            "You do not have any respiratory episodes recorded yet.";
+
+    } else {
+
+        // Sort by date and time
+        const sortedLogs =
+            [...attackLogs].sort(
+                function(a, b) {
+
+                    const dateA =
+                        new Date(
+                            `${a.date}T${a.time || "00:00:00"}`
+                        );
+
+                    const dateB =
+                        new Date(
+                            `${b.date}T${b.time || "00:00:00"}`
+                        );
+
+                    return dateB - dateA;
+
+                }
+            );
+
+
+        const latest =
+            sortedLogs[0];
+
+
+        const symptoms =
+            latest.symptoms ||
+            "Not recorded";
+
+
+        const severity =
+            latest.severity ||
+            "Not recorded";
+
+
+        let duration =
+    "Not recorded";
+
+let trigger =
+    "Not recorded";
+
+
+if (latest.notes) {
+
+    const durationMatch =
+        latest.notes.match(
+            /Duration:\s*([^;]+)/
+        );
+
+
+    const triggerMatch =
+        latest.notes.match(
+            /Trigger:\s*(.+)/
+        );
+
+
+    if (durationMatch) {
+
+        duration =
+            durationMatch[1].trim();
+
+    }
+
+
+    if (triggerMatch) {
+
+        trigger =
+            triggerMatch[1].trim();
+
+    }
+
+}
+
+
+        response =
+            `Your latest recorded respiratory episode was ${severity} severity. Symptoms: ${symptoms}. Duration: ${duration}. Possible trigger: ${trigger}.`;
+
+    }
+
+}
+    // ------------------------------------
+    // RESPIRATORY EPISODES
+    // ------------------------------------
+
+    else if (
+    lowerQuestion.includes("episode") ||
+    lowerQuestion.includes("attack") ||
+    lowerQuestion.includes("recent respiratory")
+) {
+
+    // ========================================
+    // LAST 7 DAYS
+    // ========================================
+
+    if (
+        lowerQuestion.includes("last 7 days") ||
+        lowerQuestion.includes("past 7 days") ||
+        lowerQuestion.includes("last week") ||
+        lowerQuestion.includes("past week")
+    ) {
+
+        const now =
+            new Date();
+
+        const sevenDaysAgo =
+            new Date();
+
+        sevenDaysAgo.setDate(
+            now.getDate() - 7
+        );
+
+
+        const recentAttacks =
+            attackLogs.filter(
+                function(log) {
+
+                    const date =
+                        new Date(log.date);
+
+                    return (
+                        date >= sevenDaysAgo &&
+                        date <= now
+                    );
+
+                }
+            );
+
+
+        if (
+            recentAttacks.length === 0
+        ) {
+
+            response =
+                "You have not recorded any respiratory episodes in the last 7 days.";
+
+        } else {
+
+            response =
+                `You have recorded ${recentAttacks.length} respiratory episode${recentAttacks.length === 1 ? "" : "s"} in the last 7 days.`;
+
+        }
+
+    }
+
+
+    // ========================================
+    // THIS MONTH
+    // ========================================
+
+    else {
+
+        const thisMonth =
+            getThisMonthAttacks();
+
+
+        if (thisMonth.length === 0) {
+
+            response =
+                "You have no respiratory episodes recorded for this month.";
+
+        } else {
+
+            const latest =
+                thisMonth[0];
+
+
+            response =
+                `You have recorded ${thisMonth.length} respiratory episode${thisMonth.length === 1 ? "" : "s"} this month. Your latest recorded episode was marked ${latest.severity || "unspecified"} severity. You can view the complete history in Attack Logs.`;
+
+        }
+
+    }
+
+}
+
+
+    // ------------------------------------
+    // MEDICATION
+    // ------------------------------------
+
+    else if (
+        lowerQuestion.includes("medication") ||
+        lowerQuestion.includes("adherence") ||
+        lowerQuestion.includes("medicine")
+    ) {
+
+        const adherence =
+            getMedicationAdherence();
+
+
+        if (adherence === null) {
+
+            response =
+                "There is not enough medication adherence data recorded yet.";
+
+        } else {
+
+            response =
+                `Your current recorded medication adherence is ${adherence}%. This is calculated from your medications marked as Taken or Missed.`;
+
+        }
+
+    }
+
+
+    // ------------------------------------
+    // AIR QUALITY
+    // ------------------------------------
+
+    else if (
+        lowerQuestion.includes("air quality") ||
+        lowerQuestion.includes("aqi") ||
+        lowerQuestion.includes("pollution")
+    ) {
+
+        if (!airQuality) {
+
+            response =
+                "I could not retrieve the current air-quality reading. Please open the Air Quality section and allow location access.";
+
+        } else {
+
+            const aqi =
+                airQuality.aqi;
+
+
+            let status =
+                "Good";
+
+
+            if (aqi <= 50) {
+
+                status = "Good";
+
+            } else if (aqi <= 100) {
+
+                status = "Moderate";
+
+            } else if (aqi <= 150) {
+
+                status = "Unhealthy for sensitive groups";
+
+            } else if (aqi <= 200) {
+
+                status = "Unhealthy";
+
+            } else {
+
+                status = "Very Unhealthy";
+
+            }
+
+
+            response =
+                `The current AQI near your location is ${aqi}, classified as ${status}. Temperature is ${airQuality.temperature}°C and humidity is ${airQuality.humidity}%.`;
+
+        }
+
+    }
+
+
+    // ------------------------------------
+    // RESPIRATORY TREND
+    // ------------------------------------
+
+    else if (
+        lowerQuestion.includes("trend") ||
+        lowerQuestion.includes("change") ||
+        lowerQuestion.includes("improving") ||
+        lowerQuestion.includes("worsening")
+    ) {
+
+        response =
+            getRespiratoryTrend();
+
+    }
+
+
+    // ------------------------------------
+    // ALERTS
+    // ------------------------------------
+
+    else if (
+        lowerQuestion.includes("alert") ||
+        lowerQuestion.includes("warning") ||
+        lowerQuestion.includes("notify")
+    ) {
+
+        const thisMonth =
+            getThisMonthAttacks();
+
+
+        const adherence =
+            getMedicationAdherence();
+
+
+        let alertMessage =
+            "Respira can help you monitor your recorded health information.";
+
+
+        if (thisMonth.length > 0) {
+
+            alertMessage +=
+                ` You have ${thisMonth.length} recorded episode${thisMonth.length === 1 ? "" : "s"} this month.`;
+
+        }
+
+
+        if (adherence !== null) {
+
+            alertMessage +=
+                ` Your current medication adherence is ${adherence}%.`;
+
+        }
+
+
+        alertMessage +=
+            " For severe or rapidly worsening breathing difficulties, seek emergency medical assistance.";
+
+
+        response =
+            alertMessage;
+
+    }
+
+
+    // ------------------------------------
+    // GENERAL QUESTIONS
+    // ------------------------------------
+
+    else if (
+        lowerQuestion.includes("hello") ||
+        lowerQuestion.includes("hi") ||
+        lowerQuestion.includes("help")
+    ) {
+
+        response =
+            "I can help you review your respiratory episodes, medication adherence, respiratory trends, and current air quality. Try one of the suggested questions below.";
+
+    }
+
+
+    // ------------------------------------
+    // UNKNOWN QUESTION
+    // ------------------------------------
+
+    else {
+
+        response =
+            "I can currently answer questions about your respiratory episodes, medication adherence, respiratory trends, and current air quality. Try asking about one of these areas.";
+
+    }
+
+
+    // ------------------------------------
+    // SHOW RESPONSE
+    // ------------------------------------
+
+    setTimeout(
+        function() {
+
+            addMessage(
+                response,
+                "assistant"
+            );
+
+        },
+        400
+    );
+
+}
+
+
+// ========================================
+// FORM SUBMIT
+// ========================================
+
+chatForm.addEventListener(
+    "submit",
+    async function(event) {
+
+        event.preventDefault();
+
+
+        const question =
+            chatInput.value.trim();
+
+
+        if (!question) {
+
+            return;
+
+        }
+
+
+        addMessage(
+            question,
+            "user"
+        );
+
+
+        chatInput.value = "";
+
+
+        await loadHealthData();
+
+
+        assistantResponse(
+            question
+        );
+
+    }
+);
+
+
+// ========================================
+// SUGGESTED QUESTIONS
+// ========================================
+
+questionButtons.forEach(
+    function(button) {
+
+        button.addEventListener(
+            "click",
+            async function() {
+
+                const question =
+                    button.dataset.question;
+
+
+                addMessage(
+                    question,
+                    "user"
+                );
+
+
+                await loadHealthData();
+
+
+                assistantResponse(
+                    question
+                );
+
+            }
+        );
+
+    }
+);
+
+
+// ========================================
+// LOAD DATA WHEN PAGE OPENS
+// ========================================
+
+loadHealthData();
+
+</script>
+
+</body>
+
+</html>

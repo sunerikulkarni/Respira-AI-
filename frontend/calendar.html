@@ -1,0 +1,2033 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <title>Respira - Calendar</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <div class="sidebar-brand">
+
+                <img
+                    src="images/respira-logo.png"
+                    alt="Respira Logo">
+
+                <span>Respira</span>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="7" height="7" rx="1"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1"/>
+                            <rect x="14" y="14" width="7" height="7" rx="1"/>
+                        </svg>
+                    </span>
+                    Dashboard
+                </a>
+
+
+                <a href="attack-logs.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16v16H4z"/>
+                            <path d="M8 2v4"/>
+                            <path d="M16 2v4"/>
+                            <path d="M4 10h16"/>
+                        </svg>
+                    </span>
+                    Attack Logs
+                </a>
+
+
+                <a href="medications.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 3h12"/>
+                            <path d="M7 3v4"/>
+                            <path d="M17 3v4"/>
+                            <path d="M5 7h14v14H5z"/>
+                            <path d="M8 12h8"/>
+                            <path d="M8 16h5"/>
+                        </svg>
+                    </span>
+                    Medications
+                </a>
+
+
+                <a href="air-quality.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3v18"/>
+                            <path d="M3 12h18"/>
+                            <circle cx="12" cy="12" r="9"/>
+                        </svg>
+                    </span>
+                    Air Quality
+                </a>
+
+
+                <a href="calendar.html" class="nav-item active">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="4" y="5"
+                                  width="16"
+                                  height="16"
+                                  rx="2"/>
+                            <path d="M8 3v4"/>
+                            <path d="M16 3v4"/>
+                            <path d="M4 10h16"/>
+                        </svg>
+                    </span>
+                    Calendar
+                </a>
+
+
+                <a href="analytics.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 19V5"/>
+                            <path d="M4 19h17"/>
+                            <path d="M7 16l4-5 3 2 5-7"/>
+                        </svg>
+                    </span>
+                    Analytics
+                </a>
+
+
+                <a href="ai-assistant.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3a8 8 0 0 0-8 8"/>
+                            <path d="M12 3a8 8 0 0 1 8 8"/>
+                            <path d="M4 11c0 4 2 6 4 7"/>
+                            <path d="M20 11c0 4-2 6-4 7"/>
+                            <path d="M8 21h8"/>
+                            <path d="M9 18h6"/>
+                        </svg>
+                    </span>
+                    AI Assistant
+                </a>
+
+
+                <a href="emergency.html" class="nav-item emergency-nav">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3l9 18H3L12 3z"/>
+                            <path d="M12 9v5"/>
+                            <circle cx="12" cy="17" r="0.7"/>
+                        </svg>
+                    </span>
+                    Emergency SOS
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="profile.html" class="nav-item">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="8" r="4"/>
+                        <path d="M4 21c0-4 3-7 8-7s8 3 8 7"/>
+                    </svg>
+                </span>
+                Profile
+            </a>
+
+
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 17l5-5-5-5"/>
+                        <path d="M15 12H3"/>
+                        <path d="M21 4v16"/>
+                    </svg>
+                </span>
+                Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <p class="welcome-label">
+                    HEALTH SCHEDULE
+                </p>
+
+                <h1>
+                    Calendar
+                </h1>
+
+                <p class="header-subtitle">
+                    Manage your appointments, medications and health reminders.
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="notification-button"
+                    aria-label="Notifications">
+
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+                        <path d="M10 21h4"/>
+                    </svg>
+
+                </button>
+
+
+                <button class="profile-button">
+                    U
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- CALENDAR INTRO -->
+
+        <section class="logs-intro">
+
+            <div>
+
+                <h2>
+                    Health Calendar
+                </h2>
+
+                <p>
+                    Keep track of important health-related events and reminders.
+                </p>
+
+            </div>
+
+
+            <button
+                class="primary-action"
+                id="addEventButton">
+
+                <span>+</span>
+                Add Event
+
+            </button>
+
+        </section>
+
+
+        <!-- CALENDAR AREA -->
+
+        <section class="dashboard-card calendar-card">
+
+            <div class="calendar-header">
+
+                <button
+                    class="calendar-nav"
+                    id="previousMonth">
+                    ‹
+                </button>
+
+
+                <h2 id="calendarMonth">
+                    August 2026
+                </h2>
+
+
+                <button
+                    class="calendar-nav"
+                    id="nextMonth">
+                    ›
+                </button>
+
+            </div>
+
+
+            <div class="calendar-weekdays">
+
+                <span>MON</span>
+                <span>TUE</span>
+                <span>WED</span>
+                <span>THU</span>
+                <span>FRI</span>
+                <span>SAT</span>
+                <span>SUN</span>
+
+            </div>
+
+
+            <div class="calendar-grid">
+
+                <div class="calendar-day muted">27</div>
+                <div class="calendar-day muted">28</div>
+                <div class="calendar-day muted">29</div>
+                <div class="calendar-day muted">30</div>
+                <div class="calendar-day muted">31</div>
+
+                <div class="calendar-day">1</div>
+                <div class="calendar-day">2</div>
+
+                <div class="calendar-day">3</div>
+                <div class="calendar-day">4</div>
+                <div class="calendar-day">5</div>
+
+                <div class="calendar-day today">6</div>
+
+                <div class="calendar-day">7</div>
+                <div class="calendar-day">8</div>
+                <div class="calendar-day">9</div>
+
+                <div class="calendar-day">10</div>
+                <div class="calendar-day">11</div>
+                <div class="calendar-day">12</div>
+                <div class="calendar-day">13</div>
+                <div class="calendar-day">14</div>
+                <div class="calendar-day">15</div>
+                <div class="calendar-day">16</div>
+
+                <div class="calendar-day">17</div>
+                <div class="calendar-day">18</div>
+                <div class="calendar-day">19</div>
+                <div class="calendar-day">20</div>
+                <div class="calendar-day">21</div>
+                <div class="calendar-day">22</div>
+                <div class="calendar-day">23</div>
+
+                <div class="calendar-day">24</div>
+                <div class="calendar-day">25</div>
+                <div class="calendar-day">26</div>
+                <div class="calendar-day">27</div>
+                <div class="calendar-day">28</div>
+                <div class="calendar-day">29</div>
+                <div class="calendar-day">30</div>
+
+                <div class="calendar-day">31</div>
+
+                <div class="calendar-day muted">1</div>
+                <div class="calendar-day muted">2</div>
+                <div class="calendar-day muted">3</div>
+                <div class="calendar-day muted">4</div>
+                <div class="calendar-day muted">5</div>
+                <div class="calendar-day muted">6</div>
+
+            </div>
+         
+
+            <!-- CALENDAR LEGEND -->
+            <div class="calendar-legend">
+
+                <div class="legend-item">
+                    <span class="legend-dot today-dot"></span>
+                    <span>Today</span>
+                </div>
+
+                <div class="legend-item">
+                    <span class="legend-dot event-dot"></span>
+                    <span>Health Event</span>
+                </div>
+
+                <div class="legend-item">
+                    <span class="legend-dot attack-dot"></span>
+                    <span>Attack</span>
+                </div>
+
+                <div class="legend-item">
+                    <span class="legend-dot expiry-dot"></span>
+                    <span>Medication Expiry</span>
+                </div>
+
+            </div>
+            <!-- SELECTED DAY DETAILS -->
+            <div
+                id="selectedDayDetails"
+                class="selected-day-details"
+                style="display: none;">
+
+                <div class="selected-day-header">
+                    <div>
+                        <h3 id="selectedDayTitle">
+                            Selected Day
+                        </h3>
+
+                        <p id="selectedDayDate"></p>
+                    </div>
+                </div>
+
+                <div id="selectedDayContent"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- UPCOMING EVENTS -->
+
+        <section class="dashboard-card upcoming-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Upcoming Events
+                    </h2>
+
+                    <p>
+                        Your scheduled health activities
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="event-list">
+
+
+                <div class="event-row">
+
+                    <div class="event-date">
+
+                        <strong>
+                            08
+                        </strong>
+
+                        <span>
+                            AUG
+                        </span>
+
+                    </div>
+
+
+                    <div class="event-info">
+
+                        <h3>
+                            Medication Reminder
+                        </h3>
+
+                        <p>
+                            Take scheduled medication
+                        </p>
+
+                    </div>
+
+
+                    <div class="event-time">
+                        8:00 PM
+                    </div>
+
+                </div>
+
+
+                <div class="event-row">
+
+                    <div class="event-date">
+
+                        <strong>
+                            12
+                        </strong>
+
+                        <span>
+                            AUG
+                        </span>
+
+                    </div>
+
+
+                    <div class="event-info">
+
+                        <h3>
+                            Health Checkup
+                        </h3>
+
+                        <p>
+                            Scheduled health review
+                        </p>
+
+                    </div>
+
+
+                    <div class="event-time">
+                        10:30 AM
+                    </div>
+
+                </div>
+
+
+                <div class="event-row">
+
+                    <div class="event-date">
+
+                        <strong>
+                            18
+                        </strong>
+
+                        <span>
+                            AUG
+                        </span>
+
+                    </div>
+
+
+                    <div class="event-info">
+
+                        <h3>
+                            Medication Refill
+                        </h3>
+
+                        <p>
+                            Review medication supply
+                        </p>
+
+                    </div>
+
+
+                    <div class="event-time">
+                        5:00 PM
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ADD EVENT FORM -->
+
+        <section
+            class="dashboard-card new-event-card"
+            id="eventFormCard">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Add Health Event
+                    </h2>
+
+                    <p>
+                        Create a reminder for an upcoming activity.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form id="eventForm">
+
+                <div class="event-form-grid">
+
+                    <div class="form-field">
+
+                        <label for="eventTitle">
+                            Event
+                        </label>
+
+                        <input
+                            type="text"
+                            id="eventTitle"
+                            placeholder="e.g. Doctor appointment"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="eventDate">
+                            Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="eventDate"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="eventTime">
+                            Time
+                        </label>
+
+                        <input
+                            type="time"
+                            id="eventTime"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="eventType">
+                            Event Type
+                        </label>
+
+                        <select
+                            id="eventType"
+                            required>
+
+                            <option value="">
+                                Select type
+                            </option>
+
+                            <option value="Medication">
+                                Medication
+                            </option>
+
+                            <option value="Appointment">
+                                Appointment
+                            </option>
+
+                            <option value="Checkup">
+                                Health Checkup
+                            </option>
+
+                            <option value="Reminder">
+                                Reminder
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-buttons">
+
+                    <button
+                        type="reset"
+                        class="secondary-action">
+
+                        Clear
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="primary-action">
+
+                        Save Event
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script>
+
+// ========================================
+// CALENDAR VARIABLES
+// ========================================
+
+const addEventButton =
+    document.getElementById("addEventButton");
+
+const eventFormCard =
+    document.getElementById("eventFormCard");
+
+const eventForm =
+    document.getElementById("eventForm");
+
+const calendarMonth =
+    document.getElementById("calendarMonth");
+
+const previousMonth =
+    document.getElementById("previousMonth");
+
+const nextMonth =
+    document.getElementById("nextMonth");
+
+
+// ========================================
+// USER
+// ========================================
+
+const savedUser =
+    localStorage.getItem("respiraUser");
+
+
+if (!savedUser) {
+
+    alert("Please login again.");
+
+    window.location.href =
+        "index.html";
+
+}
+
+
+// ========================================
+// CALENDAR STATE
+// ========================================
+
+let user =
+    JSON.parse(savedUser);
+
+let currentDate =
+    new Date();
+
+let currentMonth =
+    currentDate.getMonth();
+
+let currentYear =
+    currentDate.getFullYear();
+
+
+// ========================================
+// DATA
+// ========================================
+
+let attackLogs = [];
+
+let medications = [];
+
+let calendarEvents = [];
+
+
+// ========================================
+// LOAD ALL CALENDAR DATA
+// ========================================
+
+async function loadCalendarData() {
+
+    try {
+
+        const email =
+            encodeURIComponent(
+                user.email
+            );
+
+
+        // -------------------------------
+        // Load attack logs
+        // -------------------------------
+
+        const attackResponse =
+            await fetch(
+                "http://localhost:5000/api/attack-logs/" +
+                email
+            );
+
+        const attackData =
+            await attackResponse.json();
+
+
+        if (attackData.success) {
+
+            attackLogs =
+                attackData.attackLogs || [];
+
+        }
+
+
+        // -------------------------------
+        // Load medications
+        // -------------------------------
+
+        const medicationResponse =
+            await fetch(
+                "http://localhost:5000/api/medications/" +
+                email
+            );
+
+        const medicationData =
+            await medicationResponse.json();
+
+
+        if (medicationData.success) {
+
+            medications =
+                medicationData.medications || [];
+
+        }
+
+
+        // -------------------------------
+        // Load calendar events
+        // -------------------------------
+
+        const eventResponse =
+            await fetch(
+                "http://localhost:5000/api/calendar-events/" +
+                email
+            );
+
+        const eventData =
+            await eventResponse.json();
+
+
+        if (eventData.success) {
+
+            calendarEvents =
+                eventData.events || [];
+
+        }
+
+
+        // Render everything
+
+        renderCalendar();
+
+        renderUpcomingEvents();
+
+
+    } catch (error) {
+
+        console.error(
+            "Calendar loading error:",
+            error
+        );
+
+        alert(
+            "Unable to load calendar data."
+        );
+
+    }
+
+}
+
+
+// ========================================
+// FORMAT DATE AS YYYY-MM-DD
+// ========================================
+
+function formatDate(year, month, day) {
+
+    return (
+        year +
+        "-" +
+        String(month + 1).padStart(2, "0") +
+        "-" +
+        String(day).padStart(2, "0")
+    );
+
+}
+
+
+// ========================================
+// GET ATTACK DATES
+// ========================================
+
+function getAttackDates() {
+
+    return attackLogs.map(function(log) {
+
+        const date =
+            new Date(log.date);
+
+        return formatDate(
+            date.getFullYear(),
+            date.getMonth(),
+            date.getDate()
+        );
+
+    });
+
+}
+
+
+// ========================================
+// GET MEDICATION EXPIRY DATES
+// ========================================
+
+function getMedicationExpiryDates() {
+
+    return medications
+        .filter(function(medication) {
+
+            return medication.expiryDate;
+
+        })
+        .map(function(medication) {
+
+            const date =
+                new Date(
+                    medication.expiryDate
+                );
+
+            return formatDate(
+                date.getFullYear(),
+                date.getMonth(),
+                date.getDate()
+            );
+
+        });
+
+}
+
+
+// ========================================
+// RENDER CALENDAR
+// ========================================
+
+function renderCalendar() {
+
+    calendarMonth.textContent =
+        new Date(
+            currentYear,
+            currentMonth
+        ).toLocaleString(
+            "default",
+            {
+                month: "long",
+                year: "numeric"
+            }
+        );
+
+
+    const calendarGrid =
+        document.querySelector(
+            ".calendar-grid"
+        );
+
+
+    if (!calendarGrid) {
+        return;
+    }
+
+
+    // Keep weekday headings
+
+    calendarGrid.innerHTML = "";
+
+    // First day of month
+
+    let firstDay =
+        new Date(
+            currentYear,
+            currentMonth,
+            1
+        ).getDay();
+
+
+    // Convert Sunday=0 to Monday=0
+
+    firstDay =
+        firstDay === 0
+            ? 6
+            : firstDay - 1;
+
+
+    // Number of days
+
+    const daysInMonth =
+        new Date(
+            currentYear,
+            currentMonth + 1,
+            0
+        ).getDate();
+
+
+    const previousMonthDays =
+        new Date(
+            currentYear,
+            currentMonth,
+            0
+        ).getDate();
+
+
+    const attackDates =
+        getAttackDates();
+
+    const expiryDates =
+        getMedicationExpiryDates();
+
+
+    // -------------------------------
+    // Previous month dates
+    // -------------------------------
+
+    for (
+        let i = firstDay - 1;
+        i >= 0;
+        i--
+    ) {
+
+        const day =
+            previousMonthDays - i;
+
+        const cell =
+            createCalendarDay(
+                day,
+                true
+            );
+
+        calendarGrid.appendChild(
+            cell
+        );
+
+    }
+
+
+    // -------------------------------
+    // Current month dates
+    // -------------------------------
+
+    for (
+        let day = 1;
+        day <= daysInMonth;
+        day++
+    ) {
+
+        const dateString =
+            formatDate(
+                currentYear,
+                currentMonth,
+                day
+            );
+
+
+        const cell =
+            createCalendarDay(
+                day,
+                false,
+                dateString,
+                attackDates,
+                expiryDates
+            );
+
+
+        calendarGrid.appendChild(
+            cell
+        );
+
+    }
+
+
+    // -------------------------------
+    // Next month dates
+    // -------------------------------
+
+    const totalCells =
+        7 * 6;
+
+    const remainingCells =
+        totalCells -
+        (
+            firstDay +
+            daysInMonth
+        );
+
+
+    for (
+        let day = 1;
+        day <= remainingCells;
+        day++
+    ) {
+
+        const cell =
+            createCalendarDay(
+                day,
+                true
+            );
+
+        calendarGrid.appendChild(
+            cell
+        );
+
+    }
+
+}
+
+
+// ========================================
+// CREATE CALENDAR DAY
+// ========================================
+
+function createCalendarDay(
+    day,
+    otherMonth,
+    dateString,
+    attackDates,
+    expiryDates
+) {
+
+    const cell =
+        document.createElement(
+            "div"
+        );
+
+    cell.className =
+        "calendar-day";
+
+
+    if (otherMonth) {
+
+        cell.classList.add(
+            "other-month"
+        );
+
+        cell.textContent =
+            day;
+
+        return cell;
+
+    }
+
+
+    cell.textContent =
+        day;
+
+
+    // -------------------------------
+    // Today
+    // -------------------------------
+
+    const today =
+        new Date();
+
+    const todayString =
+        formatDate(
+            today.getFullYear(),
+            today.getMonth(),
+            today.getDate()
+        );
+
+
+    if (
+        dateString ===
+        todayString
+    ) {
+
+        cell.classList.add(
+            "today"
+        );
+
+    }
+
+
+    // -------------------------------
+    // Attack
+    // -------------------------------
+
+    if (
+        attackDates.includes(
+            dateString
+        )
+    ) {
+
+        cell.classList.add(
+            "has-attack"
+        );
+
+    }
+
+
+    // -------------------------------
+    // Medication expiry
+    // -------------------------------
+
+    if (
+        expiryDates.includes(
+            dateString
+        )
+    ) {
+
+        cell.classList.add(
+            "has-expiry"
+        );
+
+    }
+
+
+    // -------------------------------
+    // Custom event
+    // -------------------------------
+
+    const eventExists =
+        calendarEvents.some(
+            function(event) {
+
+                return (
+                    event.date ===
+                    dateString
+                );
+
+            }
+        );
+
+
+    if (eventExists) {
+
+        cell.classList.add(
+            "has-event"
+        );
+
+    }
+    // ========================================
+    // DATE CLICK
+    // ========================================
+
+    cell.addEventListener(
+        "click",
+        function() {
+
+            showDayDetails(
+                dateString
+            );
+
+        }
+    );
+
+
+    return cell;
+
+}
+// ========================================
+// SHOW DAY DETAILS
+// ========================================
+
+function showDayDetails(dateString) {
+
+    const detailsBox =
+        document.getElementById(
+            "selectedDayDetails"
+        );
+
+    const title =
+        document.getElementById(
+            "selectedDayTitle"
+        );
+
+    const dateText =
+        document.getElementById(
+            "selectedDayDate"
+        );
+
+    const content =
+        document.getElementById(
+            "selectedDayContent"
+        );
+
+
+    const selectedDate =
+        new Date(
+            dateString +
+            "T00:00:00"
+        );
+
+
+    title.textContent =
+        "Health Activity";
+
+
+    dateText.textContent =
+        selectedDate.toLocaleDateString(
+            "en-US",
+            {
+                weekday: "long",
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            }
+        );
+
+
+    content.innerHTML = "";
+
+
+    let foundActivity = false;
+
+
+    // ========================================
+    // CALENDAR EVENTS
+    // ========================================
+
+    calendarEvents.forEach(
+        function(event) {
+
+            if (
+                event.date ===
+                dateString
+            ) {
+
+                foundActivity = true;
+
+
+                content.innerHTML +=
+
+                    `<div class="selected-day-item">
+
+                        <div class="selected-day-icon selected-event-icon">
+                            📅
+                        </div>
+
+                        <div class="selected-day-item-info">
+
+                            <strong>
+                                ${event.title}
+                            </strong>
+
+                            <span>
+                                ${event.type}
+                                ${event.time
+                                    ? " • " +
+                                      formatTime(event.time)
+                                    : ""}
+                            </span>
+
+                        </div>
+
+                    </div>`;
+
+            }
+
+        }
+    );
+
+
+    // ========================================
+    // ATTACK LOGS
+    // ========================================
+
+    attackLogs.forEach(
+        function(log) {
+
+            const logDate =
+                new Date(
+                    log.date
+                );
+
+
+            const logDateString =
+                formatDate(
+                    logDate.getFullYear(),
+                    logDate.getMonth(),
+                    logDate.getDate()
+                );
+
+
+            if (
+                logDateString ===
+                dateString
+            ) {
+
+                foundActivity = true;
+
+
+                content.innerHTML +=
+
+                    `<div class="selected-day-item">
+
+                        <div class="selected-day-icon selected-attack-icon">
+                            +
+                        </div>
+
+                        <div class="selected-day-item-info">
+
+                            <strong>
+                                ${log.symptoms ||
+                                "Breathing Episode"}
+                            </strong>
+
+                            <span>
+                                Attack •
+                                ${log.severity ||
+                                "Mild"}
+                            </span>
+
+                        </div>
+
+                    </div>`;
+
+            }
+
+        }
+    );
+
+
+    // ========================================
+    // MEDICATION EXPIRY
+    // ========================================
+
+    medications.forEach(
+        function(medication) {
+
+            if (
+                !medication.expiryDate
+            ) {
+                return;
+            }
+
+
+            const expiryDate =
+                new Date(
+                    medication.expiryDate
+                );
+
+
+            const expiryDateString =
+                formatDate(
+                    expiryDate.getFullYear(),
+                    expiryDate.getMonth(),
+                    expiryDate.getDate()
+                );
+
+
+            if (
+                expiryDateString ===
+                dateString
+            ) {
+
+                foundActivity = true;
+
+
+                content.innerHTML +=
+
+                    `<div class="selected-day-item">
+
+                        <div class="selected-day-icon selected-expiry-icon">
+                            !
+                        </div>
+
+                        <div class="selected-day-item-info">
+
+                            <strong>
+                                Medication Expiry
+                            </strong>
+
+                            <span>
+                                ${medication.name}
+                            </span>
+
+                        </div>
+
+                    </div>`;
+
+            }
+
+        }
+    );
+
+
+    // ========================================
+    // NO ACTIVITY
+    // ========================================
+
+    if (!foundActivity) {
+
+        content.innerHTML =
+
+            `<div class="selected-day-empty">
+                No health activity recorded for this day.
+            </div>`;
+
+    }
+
+
+    // Show details
+
+    detailsBox.style.display =
+        "block";
+
+
+    // Scroll gently to details
+
+    detailsBox.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "nearest"
+
+    });
+
+}
+
+
+// ========================================
+// MONTH NAVIGATION
+// ========================================
+
+previousMonth.addEventListener(
+    "click",
+    function() {
+
+        currentMonth--;
+
+        if (currentMonth < 0) {
+
+            currentMonth = 11;
+
+            currentYear--;
+
+        }
+
+        renderCalendar();
+
+        renderUpcomingEvents();
+
+    }
+);
+
+
+nextMonth.addEventListener(
+    "click",
+    function() {
+
+        currentMonth++;
+
+        if (currentMonth > 11) {
+
+            currentMonth = 0;
+
+            currentYear++;
+
+        }
+
+        renderCalendar();
+
+        renderUpcomingEvents();
+
+    }
+);
+
+
+// ========================================
+// OPEN ADD EVENT FORM
+// ========================================
+
+addEventButton.addEventListener(
+    "click",
+    function() {
+
+        eventFormCard.scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "start"
+
+        });
+
+    }
+);
+
+
+// ========================================
+// SAVE EVENT
+// ========================================
+
+eventForm.addEventListener(
+    "submit",
+    async function(event) {
+
+        event.preventDefault();
+
+
+        const title =
+            document
+                .getElementById("eventTitle")
+                .value
+                .trim();
+
+
+        const date =
+            document
+                .getElementById("eventDate")
+                .value;
+
+
+        const time =
+            document
+                .getElementById("eventTime")
+                .value;
+
+
+        const type =
+            document
+                .getElementById("eventType")
+                .value;
+
+
+        if (
+            !title ||
+            !date ||
+            !time ||
+            !type
+        ) {
+
+            alert(
+                "Please fill in all event details."
+            );
+
+            return;
+
+        }
+
+
+        try {
+
+            const response =
+                await fetch(
+                    "http://localhost:5000/api/calendar-events",
+                    {
+
+                        method: "POST",
+
+                        headers: {
+
+                            "Content-Type":
+                                "application/json"
+
+                        },
+
+                        body:
+                            JSON.stringify({
+
+                                email:
+                                    user.email,
+
+                                title:
+                                    title,
+
+                                date:
+                                    date,
+
+                                time:
+                                    time,
+
+                                type:
+                                    type
+
+                            })
+
+                    }
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if (data.success) {
+
+                alert(
+                    "Event saved successfully."
+                );
+
+
+                eventForm.reset();
+
+
+                // Reload calendar data
+
+                await loadCalendarData();
+
+
+            } else {
+
+                alert(
+                    data.message ||
+                    "Unable to save event."
+                );
+
+            }
+
+
+        } catch (error) {
+
+            console.error(
+                "Save event error:",
+                error
+            );
+
+            alert(
+                "Unable to connect to the Respira server."
+            );
+
+        }
+
+    }
+);
+
+
+// ========================================
+// RENDER UPCOMING EVENTS
+// ========================================
+
+// ========================================
+// RENDER UPCOMING EVENTS
+// ========================================
+
+function renderUpcomingEvents() {
+
+    const eventsContainer =
+        document.querySelector(
+            ".event-list"
+        );
+
+
+    if (!eventsContainer) {
+        return;
+    }
+
+
+    eventsContainer.innerHTML = "";
+
+
+    const today =
+        new Date();
+
+    today.setHours(
+        0,
+        0,
+        0,
+        0
+    );
+
+
+    let upcomingItems = [];
+
+
+    // ========================================
+    // CUSTOM CALENDAR EVENTS
+    // ========================================
+
+    calendarEvents.forEach(
+        function(event) {
+
+            const eventDate =
+                new Date(
+                    event.date +
+                    "T00:00:00"
+                );
+
+
+            if (eventDate >= today) {
+
+                upcomingItems.push({
+
+                    date:
+                        event.date,
+
+                    title:
+                        event.title,
+
+                    description:
+                        event.type,
+
+                    time:
+                        event.time
+
+                });
+
+            }
+
+        }
+    );
+
+
+    // ========================================
+    // MEDICATION EXPIRY EVENTS
+    // ========================================
+
+    medications.forEach(
+        function(medication) {
+
+            if (
+                !medication.expiryDate
+            ) {
+                return;
+            }
+
+
+            const expiryDate =
+                new Date(
+                    medication.expiryDate
+                );
+
+
+            expiryDate.setHours(
+                0,
+                0,
+                0,
+                0
+            );
+
+
+            if (expiryDate >= today) {
+
+                const expiryDateString =
+                    formatDate(
+                        expiryDate.getFullYear(),
+                        expiryDate.getMonth(),
+                        expiryDate.getDate()
+                    );
+
+
+                upcomingItems.push({
+
+                    date:
+                        expiryDateString,
+
+                    title:
+                        "Medication Expiry",
+
+                    description:
+                        medication.name,
+
+                    time:
+                        ""
+
+                });
+
+            }
+
+        }
+    );
+
+
+    // ========================================
+    // SORT BY DATE
+    // ========================================
+
+    upcomingItems.sort(
+        function(a, b) {
+
+            return (
+                new Date(
+                    a.date +
+                    "T00:00:00"
+                ) -
+                new Date(
+                    b.date +
+                    "T00:00:00"
+                )
+            );
+
+        }
+    );
+
+
+    // ========================================
+    // SHOW ONLY NEXT 5 EVENTS
+    // ========================================
+
+    upcomingItems =
+        upcomingItems.slice(
+            0,
+            5
+        );
+
+
+    // ========================================
+    // EMPTY STATE
+    // ========================================
+
+    if (
+        upcomingItems.length === 0
+    ) {
+
+        eventsContainer.innerHTML =
+
+            `<div class="empty-calendar-message">
+                No upcoming health events.
+            </div>`;
+
+        return;
+
+    }
+
+
+    // ========================================
+    // DISPLAY EVENTS
+    // ========================================
+
+    upcomingItems.forEach(
+        function(item) {
+
+            createUpcomingEvent(
+                eventsContainer,
+                item.date,
+                item.title,
+                item.description,
+                item.time
+            );
+
+        }
+    );
+
+}
+
+
+// ========================================
+// CREATE UPCOMING EVENT
+// ========================================
+
+function createUpcomingEvent(
+    container,
+    dateString,
+    title,
+    type,
+    time
+) {
+
+    const date =
+        new Date(
+            dateString +
+            "T00:00:00"
+        );
+
+
+    const day =
+        String(
+            date.getDate()
+        ).padStart(2, "0");
+
+
+    const month =
+        date.toLocaleString(
+            "default",
+            {
+                month: "short"
+            }
+        ).toUpperCase();
+
+
+    const row =
+        document.createElement(
+            "div"
+        );
+
+
+    row.className =
+        "event-row";
+
+
+    row.innerHTML =
+
+        `<div class="event-date">
+            <strong>${day}</strong>
+            <span>${month}</span>
+        </div>
+
+        <div class="event-info">
+            <h3>${title}</h3>
+            <p>${type}</p>
+        </div>
+
+        <div class="event-time">
+            ${formatTime(time)}
+        </div>`;
+
+
+    container.appendChild(
+        row
+    );
+
+}
+
+
+// ========================================
+// FORMAT TIME
+// ========================================
+
+function formatTime(time) {
+
+    if (!time) {
+
+        return "";
+
+    }
+
+
+    const parts =
+        time.split(":");
+
+
+    let hours =
+        parseInt(
+            parts[0]
+        );
+
+
+    const minutes =
+        parts[1] || "00";
+
+
+    const period =
+        hours >= 12
+            ? "PM"
+            : "AM";
+
+
+    hours =
+        hours % 12 ||
+        12;
+
+
+    return (
+        hours +
+        ":" +
+        minutes +
+        " " +
+        period
+    );
+
+}
+
+
+// ========================================
+// START CALENDAR
+// ========================================
+
+loadCalendarData();
+
+</script>
+
+</body>
+
+</html>

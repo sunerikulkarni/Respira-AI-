@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <title>Respira - Profile</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <div class="sidebar-brand">
+
+                <img src="images/respira-logo.png" alt="Respira Logo">
+
+                <span>Respira</span>
+
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="7" height="7" rx="1"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1"/>
+                            <rect x="14" y="14" width="7" height="7" rx="1"/>
+                        </svg>
+                    </span>
+                    Dashboard
+                </a>
+
+                <a href="attack-logs.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16v16H4z"/>
+                            <path d="M8 2v4"/>
+                            <path d="M16 2v4"/>
+                            <path d="M4 10h16"/>
+                        </svg>
+                    </span>
+                    Attack Logs
+                </a>
+
+                <a href="medications.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 3h12"/>
+                            <path d="M7 3v4"/>
+                            <path d="M17 3v4"/>
+                            <path d="M5 7h14v14H5z"/>
+                            <path d="M8 12h8"/>
+                            <path d="M8 16h5"/>
+                        </svg>
+                    </span>
+                    Medications
+                </a>
+
+                <a href="air-quality.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3v18"/>
+                            <path d="M3 12h18"/>
+                            <circle cx="12" cy="12" r="9"/>
+                        </svg>
+                    </span>
+                    Air Quality
+                </a>
+
+                <a href="calendar.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="4" y="5" width="16" height="16" rx="2"/>
+                            <path d="M8 3v4"/>
+                            <path d="M16 3v4"/>
+                            <path d="M4 10h16"/>
+                        </svg>
+                    </span>
+                    Calendar
+                </a>
+
+                <a href="analytics.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 19V5"/>
+                            <path d="M4 19h17"/>
+                            <path d="M7 16l4-5 3 2 5-7"/>
+                        </svg>
+                    </span>
+                    Analytics
+                </a>
+
+                <a href="ai-assistant.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3a8 8 0 0 0-8 8"/>
+                            <path d="M12 3a8 8 0 0 1 8 8"/>
+                            <path d="M4 11c0 4 2 6 4 7"/>
+                            <path d="M20 11c0 4-2 6-4 7"/>
+                            <path d="M8 21h8"/>
+                            <path d="M9 18h6"/>
+                        </svg>
+                    </span>
+                    AI Assistant
+                </a>
+
+                <a href="emergency.html" class="nav-item emergency-nav">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3l9 18H3L12 3z"/>
+                            <path d="M12 9v5"/>
+                            <circle cx="12" cy="17" r="0.7"/>
+                        </svg>
+                    </span>
+                    Emergency SOS
+                </a>
+
+            </nav>
+
+        </div>
+
+        <div class="sidebar-bottom">
+
+            <a href="profile.html" class="nav-item active">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="8" r="4"/>
+                        <path d="M4 21c0-4 3-7 8-7s8 3 8 7"/>
+                    </svg>
+                </span>
+                Profile
+            </a>
+
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 17l5-5-5-5"/>
+                        <path d="M15 12H3"/>
+                        <path d="M21 4v16"/>
+                    </svg>
+                </span>
+                Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <p class="welcome-label">
+                    ACCOUNT SETTINGS
+                </p>
+
+                <h1>
+                    Profile
+                </h1>
+
+                <p class="header-subtitle">
+                    Manage your personal information and Respira preferences.
+                </p>
+
+            </div>
+
+            <div class="header-actions">
+
+                <button class="notification-button">
+
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+                        <path d="M10 21h4"/>
+                    </svg>
+
+                </button>
+
+                <button class="profile-button">
+                    U
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- PROFILE HEADER -->
+
+        <section class="profile-header-card">
+
+            <div class="profile-avatar-large">
+                U
+            </div>
+
+            <div class="profile-header-info">
+
+                <h2 id="profileDisplayName">
+                    User
+                </h2>
+
+                <p id="profileDisplayEmail">
+                    user@example.com
+                </p>
+
+                <span class="profile-member">
+                    Respira Member
+                </span>
+
+            </div>
+
+            <button
+                class="profile-edit-button"
+                id="editProfileButton">
+
+                Edit Profile
+
+            </button>
+
+        </section>
+
+
+        <!-- PERSONAL INFORMATION -->
+
+        <section class="dashboard-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Personal Information
+                    </h2>
+
+                    <p>
+                        Basic information associated with your account.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-form-grid">
+
+                <div class="profile-field">
+
+                    <label>
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        value="User"
+                        disabled>
+
+                </div>
+
+
+                <div class="profile-field">
+
+                    <label>
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="emailAddress"
+                        value="user@example.com"
+                        disabled>
+
+                </div>
+
+
+                <div class="profile-field">
+
+                    <label>
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phoneNumber"
+                        value="+91 XXXXX XXXXX"
+                        disabled>
+
+                </div>
+
+
+                <div class="profile-field">
+
+                    <label>
+                        Date of Birth
+                    </label>
+
+                    <input
+                        type="date"
+                        id="dateOfBirth"
+                        disabled>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESPIRATORY INFORMATION -->
+
+        <section class="dashboard-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Respiratory Information
+                    </h2>
+
+                    <p>
+                        Information used to personalize your Respira experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-form-grid">
+
+                <div class="profile-field">
+
+                    <label>
+                        Respiratory Condition
+                    </label>
+
+                    <select id="condition" disabled>
+
+                        <option value="">
+                            Select condition
+                        </option>
+
+                        <option>
+                            Asthma
+                        </option>
+
+                        <option>
+                            COPD
+                        </option>
+
+                        <option>
+                            Allergic Respiratory Condition
+                        </option>
+
+                        <option>
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="profile-field">
+
+                    <label>
+                        Emergency Contact Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="emergencyName"
+                        placeholder="Enter emergency contact"
+                        disabled>
+
+                </div>
+
+
+                <div class="profile-field">
+
+                    <label>
+                        Emergency Contact Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="emergencyNumber"
+                        placeholder="+91 XXXXX XXXXX"
+                        disabled>
+
+                </div>
+
+
+                <div class="profile-field">
+
+                    <label>
+                        Preferred Hospital
+                    </label>
+
+                    <input
+                        type="text"
+                        id="hospital"
+                        placeholder="Enter preferred hospital"
+                        disabled>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PREFERENCES -->
+
+        <section class="dashboard-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Preferences
+                    </h2>
+
+                    <p>
+                        Control how Respira communicates with you.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="preference-list">
+
+                <div class="preference-row">
+
+                    <div>
+
+                        <h3>
+                            Medication Reminders
+                        </h3>
+
+                        <p>
+                            Receive reminders for scheduled medications.
+                        </p>
+
+                    </div>
+
+                    <label class="toggle">
+
+                        <input
+                            type="checkbox"
+                            id="medicationReminder"
+                            checked
+                            disabled>
+
+                        <span class="toggle-slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="preference-row">
+
+                    <div>
+
+                        <h3>
+                            Attack Notifications
+                        </h3>
+
+                        <p>
+                            Receive notifications related to recorded
+                            respiratory episodes.
+                        </p>
+
+                    </div>
+
+                    <label class="toggle">
+
+                        <input
+                            type="checkbox"
+                            id="attackNotification"
+                            checked
+                            disabled>
+
+                        <span class="toggle-slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="preference-row">
+
+                    <div>
+
+                        <h3>
+                            Air Quality Alerts
+                        </h3>
+
+                        <p>
+                            Receive alerts when air quality conditions
+                            become unfavorable.
+                        </p>
+
+                    </div>
+
+                    <label class="toggle">
+
+                        <input
+                            type="checkbox"
+                            id="airQualityAlert"
+                            checked
+                            disabled>
+
+                        <span class="toggle-slider"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SAVE AREA -->
+
+        <div
+            class="profile-save-area"
+            id="saveArea">
+
+            <button
+                class="profile-cancel-button"
+                id="cancelButton">
+
+                Cancel
+
+            </button>
+
+            <button
+                class="profile-save-button"
+                id="saveButton">
+
+                Save Changes
+
+            </button>
+
+        </div>
+
+
+        <!-- SECURITY -->
+
+        <section class="dashboard-card security-card">
+
+            <div>
+
+                <h2>
+                    Account Security
+                </h2>
+
+                <p>
+                    Manage your account credentials and security settings.
+                </p>
+
+            </div>
+
+           <button
+                class="security-button"
+                id="changePasswordButton">
+
+                Change Password
+
+            </button>
+
+        </section>
+
+<!-- CHANGE PASSWORD -->
+
+<div
+    id="changePasswordModal"
+    class="password-modal"
+    style="display: none;">
+
+    <div class="password-modal-content">
+
+        <h2>Change Password</h2>
+
+        <p>
+            Enter your current password and choose a new password.
+        </p>
+
+
+        <!-- Current Password -->
+
+        <div class="profile-field">
+
+            <label for="currentPassword">
+                Current Password
+            </label>
+
+            <input
+                type="password"
+                id="currentPassword"
+                placeholder="Enter current password">
+
+        </div>
+
+
+        <!-- New Password -->
+
+        <div class="profile-field">
+
+            <label for="newPassword">
+                New Password
+            </label>
+
+            <input
+                type="password"
+                id="newPassword"
+                placeholder="Enter new password">
+
+        </div>
+
+
+        <!-- Confirm Password -->
+
+        <div class="profile-field">
+
+            <label for="confirmNewPassword">
+                Confirm New Password
+            </label>
+
+            <input
+                type="password"
+                id="confirmNewPassword"
+                placeholder="Confirm new password">
+
+        </div>
+
+
+        <!-- Buttons -->
+
+        <div class="profile-save-area">
+
+            <button
+                type="button"
+                class="profile-cancel-button"
+                id="cancelPasswordButton">
+
+                Cancel
+
+            </button>
+
+
+            <button
+                type="button"
+                class="profile-save-button"
+                id="savePasswordButton">
+
+                Update Password
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+        <div class="profile-footer-space"></div>
+
+    </main>
+
+</div>
+
+
+<script>
+
+const editButton =
+    document.getElementById("editProfileButton");
+
+const saveArea =
+    document.getElementById("saveArea");
+
+const saveButton =
+    document.getElementById("saveButton");
+
+const cancelButton =
+    document.getElementById("cancelButton");
+
+
+const editableFields = [
+    "fullName",
+    "emailAddress",
+    "phoneNumber",
+    "dateOfBirth",
+    "condition",
+    "emergencyName",
+    "emergencyNumber",
+    "hospital",
+    "medicationReminder",
+    "attackNotification",
+    "airQualityAlert"
+];
+
+
+function setEditing(enabled) {
+
+    editableFields.forEach(function(id) {
+
+        const element =
+            document.getElementById(id);
+
+        element.disabled =
+            !enabled;
+
+    });
+
+
+    saveArea.style.display =
+        enabled ? "flex" : "none";
+
+}
+
+
+editButton.addEventListener(
+    "click",
+    function() {
+
+        setEditing(true);
+
+        editButton.style.display =
+            "none";
+
+    }
+);
+
+
+cancelButton.addEventListener(
+    "click",
+    function() {
+
+        setEditing(false);
+
+        editButton.style.display =
+            "block";
+
+    }
+);
+
+
+saveButton.addEventListener(
+    "click",
+    function() {
+
+        const name =
+            document.getElementById("fullName").value;
+
+        const email =
+            document.getElementById("emailAddress").value;
+
+
+        document.getElementById(
+            "profileDisplayName"
+        ).textContent =
+            name || "User";
+
+
+        document.getElementById(
+            "profileDisplayEmail"
+        ).textContent =
+            email || "user@example.com";
+
+
+        setEditing(false);
+
+        editButton.style.display =
+            "block";
+
+        alert(
+            "Profile changes saved successfully."
+        );
+
+    }
+);
+
+setEditing(false);
+// ========================================
+// LOAD LOGGED-IN USER
+// ========================================
+
+const savedUser =
+    localStorage.getItem("respiraUser");
+
+
+if (!savedUser) {
+
+    // User is not logged in
+    window.location.href = "index.html";
+
+} else {
+
+    try {
+
+        const user =
+            JSON.parse(savedUser);
+
+
+        // -------------------------------
+        // Display name
+        // -------------------------------
+
+        const profileDisplayName =
+            document.getElementById(
+                "profileDisplayName"
+            );
+
+
+        if (
+            profileDisplayName &&
+            user.fullName
+        ) {
+
+            profileDisplayName.textContent =
+                user.fullName;
+
+        }
+
+
+        // -------------------------------
+        // Display email
+        // -------------------------------
+
+        const profileDisplayEmail =
+            document.getElementById(
+                "profileDisplayEmail"
+            );
+
+
+        if (
+            profileDisplayEmail &&
+            user.email
+        ) {
+
+            profileDisplayEmail.textContent =
+                user.email;
+
+        }
+
+
+        // -------------------------------
+        // Fill Full Name field
+        // -------------------------------
+
+        const fullName =
+            document.getElementById(
+                "fullName"
+            );
+
+
+        if (
+            fullName &&
+            user.fullName
+        ) {
+
+            fullName.value =
+                user.fullName;
+
+        }
+
+
+        // -------------------------------
+        // Fill Email field
+        // -------------------------------
+
+        const emailAddress =
+            document.getElementById(
+                "emailAddress"
+            );
+
+
+        if (
+            emailAddress &&
+            user.email
+        ) {
+
+            emailAddress.value =
+                user.email;
+
+        }
+
+
+    } catch (error) {
+
+        console.error(
+            "Unable to load user information:",
+            error
+        );
+
+        localStorage.removeItem(
+            "respiraUser"
+        );
+
+        window.location.href =
+            "index.html";
+
+    }
+
+}
+// ========================================
+// CHANGE PASSWORD
+// ========================================
+
+const changePasswordButton =
+    document.getElementById(
+        "changePasswordButton"
+    );
+
+const changePasswordModal =
+    document.getElementById(
+        "changePasswordModal"
+    );
+
+const cancelPasswordButton =
+    document.getElementById(
+        "cancelPasswordButton"
+    );
+
+const savePasswordButton =
+    document.getElementById(
+        "savePasswordButton"
+    );
+
+
+// Open password form
+
+changePasswordButton.addEventListener(
+    "click",
+    function () {
+
+        changePasswordModal.style.display =
+            "block";
+
+    }
+);
+
+
+// Close password form
+
+cancelPasswordButton.addEventListener(
+    "click",
+    function () {
+
+        changePasswordModal.style.display =
+            "none";
+
+        document.getElementById(
+            "currentPassword"
+        ).value = "";
+
+        document.getElementById(
+            "newPassword"
+        ).value = "";
+
+        document.getElementById(
+            "confirmNewPassword"
+        ).value = "";
+
+    }
+);
+
+
+// Update password
+
+savePasswordButton.addEventListener(
+    "click",
+    async function () {
+
+        const currentPassword =
+            document.getElementById(
+                "currentPassword"
+            ).value;
+
+        const newPassword =
+            document.getElementById(
+                "newPassword"
+            ).value;
+
+        const confirmNewPassword =
+            document.getElementById(
+                "confirmNewPassword"
+            ).value;
+
+
+        // Check empty fields
+
+        if (
+            !currentPassword ||
+            !newPassword ||
+            !confirmNewPassword
+        ) {
+
+            alert(
+                "Please fill in all password fields."
+            );
+
+            return;
+
+        }
+
+
+        // Check password length
+
+        if (newPassword.length < 6) {
+
+            alert(
+                "New password must contain at least 6 characters."
+            );
+
+            return;
+
+        }
+
+
+        // Check password confirmation
+
+        if (
+            newPassword !==
+            confirmNewPassword
+        ) {
+
+            alert(
+                "New passwords do not match."
+            );
+
+            return;
+
+        }
+
+
+        // Get logged-in user
+
+        const savedUser =
+            localStorage.getItem(
+                "respiraUser"
+            );
+
+
+        if (!savedUser) {
+
+            alert(
+                "Please login again."
+            );
+
+            window.location.href =
+                "index.html";
+
+            return;
+
+        }
+
+
+        const user =
+            JSON.parse(savedUser);
+
+
+        try {
+
+            const response =
+                await fetch(
+                    "http://localhost:5000/api/change-password",
+                    {
+
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body: JSON.stringify({
+
+                            email:
+                                user.email,
+
+                            currentPassword:
+                                currentPassword,
+
+                            newPassword:
+                                newPassword
+
+                        })
+
+                    }
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if (data.success) {
+
+                alert(
+                    "Password changed successfully!"
+                );
+
+
+                changePasswordModal.style.display =
+                    "none";
+
+
+                document.getElementById(
+                    "currentPassword"
+                ).value = "";
+
+                document.getElementById(
+                    "newPassword"
+                ).value = "";
+
+                document.getElementById(
+                    "confirmNewPassword"
+                ).value = "";
+
+
+            } else {
+
+                alert(
+                    data.message
+                );
+
+            }
+
+
+        } catch (error) {
+
+            console.error(
+                "Password change error:",
+                error
+            );
+
+            alert(
+                "Unable to connect to the Respira server."
+            );
+
+        }
+
+    }
+);
+</script>
+
+</body>
+
+</html>

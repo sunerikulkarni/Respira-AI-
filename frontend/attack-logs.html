@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <title>Respira - Attack Logs</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <div class="sidebar-brand">
+
+                <img
+                    src="images/respira-logo.png"
+                    alt="Respira Logo">
+
+                <span>Respira</span>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="7" height="7" rx="1"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1"/>
+                            <rect x="14" y="14" width="7" height="7" rx="1"/>
+                        </svg>
+                    </span>
+                    Dashboard
+                </a>
+
+
+                <a href="attack-logs.html"
+                   class="nav-item active">
+
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16v16H4z"/>
+                            <path d="M8 2v4"/>
+                            <path d="M16 2v4"/>
+                            <path d="M4 10h16"/>
+                        </svg>
+                    </span>
+
+                    Attack Logs
+
+                </a>
+
+
+                <a href="medications.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 3h12"/>
+                            <path d="M7 3v4"/>
+                            <path d="M17 3v4"/>
+                            <path d="M5 7h14v14H5z"/>
+                            <path d="M8 12h8"/>
+                            <path d="M8 16h5"/>
+                        </svg>
+                    </span>
+
+                    Medications
+
+                </a>
+
+
+                <a href="air-quality.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3v18"/>
+                            <path d="M3 12h18"/>
+                            <circle cx="12" cy="12" r="9"/>
+                        </svg>
+                    </span>
+
+                    Air Quality
+
+                </a>
+
+
+                <a href="calendar.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="4" y="5"
+                                  width="16"
+                                  height="16"
+                                  rx="2"/>
+                            <path d="M8 3v4"/>
+                            <path d="M16 3v4"/>
+                            <path d="M4 10h16"/>
+                        </svg>
+                    </span>
+
+                    Calendar
+
+                </a>
+
+
+                <a href="analytics.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 19V5"/>
+                            <path d="M4 19h17"/>
+                            <path d="M7 16l4-5 3 2 5-7"/>
+                        </svg>
+                    </span>
+
+                    Analytics
+
+                </a>
+
+
+                <a href="ai-assistant.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3a8 8 0 0 0-8 8"/>
+                            <path d="M12 3a8 8 0 0 1 8 8"/>
+                            <path d="M4 11c0 4 2 6 4 7"/>
+                            <path d="M20 11c0 4-2 6-4 7"/>
+                            <path d="M8 21h8"/>
+                            <path d="M9 18h6"/>
+                        </svg>
+                    </span>
+
+                    AI Assistant
+
+                </a>
+
+
+                <a href="emergency.html" class="nav-item emergency-nav">
+
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3l9 18H3L12 3z"/>
+                            <path d="M12 9v5"/>
+                            <circle cx="12" cy="17" r="0.7"/>
+                        </svg>
+                    </span>
+
+                    Emergency SOS
+
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="profile.html" class="nav-item">
+
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="8" r="4"/>
+                        <path d="M4 21c0-4 3-7 8-7s8 3 8 7"/>
+                    </svg>
+                </span>
+
+                Profile
+
+            </a>
+
+
+            <a href="index.html" class="nav-item">
+
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 17l5-5-5-5"/>
+                        <path d="M15 12H3"/>
+                        <path d="M21 4v16"/>
+                    </svg>
+                </span>
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <p class="welcome-label">
+                    HEALTH RECORDS
+                </p>
+
+                <h1>
+                    Attack Logs
+                </h1>
+
+                <p class="header-subtitle">
+                    Monitor and review your breathing episodes.
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="notification-button"
+                    aria-label="Notifications">
+
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+                        <path d="M10 21h4"/>
+                    </svg>
+
+                </button>
+
+
+                <button class="profile-button">
+                    U
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= PAGE INTRO ================= -->
+
+        <section class="logs-intro">
+
+            <div>
+
+                <h2>
+                    Breathing Episode History
+                </h2>
+
+                <p>
+                    Review your previous episodes and identify
+                    possible patterns or triggers.
+                </p>
+
+            </div>
+
+
+            <button
+                class="primary-action"
+                id="addAttackButton">
+
+                <span>+</span>
+                Log New Episode
+
+            </button>
+
+        </section>
+
+
+        <!-- ================= SUMMARY ================= -->
+
+        <section class="overview-grid logs-summary">
+
+            <div class="health-card">
+
+                <span class="card-label">
+                    TOTAL EPISODES
+                </span>
+
+                <h3 id="totalEpisodes">
+                    0
+                </h3>
+
+                <p class="card-description">
+                    All recorded episodes
+                </p>
+
+            </div>
+
+
+            <div class="health-card">
+
+                <span class="card-label">
+                    THIS MONTH
+                </span>
+
+                <h3 id="thisMonthEpisodes">
+                    0
+                </h3>
+
+                <p class="card-description">
+                    Episodes in August
+                </p>
+
+            </div>
+
+
+            <div class="health-card">
+
+                <span class="card-label">
+                    COMMON SEVERITY
+                </span>
+
+                <h3>
+                    Mild
+                </h3>
+
+                <p class="card-description">
+                    Most frequent level
+                </p>
+
+            </div>
+
+
+            <div class="health-card">
+
+                <span class="card-label">
+                    LAST RECORDED
+                </span>
+
+                <h3 id="lastEpisode">
+                    —
+                </h3>
+
+                <p class="card-description">
+                    Most recent episode
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= EPISODES ================= -->
+
+        <section class="dashboard-card episodes-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Recent Episodes
+                    </h2>
+
+                    <p>
+                        Your latest recorded breathing episodes
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="episode-list" id="episodeList">
+
+
+                <!-- Episode 1 -->
+
+                <div class="episode-row">
+
+                    <div class="episode-date">
+
+                        <strong>
+                            06
+                        </strong>
+
+                        <span>
+                            AUG
+                        </span>
+
+                    </div>
+
+
+                    <div class="episode-info">
+
+                        <h3>
+                            Shortness of breath
+                        </h3>
+
+                        <p>
+                            8:30 PM &nbsp; • &nbsp; 10 minutes
+                        </p>
+
+                    </div>
+
+
+                    <div class="episode-trigger">
+
+                        <span>
+                            Trigger
+                        </span>
+
+                        <strong>
+                            Dust
+                        </strong>
+
+                    </div>
+
+
+                    <span class="severity mild">
+                        Mild
+                    </span>
+
+                </div>
+
+
+                <!-- Episode 2 -->
+
+                <div class="episode-row">
+
+                    <div class="episode-date">
+
+                        <strong>
+                            02
+                        </strong>
+
+                        <span>
+                            AUG
+                        </span>
+
+                    </div>
+
+
+                    <div class="episode-info">
+
+                        <h3>
+                            Wheezing
+                        </h3>
+
+                        <p>
+                            7:15 AM &nbsp; • &nbsp; 15 minutes
+                        </p>
+
+                    </div>
+
+
+                    <div class="episode-trigger">
+
+                        <span>
+                            Trigger
+                        </span>
+
+                        <strong>
+                            Cold air
+                        </strong>
+
+                    </div>
+
+
+                    <span class="severity moderate">
+                        Moderate
+                    </span>
+
+                </div>
+
+
+                <!-- Episode 3 -->
+
+                <div class="episode-row">
+
+                    <div class="episode-date">
+
+                        <strong>
+                            25
+                        </strong>
+
+                        <span>
+                            JUL
+                        </span>
+
+                    </div>
+
+
+                    <div class="episode-info">
+
+                        <h3>
+                            Chest tightness
+                        </h3>
+
+                        <p>
+                            9:40 PM &nbsp; • &nbsp; 8 minutes
+                        </p>
+
+                    </div>
+
+
+                    <div class="episode-trigger">
+
+                        <span>
+                            Trigger
+                        </span>
+
+                        <strong>
+                            Exercise
+                        </strong>
+
+                    </div>
+
+
+                    <span class="severity mild">
+                        Mild
+                    </span>
+
+                </div>
+
+
+                <!-- Episode 4 -->
+
+                <div class="episode-row">
+
+                    <div class="episode-date">
+
+                        <strong>
+                            18
+                        </strong>
+
+                        <span>
+                            JUL
+                        </span>
+
+                    </div>
+
+
+                    <div class="episode-info">
+
+                        <h3>
+                            Coughing
+                        </h3>
+
+                        <p>
+                            6:20 PM &nbsp; • &nbsp; 12 minutes
+                        </p>
+
+                    </div>
+
+
+                    <div class="episode-trigger">
+
+                        <span>
+                            Trigger
+                        </span>
+
+                        <strong>
+                            Unknown
+                        </strong>
+
+                    </div>
+
+
+                    <span class="severity mild">
+                        Mild
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= NEW EPISODE FORM ================= -->
+
+        <section
+            class="dashboard-card new-episode-card"
+            id="episodeFormCard">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Log a New Episode
+                    </h2>
+
+                    <p>
+                        Record the details of your latest episode.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form id="episodeForm">
+
+                <div class="episode-form-grid">
+
+
+                    <div class="form-field">
+
+                        <label for="episodeDate">
+                            Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="episodeDate"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="episodeTime">
+                            Time
+                        </label>
+
+                        <input
+                            type="text"
+                            id="episodeTime"
+                            placeholder="HH:MM:SS"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="symptoms">
+                            Symptoms
+                        </label>
+
+                        <input
+                            type="text"
+                            id="symptoms"
+                            placeholder="e.g. Wheezing, coughing"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="severity">
+                            Severity
+                        </label>
+
+                        <select id="severity" required>
+
+                            <option value="">
+                                Select severity
+                            </option>
+
+                            <option value="Mild">
+                                Mild
+                            </option>
+
+                            <option value="Moderate">
+                                Moderate
+                            </option>
+
+                            <option value="Severe">
+                                Severe
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="duration">
+                            Duration
+                        </label>
+
+                        <input
+                            type="text"
+                            id="duration"
+                            placeholder="e.g. 10 minutes"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="trigger">
+                            Possible Trigger
+                        </label>
+
+                        <input
+                            type="text"
+                            id="trigger"
+                            placeholder="e.g. Dust, exercise">
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-buttons">
+
+                    <button
+                        type="button"
+                        class="secondary-action"
+                        id="cancelEpisode">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="primary-action">
+
+                        Save Episode
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script>
+
+// ========================================
+// ATTACK LOGS
+// ========================================
+
+
+// ========================================
+// SET CURRENT DATE AND EXACT TIME
+// ========================================
+
+function setCurrentDateTime() {
+
+    const now = new Date();
+
+    // Current date
+
+    const year =
+        now.getFullYear();
+
+    const month =
+        String(now.getMonth() + 1)
+            .padStart(2, "0");
+
+    const day =
+        String(now.getDate())
+            .padStart(2, "0");
+
+
+    const episodeDate =
+        document.getElementById(
+            "episodeDate"
+        );
+
+
+    if (episodeDate) {
+
+        episodeDate.value =
+            `${year}-${month}-${day}`;
+
+    }
+
+
+    // Current time
+
+    const hours =
+        String(now.getHours())
+            .padStart(2, "0");
+
+    const minutes =
+        String(now.getMinutes())
+            .padStart(2, "0");
+
+    const seconds =
+        String(now.getSeconds())
+            .padStart(2, "0");
+
+
+    const episodeTime =
+        document.getElementById(
+            "episodeTime"
+        );
+
+
+    if (episodeTime) {
+
+        episodeTime.value =
+            `${hours}:${minutes}:${seconds}`;
+
+    }
+
+}
+
+
+// ========================================
+// PAGE ELEMENTS
+// ========================================
+
+const addAttackButton =
+    document.getElementById(
+        "addAttackButton"
+    );
+
+
+const episodeFormCard =
+    document.getElementById(
+        "episodeFormCard"
+    );
+
+
+const cancelEpisode =
+    document.getElementById(
+        "cancelEpisode"
+    );
+
+
+const episodeForm =
+    document.getElementById(
+        "episodeForm"
+    );
+
+
+// ========================================
+// EDITING MODE
+// ========================================
+
+let editingEpisodeId = null;
+
+
+const episodeSubmitButton =
+    episodeForm.querySelector(
+        'button[type="submit"]'
+    );
+
+
+// ========================================
+// CURRENT DATE AND TIME ON PAGE LOAD
+// ========================================
+
+setCurrentDateTime();
+
+
+// ========================================
+// OPEN NEW EPISODE FORM
+// ========================================
+
+addAttackButton.addEventListener(
+    "click",
+    function () {
+
+        // Make sure we are NOT in edit mode
+
+        editingEpisodeId = null;
+
+
+        // Reset form
+
+        episodeForm.reset();
+
+
+        // Restore button text
+
+        episodeSubmitButton.textContent =
+            "Save Episode";
+
+
+        // Set current date and time
+
+        setCurrentDateTime();
+
+
+        // Scroll to form
+
+        episodeFormCard.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }
+);
+
+
+// ========================================
+// CANCEL EPISODE / CANCEL EDIT
+// ========================================
+
+cancelEpisode.addEventListener(
+    "click",
+    function () {
+
+        // Exit edit mode
+
+        editingEpisodeId = null;
+
+
+        // Reset form
+
+        episodeForm.reset();
+
+
+        // Restore button text
+
+        episodeSubmitButton.textContent =
+            "Save Episode";
+
+
+        // Set fresh date and time
+
+        setCurrentDateTime();
+
+    }
+);
+
+
+// ========================================
+// SAVE / UPDATE ATTACK LOG
+// ========================================
+
+episodeForm.addEventListener(
+    "submit",
+    async function (event) {
+
+        event.preventDefault();
+
+
+        // ========================================
+        // GET LOGGED-IN USER
+        // ========================================
+
+        const savedUser =
+            localStorage.getItem(
+                "respiraUser"
+            );
+
+
+        if (!savedUser) {
+
+            alert(
+                "Please login again before recording an episode."
+            );
+
+
+            window.location.href =
+                "index.html";
+
+
+            return;
+
+        }
+
+
+        const user =
+            JSON.parse(savedUser);
+
+
+        // ========================================
+        // GET FORM VALUES
+        // ========================================
+
+        const date =
+            document
+                .getElementById(
+                    "episodeDate"
+                )
+                .value;
+
+
+        const time =
+            document
+                .getElementById(
+                    "episodeTime"
+                )
+                .value;
+
+
+        const symptoms =
+            document
+                .getElementById(
+                    "symptoms"
+                )
+                .value
+                .trim();
+
+
+        const severity =
+            document
+                .getElementById(
+                    "severity"
+                )
+                .value;
+
+
+        const duration =
+            document
+                .getElementById(
+                    "duration"
+                )
+                .value
+                .trim();
+
+
+        const trigger =
+            document
+                .getElementById(
+                    "trigger"
+                )
+                .value
+                .trim();
+
+
+        // ========================================
+        // COMBINE DATE AND TIME
+        // ========================================
+
+        const episodeDateTime =
+            `${date}T${time}`;
+
+
+        try {
+
+            let response;
+
+
+            // ========================================
+            // UPDATE EXISTING EPISODE
+            // ========================================
+
+            if (editingEpisodeId) {
+
+                response =
+                    await fetch(
+                        "http://localhost:5000/api/attack-logs/" +
+                        editingEpisodeId,
+                        {
+
+                            method: "PUT",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body: JSON.stringify({
+
+                                date:
+                                    episodeDateTime,
+
+                                severity:
+                                    severity,
+
+                                symptoms:
+                                    symptoms,
+
+                                notes:
+                                    `Duration: ${duration}; Trigger: ${trigger}`
+
+                            })
+
+                        }
+                    );
+
+            }
+
+
+            // ========================================
+            // CREATE NEW EPISODE
+            // ========================================
+
+            else {
+
+                response =
+                    await fetch(
+                        "http://localhost:5000/api/attack-logs",
+                        {
+
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body: JSON.stringify({
+
+                                email:
+                                    user.email,
+
+                                date:
+                                    episodeDateTime,
+
+                                severity:
+                                    severity,
+
+                                symptoms:
+                                    symptoms,
+
+                                notes:
+                                    `Duration: ${duration}; Trigger: ${trigger}`
+
+                            })
+
+                        }
+                    );
+
+            }
+
+
+            // ========================================
+            // GET SERVER RESPONSE
+            // ========================================
+
+            const data =
+                await response.json();
+
+
+            // ========================================
+            // SUCCESS
+            // ========================================
+
+            if (data.success) {
+
+
+                if (editingEpisodeId) {
+
+                    alert(
+                        "Episode updated successfully!"
+                    );
+
+                } else {
+
+                    alert(
+                        "Episode recorded successfully!"
+                    );
+
+                }
+
+
+                // Exit edit mode
+
+                editingEpisodeId = null;
+
+
+                // Restore button
+
+                episodeSubmitButton.textContent =
+                    "Save Episode";
+
+
+                // Reset form
+
+                episodeForm.reset();
+
+
+                // Set fresh date and time
+
+                setCurrentDateTime();
+
+
+                // Reload episodes
+
+                loadAttackLogs();
+
+            }
+
+
+            // ========================================
+            // SERVER ERROR
+            // ========================================
+
+            else {
+
+                alert(
+                    data.message ||
+                    "Unable to save episode."
+                );
+
+            }
+
+
+        } catch (error) {
+
+            console.error(
+                "Attack log error:",
+                error
+            );
+
+
+            alert(
+                "Unable to connect to the Respira server."
+            );
+
+        }
+
+    }
+);
+
+
+// ========================================
+// LOAD ATTACK LOGS FROM MONGODB
+// ========================================
+
+async function loadAttackLogs() {
+
+    const savedUser =
+        localStorage.getItem(
+            "respiraUser"
+        );
+
+
+    // Check login
+
+    if (!savedUser) {
+
+        alert(
+            "Please login again."
+        );
+
+
+        window.location.href =
+            "index.html";
+
+
+        return;
+
+    }
+
+
+    const user =
+        JSON.parse(savedUser);
+
+
+    try {
+
+        const response =
+            await fetch(
+                "http://localhost:5000/api/attack-logs/" +
+                encodeURIComponent(
+                    user.email
+                )
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!data.success) {
+
+            alert(
+                data.message
+            );
+
+
+            return;
+
+        }
+
+
+        displayAttackLogs(
+            data.attackLogs
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "Error loading attack logs:",
+            error
+        );
+
+
+        alert(
+            "Unable to load your attack logs."
+        );
+
+    }
+
+}
+
+
+// ========================================
+// DISPLAY ATTACK LOGS
+// ========================================
+
+function displayAttackLogs(
+    attackLogs
+) {
+
+    // Save currently loaded episodes
+    // so Edit can find them
+
+    window.currentAttackLogs =
+        attackLogs;
+
+
+    // ========================================
+    // SUMMARY CARDS
+    // ========================================
+
+    const totalEpisodes =
+        document.getElementById(
+            "totalEpisodes"
+        );
+
+
+    const thisMonthEpisodes =
+        document.getElementById(
+            "thisMonthEpisodes"
+        );
+
+
+    const lastEpisode =
+        document.getElementById(
+            "lastEpisode"
+        );
+
+
+    // Total episodes
+
+    if (totalEpisodes) {
+
+        totalEpisodes.textContent =
+            attackLogs.length;
+
+    }
+
+
+    // ========================================
+    // THIS MONTH
+    // ========================================
+
+    const now =
+        new Date();
+
+
+    const currentMonth =
+        now.getMonth();
+
+
+    const currentYear =
+        now.getFullYear();
+
+
+    const monthlyEpisodes =
+        attackLogs.filter(
+            function (log) {
+
+                const logDate =
+                    new Date(
+                        log.date
+                    );
+
+
+                return (
+
+                    logDate.getMonth() ===
+                        currentMonth &&
+
+                    logDate.getFullYear() ===
+                        currentYear
+
+                );
+
+            }
+        );
+
+
+    if (thisMonthEpisodes) {
+
+        thisMonthEpisodes.textContent =
+            monthlyEpisodes.length;
+
+    }
+
+
+    // ========================================
+    // LAST EPISODE
+    // ========================================
+
+    if (
+        lastEpisode &&
+        attackLogs.length > 0
+    ) {
+
+        const latestDate =
+            new Date(
+                attackLogs[0].date
+            );
+
+
+        lastEpisode.textContent =
+            latestDate.toLocaleDateString(
+                "en-US",
+                {
+                    day: "2-digit",
+                    month: "short"
+                }
+            );
+
+    }
+
+
+    // ========================================
+    // EPISODE LIST
+    // ========================================
+
+    const episodeList =
+        document.getElementById(
+            "episodeList"
+        );
+
+
+    if (!episodeList) {
+
+        console.error(
+            "episodeList element not found."
+        );
+
+
+        return;
+
+    }
+
+
+    // Remove sample episodes
+
+    episodeList.innerHTML =
+        "";
+
+
+    // ========================================
+    // NO EPISODES
+    // ========================================
+
+    if (attackLogs.length === 0) {
+
+        episodeList.innerHTML = `
+
+            <div class="episode-row">
+
+                <div class="episode-info">
+
+                    <h3>
+                        No episodes recorded yet
+                    </h3>
+
+                    <p>
+                        Your recorded episodes
+                        will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+        `;
+
+
+        return;
+
+    }
+
+
+    // ========================================
+    // DISPLAY EPISODES
+    // ========================================
+
+    attackLogs.forEach(
+        function (log) {
+
+            const date =
+                new Date(
+                    log.date
+                );
+
+
+            const day =
+                String(
+                    date.getDate()
+                ).padStart(
+                    2,
+                    "0"
+                );
+
+
+            const month =
+                date.toLocaleString(
+                    "en-US",
+                    {
+                        month: "short"
+                    }
+                ).toUpperCase();
+
+
+            const time =
+                date.toLocaleTimeString(
+                    "en-US",
+                    {
+                        hour: "numeric",
+                        minute: "2-digit",
+                        second: "2-digit"
+                    }
+                );
+
+
+            // ========================================
+            // DEFAULT VALUES
+            // ========================================
+
+            let duration =
+                "Not specified";
+
+
+            let trigger =
+                "Not specified";
+
+
+            // ========================================
+            // GET DURATION AND TRIGGER
+            // ========================================
+
+            if (log.notes) {
+
+                const durationMatch =
+                    log.notes.match(
+                        /Duration:\s*([^;]+)/
+                    );
+
+
+                const triggerMatch =
+                    log.notes.match(
+                        /Trigger:\s*(.+)/
+                    );
+
+
+                if (durationMatch) {
+
+                    duration =
+                        durationMatch[1].trim();
+
+                }
+
+
+                if (triggerMatch) {
+
+                    trigger =
+                        triggerMatch[1].trim();
+
+                }
+
+            }
+
+
+            const severity =
+                log.severity ||
+                "Mild";
+
+
+            // ========================================
+            // CREATE EPISODE ROW
+            // ========================================
+
+            const episodeRow =
+                document.createElement(
+                    "div"
+                );
+
+
+            episodeRow.className =
+                "episode-row";
+
+
+            episodeRow.innerHTML = `
+
+                <div class="episode-date">
+
+                    <strong>
+                        ${day}
+                    </strong>
+
+                    <span>
+                        ${month}
+                    </span>
+
+                </div>
+
+
+                <div class="episode-info">
+
+                    <h3>
+                        ${
+                            log.symptoms ||
+                            "Breathing episode"
+                        }
+                    </h3>
+
+                    <p>
+                        ${time}
+                        &nbsp; • &nbsp;
+                        ${duration}
+                    </p>
+
+                </div>
+
+
+                <div class="episode-trigger">
+
+                    <span>
+                        Trigger
+                    </span>
+
+                    <strong>
+                        ${trigger}
+                    </strong>
+
+                </div>
+
+
+                <span class="severity">
+                    ${severity}
+                </span>
+
+
+                <button
+                    type="button"
+                    class="delete-episode-button"
+                    data-id="${log._id}">
+                    Delete
+                </button>
+
+
+                <button
+                    type="button"
+                    class="edit-episode-button"
+                    data-id="${log._id}">
+                    Edit
+                </button>
+
+            `;
+
+
+            episodeList.appendChild(
+                episodeRow
+            );
+
+        }
+    );
+
+}
+
+
+// ========================================
+// DELETE ATTACK EPISODE
+// ========================================
+
+document.addEventListener(
+    "click",
+    async function (event) {
+
+        if (
+            !event.target.classList.contains(
+                "delete-episode-button"
+            )
+        ) {
+
+            return;
+
+        }
+
+
+        const episodeId =
+            event.target.dataset.id;
+
+
+        if (!episodeId) {
+
+            alert(
+                "Unable to identify this episode."
+            );
+
+
+            return;
+
+        }
+
+
+        const confirmDelete =
+            confirm(
+                "Are you sure you want to delete this episode?"
+            );
+
+
+        if (!confirmDelete) {
+
+            return;
+
+        }
+
+
+        try {
+
+            const response =
+                await fetch(
+                    "http://localhost:5000/api/attack-logs/" +
+                    episodeId,
+                    {
+                        method: "DELETE"
+                    }
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if (data.success) {
+
+                alert(
+                    "Episode deleted successfully."
+                );
+
+
+                loadAttackLogs();
+
+            }
+
+
+            else {
+
+                alert(
+                    data.message ||
+                    "Unable to delete episode."
+                );
+
+            }
+
+
+        } catch (error) {
+
+            console.error(
+                "Delete episode error:",
+                error
+            );
+
+
+            alert(
+                "Unable to connect to the Respira server."
+            );
+
+        }
+
+    }
+);
+
+
+// ========================================
+// EDIT ATTACK EPISODE
+// ========================================
+
+document.addEventListener(
+    "click",
+    function (event) {
+
+        if (
+            !event.target.classList.contains(
+                "edit-episode-button"
+            )
+        ) {
+
+            return;
+
+        }
+
+
+        const episodeId =
+            event.target.dataset.id;
+
+
+        // Find selected episode
+
+        const episode =
+            window.currentAttackLogs.find(
+                function (log) {
+
+                    return (
+                        log._id ===
+                        episodeId
+                    );
+
+                }
+            );
+
+
+        if (!episode) {
+
+            alert(
+                "Unable to find this episode."
+            );
+
+
+            return;
+
+        }
+
+
+        // Enter edit mode
+
+        editingEpisodeId =
+            episodeId;
+
+
+        // ========================================
+        // DATE AND TIME
+        // ========================================
+
+        const dateTime =
+            episode.date.split(
+                "T"
+            );
+
+
+        document.getElementById(
+            "episodeDate"
+        ).value =
+            dateTime[0];
+
+
+        document.getElementById(
+            "episodeTime"
+        ).value =
+            dateTime[1]
+                ? dateTime[1].substring(
+                    0,
+                    8
+                )
+                : "";
+
+
+        // ========================================
+        // SYMPTOMS
+        // ========================================
+
+        document.getElementById(
+            "symptoms"
+        ).value =
+            episode.symptoms ||
+            "";
+
+
+        // ========================================
+        // SEVERITY
+        // ========================================
+
+        document.getElementById(
+            "severity"
+        ).value =
+            episode.severity ||
+            "Mild";
+
+
+        // ========================================
+        // DURATION AND TRIGGER
+        // ========================================
+
+        let duration =
+            "";
+
+
+        let trigger =
+            "";
+
+
+        if (episode.notes) {
+
+            const durationMatch =
+                episode.notes.match(
+                    /Duration:\s*([^;]+)/
+                );
+
+
+            const triggerMatch =
+                episode.notes.match(
+                    /Trigger:\s*(.+)/
+                );
+
+
+            if (durationMatch) {
+
+                duration =
+                    durationMatch[1].trim();
+
+            }
+
+
+            if (triggerMatch) {
+
+                trigger =
+                    triggerMatch[1].trim();
+
+            }
+
+        }
+
+
+        document.getElementById(
+            "duration"
+        ).value =
+            duration;
+
+
+        document.getElementById(
+            "trigger"
+        ).value =
+            trigger;
+
+
+        // ========================================
+        // CHANGE BUTTON
+        // ========================================
+
+        episodeSubmitButton.textContent =
+            "Update Episode";
+
+
+        // ========================================
+        // SCROLL TO FORM
+        // ========================================
+
+        episodeFormCard.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }
+);
+
+
+// ========================================
+// LOAD ATTACK LOGS WHEN PAGE OPENS
+// ========================================
+
+loadAttackLogs();
+
+</script>
+</body>
+
+</html>

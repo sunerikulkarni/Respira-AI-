@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <title>Respira - Emergency SOS</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <div class="sidebar-brand">
+
+                <img src="images/respira-logo.png" alt="Respira Logo">
+
+                <span>Respira</span>
+
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="7" height="7" rx="1"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1"/>
+                            <rect x="14" y="14" width="7" height="7" rx="1"/>
+                        </svg>
+                    </span>
+                    Dashboard
+                </a>
+
+                <a href="attack-logs.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16v16H4z"/>
+                            <path d="M8 2v4"/>
+                            <path d="M16 2v4"/>
+                            <path d="M4 10h16"/>
+                        </svg>
+                    </span>
+                    Attack Logs
+                </a>
+
+                <a href="medications.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 3h12"/>
+                            <path d="M7 3v4"/>
+                            <path d="M17 3v4"/>
+                            <path d="M5 7h14v14H5z"/>
+                            <path d="M8 12h8"/>
+                            <path d="M8 16h5"/>
+                        </svg>
+                    </span>
+                    Medications
+                </a>
+
+                <a href="air-quality.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3v18"/>
+                            <path d="M3 12h18"/>
+                            <circle cx="12" cy="12" r="9"/>
+                        </svg>
+                    </span>
+                    Air Quality
+                </a>
+
+                <a href="calendar.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="4" y="5" width="16" height="16" rx="2"/>
+                            <path d="M8 3v4"/>
+                            <path d="M16 3v4"/>
+                            <path d="M4 10h16"/>
+                        </svg>
+                    </span>
+                    Calendar
+                </a>
+
+                <a href="analytics.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 19V5"/>
+                            <path d="M4 19h17"/>
+                            <path d="M7 16l4-5 3 2 5-7"/>
+                        </svg>
+                    </span>
+                    Analytics
+                </a>
+
+                <a href="ai-assistant.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3a8 8 0 0 0-8 8"/>
+                            <path d="M12 3a8 8 0 0 1 8 8"/>
+                            <path d="M4 11c0 4 2 6 4 7"/>
+                            <path d="M20 11c0 4-2 6-4 7"/>
+                            <path d="M8 21h8"/>
+                            <path d="M9 18h6"/>
+                        </svg>
+                    </span>
+                    AI Assistant
+                </a>
+
+                <a href="emergency.html" class="nav-item active emergency-nav">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3l9 18H3L12 3z"/>
+                            <path d="M12 9v5"/>
+                            <circle cx="12" cy="17" r="0.7"/>
+                        </svg>
+                    </span>
+                    Emergency SOS
+                </a>
+
+            </nav>
+
+        </div>
+
+        <div class="sidebar-bottom">
+
+            <a href="profile.html" class="nav-item">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="8" r="4"/>
+                        <path d="M4 21c0-4 3-7 8-7s8 3 8 7"/>
+                    </svg>
+                </span>
+                Profile
+            </a>
+
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 17l5-5-5-5"/>
+                        <path d="M15 12H3"/>
+                        <path d="M21 4v16"/>
+                    </svg>
+                </span>
+                Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <p class="welcome-label">
+                    EMERGENCY SUPPORT
+                </p>
+
+                <h1>
+                    Emergency SOS
+                </h1>
+
+                <p class="header-subtitle">
+                    Quick access to emergency assistance and saved contacts.
+                </p>
+
+            </div>
+
+            <div class="header-actions">
+
+                <button
+                    class="notification-button"
+                    aria-label="Notifications">
+
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+                        <path d="M10 21h4"/>
+                    </svg>
+
+                </button>
+
+                <button class="profile-button">
+                    U
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- EMERGENCY ALERT -->
+
+        <section class="emergency-alert-card">
+
+            <div class="emergency-alert-icon">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 3l9 18H3L12 3z"/>
+                    <path d="M12 9v5"/>
+                    <circle cx="12" cy="17" r="0.7"/>
+                </svg>
+
+            </div>
+
+            <div class="emergency-alert-content">
+
+                <h2>
+                    Having severe breathing difficulty?
+                </h2>
+
+                <p>
+                    If you are experiencing severe or rapidly worsening
+                    breathing difficulty, seek emergency medical assistance
+                    immediately.
+                </p>
+
+            </div>
+
+            <button
+                class="sos-button"
+                id="sosButton">
+
+                Emergency SOS
+
+            </button>
+
+        </section>
+
+
+        <!-- QUICK ACTIONS -->
+
+        <section class="emergency-grid">
+
+            <div class="dashboard-card emergency-action-card">
+
+                <div class="emergency-card-icon">
+
+                    <svg viewBox="0 0 24 24">
+                        <path d="M22 16.9v3a2 2 0 0 1-2.2 2
+                                 A19.8 19.8 0 0 1 3.1 5.2
+                                 A2 2 0 0 1 5.1 3h3
+                                 a2 2 0 0 1 2 1.7
+                                 c.1 1 .4 2 .7 2.9
+                                 a2 2 0 0 1-.5 2.1
+                                 L9 11
+                                 a16 16 0 0 0 4 4
+                                 l1.3-1.3
+                                 a2 2 0 0 1 2.1-.5
+                                 c.9.3 1.9.6 2.9.7
+                                 A2 2 0 0 1 22 16.9z"/>
+                    </svg>
+
+                </div>
+
+                <h2>
+                    Emergency Services
+                </h2>
+
+                <p>
+                    Contact your local emergency medical service immediately
+                    when urgent medical attention is required.
+                </p>
+
+                <button
+                    class="emergency-outline-button"
+                    id="callEmergencyButton">
+
+                    Call Emergency Services
+
+                </button>
+
+            </div>
+
+
+                        <!-- ========================================
+     EMERGENCY CONTACT
+======================================== -->
+
+<div class="dashboard-card emergency-action-card emergency-contact-card">
+
+    <div class="emergency-card-icon">
+        <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="8" r="4"
+                stroke="currentColor"
+                stroke-width="1.8"/>
+            <path d="M4 21c0-4 3-7 8-7s8 3 8 7"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"/>
+        </svg>
+    </div>
+
+    <h2>Emergency Contact</h2>
+
+    <p>
+        Contact your saved emergency contact when you need
+        someone you trust to assist you.
+    </p>
+
+    <div id="emergencyContactDetails">
+
+        <!-- Name -->
+        <div class="contact-detail">
+
+            <div class="contact-label">
+                <span class="contact-detail-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="8" r="3.5"
+                            stroke="currentColor"
+                            stroke-width="1.8"/>
+                        <path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"/>
+                    </svg>
+                </span>
+
+                <span>Name</span>
+            </div>
+
+            <strong id="contactName">
+                Not configured
+            </strong>
+
+        </div>
+
+
+        <!-- Primary Number -->
+        <div class="contact-detail">
+
+            <div class="contact-label">
+                <span class="contact-detail-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M6.5 3.5h3l1.5 4-2 1.5
+                                 c1 2.2 2.8 4 5 5l1.5-2
+                                 4 1.5v3c0 .8-.7 1.5-1.5 1.5
+                                 C10.5 18 6 13.5 6 8
+                                 c0-.8.7-1.5 1.5-1.5"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"/>
+                    </svg>
+                </span>
+
+                <span>Primary Number</span>
+            </div>
+
+            <strong id="contactPhone">
+                Not configured
+            </strong>
+
+        </div>
+
+
+        <!-- Alternate Number -->
+        <div class="contact-detail">
+
+            <div class="contact-label">
+                <span class="contact-detail-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <rect x="6" y="3" width="12" height="18"
+                            rx="2"
+                            stroke="currentColor"
+                            stroke-width="1.8"/>
+                        <circle cx="12" cy="17.5" r="1"
+                            fill="currentColor"/>
+                    </svg>
+                </span>
+
+                <span>Alternate Number</span>
+            </div>
+
+            <strong id="alternatePhone">
+                Not added
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- Contact Actions -->
+    <div class="contact-actions">
+
+        <button
+            class="emergency-primary-button"
+            id="contactButton">
+            Contact
+        </button>
+
+        <button
+            class="emergency-outline-button"
+            id="updateContactButton">
+            Update
+        </button>
+
+        <button
+            class="emergency-outline-button"
+            id="deleteContactButton">
+            Delete
+        </button>
+
+    </div>
+
+</div>
+
+        </section>
+
+
+        <!-- CURRENT STATUS -->
+
+        <section class="dashboard-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Emergency Status
+                    </h2>
+
+                    <p>
+                        Current information available to Respira.
+                    </p>
+
+                </div>
+
+                <span class="status-badge">
+                    Ready
+                </span>
+
+            </div>
+
+
+            <div class="emergency-status-grid">
+
+                <div class="status-item">
+
+                    <span>
+                        Location
+                    </span>
+
+                    <strong id="locationStatus">
+                        Not shared
+                    </strong>
+
+                </div>
+
+
+                <div class="status-item">
+
+                    <span>
+                        Emergency Contact
+                    </span>
+
+                    <strong>
+                        Not configured
+                    </strong>
+
+                </div>
+
+
+                <div class="status-item">
+
+                    <span>
+                        SOS Service
+                    </span>
+
+                    <strong>
+                        Available
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- EMERGENCY INFORMATION -->
+
+        <section class="dashboard-card emergency-information">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        During a Severe Episode
+                    </h2>
+
+                    <p>
+                        General emergency guidance
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="guidance-list">
+
+                <div class="guidance-item">
+
+                    <span class="guidance-number">
+                        01
+                    </span>
+
+                    <p>
+                        Move to a safe location and remain as calm as possible.
+                    </p>
+
+                </div>
+
+
+                <div class="guidance-item">
+
+                    <span class="guidance-number">
+                        02
+                    </span>
+
+                    <p>
+                        Follow the emergency medication plan provided by
+                        your healthcare professional.
+                    </p>
+
+                </div>
+
+
+                <div class="guidance-item">
+
+                    <span class="guidance-number">
+                        03
+                    </span>
+
+                    <p>
+                        Contact emergency medical services if symptoms are
+                        severe or continue to worsen.
+                    </p>
+
+                </div>
+
+
+                <div class="guidance-item">
+
+                    <span class="guidance-number">
+                        04
+                    </span>
+
+                    <p>
+                        If possible, inform a trusted emergency contact
+                        about your situation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DISCLAIMER -->
+
+        <section class="dashboard-card emergency-disclaimer">
+
+            <div class="disclaimer-icon">
+
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M12 10v6"/>
+                    <circle cx="12" cy="7" r="0.7"/>
+                </svg>
+
+            </div>
+
+            <p>
+                Respira's emergency features are intended to assist with
+                communication and access to support. They do not replace
+                emergency medical services or professional medical care.
+            </p>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ========================================
+     EMERGENCY SOS MODAL
+======================================== -->
+
+<div
+    class="sos-modal"
+    id="sosModal">
+
+    <div class="sos-modal-content">
+
+        <!-- Header -->
+        <div class="sos-modal-header">
+
+            <div class="sos-modal-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M12 3l9 18H3L12 3z"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linejoin="round"/>
+
+                    <path
+                        d="M12 9v5"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"/>
+
+                    <circle
+                        cx="12"
+                        cy="17"
+                        r="0.8"
+                        fill="currentColor"/>
+                </svg>
+            </div>
+
+            <div>
+                <h2>Emergency SOS</h2>
+
+                <p>
+                    Choose an emergency action if you need
+                    immediate assistance.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- Emergency 112 -->
+        <div class="sos-emergency-action">
+
+            <div class="sos-action-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M6.5 3.5h3l1.5 4-2 1.5
+                           c1 2.2 2.8 4 5 5l1.5-2
+                           4 1.5v3c0 .8-.7 1.5-1.5 1.5
+                           C10.5 18 6 13.5 6 8
+                           c0-.8.7-1.5 1.5-1.5"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                </svg>
+            </div>
+
+            <div class="sos-action-text">
+
+                <strong>Emergency Medical Assistance</strong>
+
+                <span>
+                    Call India's emergency number
+                </span>
+
+            </div>
+
+            <button
+                class="sos-call-button"
+                id="sosCall112Button">
+
+                Call 112
+
+            </button>
+
+        </div>
+
+
+        <!-- Location -->
+        <div class="sos-info-section">
+
+            <div class="sos-section-heading">
+
+                <div class="sos-small-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+
+                        <path
+                            d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"
+                            stroke="currentColor"
+                            stroke-width="1.7"/>
+
+                        <circle
+                            cx="12"
+                            cy="9"
+                            r="2.2"
+                            stroke="currentColor"
+                            stroke-width="1.7"/>
+
+                    </svg>
+                </div>
+
+                <div>
+                    <strong>Your Location</strong>
+
+                    <span>
+                        Location access helps provide your current position.
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="sos-location-status">
+
+                <span id="sosModalLocationStatus">
+                    Location not shared
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Emergency Contact -->
+<div class="sos-info-section">
+
+    <div class="sos-section-heading">
+
+        <div class="sos-small-icon">
+            <svg viewBox="0 0 24 24" fill="none">
+
+                <circle
+                    cx="12"
+                    cy="8"
+                    r="3.5"
+                    stroke="currentColor"
+                    stroke-width="1.7"/>
+
+                <path
+                    d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"/>
+
+            </svg>
+        </div>
+
+        <div>
+
+            <strong>Emergency Contact</strong>
+
+            <span>
+                Your saved contact can be reached for assistance.
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="sos-contact-preview"
+        id="sosContactPreview">
+
+        <div class="sos-contact-empty">
+
+            <span>
+                No emergency contact configured
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+        <!-- During an Attack -->
+        <div class="sos-guidance-box">
+
+            <div class="sos-guidance-title">
+
+                <svg viewBox="0 0 24 24" fill="none">
+
+                    <path
+                        d="M12 3l9 18H3L12 3z"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linejoin="round"/>
+
+                    <path
+                        d="M12 9v5"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linecap="round"/>
+
+                    <circle
+                        cx="12"
+                        cy="17"
+                        r="0.8"
+                        fill="currentColor"/>
+
+                </svg>
+
+                <strong>During an Attack</strong>
+
+            </div>
+
+            <div class="sos-guidance-list">
+
+                <div>
+                    <span>01</span>
+                    <p>
+                        Move to a safe location and remain as calm as possible.
+                    </p>
+                </div>
+
+                <div>
+                    <span>02</span>
+                    <p>
+                        Follow the emergency medication plan provided by
+                        your healthcare professional.
+                    </p>
+                </div>
+
+                <div>
+                    <span>03</span>
+                    <p>
+                        Contact emergency medical services if symptoms are
+                        severe or continue to worsen.
+                    </p>
+                </div>
+
+                <div>
+                    <span>04</span>
+                    <p>
+                        If possible, inform your trusted emergency contact.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Buttons -->
+        <div class="sos-modal-buttons">
+
+            <button
+                class="cancel-sos"
+                id="cancelSos">
+
+                Cancel
+
+            </button>
+
+            <button
+                class="confirm-sos"
+                id="confirmSos">
+
+                Share Location
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const sosButton =
+    document.getElementById("sosButton");
+
+const sosModal =
+    document.getElementById("sosModal");
+
+const cancelSos =
+    document.getElementById("cancelSos");
+
+const confirmSos =
+    document.getElementById("confirmSos");
+
+const callEmergencyButton =
+    document.getElementById("callEmergencyButton");
+
+const contactButton =
+    document.getElementById("contactButton");
+
+
+sosButton.addEventListener(
+    "click",
+    async function () {
+
+        sosModal.classList.add("show");
+
+        const sosModalContent =
+            document.querySelector(".sos-modal-content");
+
+        if (sosModalContent) {
+            sosModalContent.scrollTop = 0;
+        }
+
+        await loadSosEmergencyContact();
+
+    }
+);
+
+
+cancelSos.addEventListener(
+    "click",
+    function () {
+
+        sosModal.classList.remove("show");
+
+    }
+);
+
+
+confirmSos.addEventListener(
+    "click",
+    function () {
+
+        sosModal.classList.remove("show");
+
+        if (!navigator.geolocation) {
+
+            alert(
+                "Location services are not available on this device."
+            );
+
+            return;
+        }
+
+        navigator.geolocation.getCurrentPosition(
+
+            function (position) {
+
+                const latitude =
+                    position.coords.latitude;
+
+                const longitude =
+                    position.coords.longitude;
+
+                // Update Emergency Status
+                const locationStatus =
+                    document.querySelector(
+                        ".status-item:first-child strong"
+                    );
+
+                if (locationStatus) {
+                    locationStatus.textContent =
+                        "Location shared";
+                }
+                const sosModalLocationStatus =
+                    document.getElementById(
+                        "sosModalLocationStatus"
+                    );
+
+                if (sosModalLocationStatus) {
+                    sosModalLocationStatus.textContent =
+                        "Location shared";
+                }
+
+                alert(
+                    "Emergency assistance process initiated.\n\n" +
+                    "Your current location has been obtained."
+                );
+
+                console.log(
+                    "SOS Location:",
+                    latitude,
+                    longitude
+                );
+
+            },
+
+            function (error) {
+
+                console.error(
+                    "Location error:",
+                    error
+                );
+
+                alert(
+                    "Emergency assistance process initiated,\n" +
+                    "but your location could not be obtained."
+                );
+
+            },
+
+            {
+                enableHighAccuracy: true,
+                timeout: 10000,
+                maximumAge: 0
+            }
+
+        );
+
+    }
+);
+
+
+callEmergencyButton.addEventListener(
+    "click",
+    function () {
+
+        const confirmCall =
+            confirm(
+                "Do you want to open the phone dialer for emergency services?"
+            );
+
+        if (!confirmCall) {
+            return;
+        }
+
+        window.location.href =
+            "tel:112";
+
+    }
+);
+
+
+// ========================================
+// EMERGENCY CONTACT ACTIONS
+// ========================================
+
+const updateContactButton =
+    document.getElementById("updateContactButton");
+
+const deleteContactButton =
+    document.getElementById("deleteContactButton");
+
+
+// ========================================
+// CONTACT SAVED PERSON
+// ========================================
+
+contactButton.addEventListener(
+    "click",
+    async function () {
+
+        try {
+
+            const storedUser =
+                localStorage.getItem("respiraUser");
+
+            if (!storedUser) {
+                alert("Please login first.");
+                return;
+            }
+
+            const user =
+                JSON.parse(storedUser);
+
+            const response =
+                await fetch(
+                    `http://localhost:5000/api/emergency-contact/${encodeURIComponent(user.email)}`
+                );
+
+            const data =
+                await response.json();
+
+            if (!data.success || !data.contact) {
+
+                alert(
+                    "No emergency contact is configured yet.\n\n" +
+                    "Please use the Update button to add one."
+                );
+
+                return;
+            }
+
+            const contact =
+                data.contact;
+
+            let phone = contact.phone;
+
+            if (contact.alternatePhone) {
+
+                const choice =
+                    prompt(
+                        "Which number do you want to contact?\n\n" +
+                        "1 - Primary: " + contact.phone + "\n" +
+                        "2 - Alternate: " + contact.alternatePhone
+                    );
+
+                if (choice === "2") {
+                    phone = contact.alternatePhone;
+                } else if (choice !== "1") {
+                    return;
+                }
+
+            }
+
+            const callNow =
+                confirm(
+                    `Call ${contact.name}?\n\n` +
+                    `Number: ${phone}`
+                );
+
+            if (!callNow) {
+                return;
+            }
+
+            window.location.href =
+                "tel:" + phone;
+
+        } catch (error) {
+
+            console.error(
+                "Contact error:",
+                error
+            );
+
+            alert(
+                "Unable to contact the emergency person."
+            );
+
+        }
+
+    }
+);
+
+
+// ========================================
+// UPDATE EMERGENCY CONTACT
+// ========================================
+
+updateContactButton.addEventListener(
+    "click",
+    async function () {
+
+        try {
+
+            const storedUser =
+                localStorage.getItem("respiraUser");
+
+            if (!storedUser) {
+                alert("Please login first.");
+                return;
+            }
+
+            const user =
+                JSON.parse(storedUser);
+
+            const response =
+                await fetch(
+                    `http://localhost:5000/api/emergency-contact/${encodeURIComponent(user.email)}`
+                );
+
+            const data =
+                await response.json();
+
+            const existingContact =
+                data.success && data.contact
+                    ? data.contact
+                    : null;
+
+
+            const name =
+                prompt(
+                    "Enter emergency contact name:",
+                    existingContact
+                        ? existingContact.name
+                        : ""
+                );
+
+            if (!name) {
+                return;
+            }
+
+
+            const phone =
+                prompt(
+                    "Enter primary phone number:",
+                    existingContact
+                        ? existingContact.phone
+                        : ""
+                );
+
+            if (!phone) {
+                return;
+            }
+
+
+            const alternatePhone =
+                prompt(
+                    "Enter alternate phone number (optional):",
+                    existingContact
+                        ? existingContact.alternatePhone || ""
+                        : ""
+                );
+
+
+            const saveResponse =
+                await fetch(
+                    "http://localhost:5000/api/emergency-contact",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify({
+
+                            email: user.email,
+
+                            name: name,
+
+                            phone: phone,
+
+                            alternatePhone:
+                                alternatePhone || ""
+
+                        })
+                    }
+                );
+
+
+            const saveData =
+                await saveResponse.json();
+
+
+            if (!saveData.success) {
+
+                alert(
+                    "Could not save emergency contact."
+                );
+
+                return;
+            }
+
+
+            // Update contact card
+            document.getElementById(
+                "contactName"
+            ).textContent = name;
+
+            document.getElementById(
+                "contactPhone"
+            ).textContent = phone;
+
+            document.getElementById(
+                "alternatePhone"
+            ).textContent =
+                alternatePhone || "Not added";
+
+
+            // Update Emergency Status
+            const contactStatus =
+                document.querySelector(
+                    ".status-item:nth-child(2) strong"
+                );
+
+            if (contactStatus) {
+                contactStatus.textContent = name;
+            }
+
+
+            alert(
+                "Emergency contact saved successfully."
+            );
+
+        } catch (error) {
+
+            console.error(
+                "Update contact error:",
+                error
+            );
+
+            alert(
+                "Something went wrong while saving the emergency contact."
+            );
+
+        }
+
+    }
+);
+
+
+// ========================================
+// DELETE EMERGENCY CONTACT
+// ========================================
+
+deleteContactButton.addEventListener(
+    "click",
+    async function () {
+
+        try {
+
+            const storedUser =
+                localStorage.getItem("respiraUser");
+
+            if (!storedUser) {
+                alert("Please login first.");
+                return;
+            }
+
+            const user =
+                JSON.parse(storedUser);
+
+
+            const response =
+                await fetch(
+                    `http://localhost:5000/api/emergency-contact/${encodeURIComponent(user.email)}`
+                );
+
+            const data =
+                await response.json();
+
+
+            if (!data.success || !data.contact) {
+
+                alert(
+                    "No emergency contact is currently saved."
+                );
+
+                return;
+            }
+
+
+            const contact =
+                data.contact;
+
+
+            const confirmDelete =
+                confirm(
+                    `Delete emergency contact "${contact.name}"?`
+                );
+
+
+            if (!confirmDelete) {
+                return;
+            }
+
+
+            const deleteResponse =
+                await fetch(
+                    `http://localhost:5000/api/emergency-contact/${encodeURIComponent(user.email)}`,
+                    {
+                        method: "DELETE"
+                    }
+                );
+
+
+            const deleteData =
+                await deleteResponse.json();
+
+
+            if (!deleteData.success) {
+
+                alert(
+                    "Could not delete emergency contact."
+                );
+
+                return;
+            }
+
+
+            // Reset contact card
+            document.getElementById(
+                "contactName"
+            ).textContent = "Not configured";
+
+            document.getElementById(
+                "contactPhone"
+            ).textContent = "Not configured";
+
+            document.getElementById(
+                "alternatePhone"
+            ).textContent = "Not added";
+
+
+            // Reset Emergency Status
+            const contactStatus =
+                document.querySelector(
+                    ".status-item:nth-child(2) strong"
+                );
+
+            if (contactStatus) {
+                contactStatus.textContent =
+                    "Not configured";
+            }
+
+
+            alert(
+                "Emergency contact deleted successfully."
+            );
+
+        } catch (error) {
+
+            console.error(
+                "Delete contact error:",
+                error
+            );
+
+            alert(
+                "Something went wrong while deleting the emergency contact."
+            );
+
+        }
+
+    }
+);
+// ========================================
+// LOAD SAVED EMERGENCY CONTACT
+// ========================================
+
+async function loadEmergencyContact() {
+
+    try {
+
+        const savedUser =
+            localStorage.getItem("respiraUser");
+
+        if (!savedUser) {
+            return;
+        }
+
+        const user =
+            JSON.parse(savedUser);
+
+        const response =
+            await fetch(
+                `http://localhost:5000/api/emergency-contact/${encodeURIComponent(user.email)}`
+            );
+
+        const data =
+            await response.json();
+
+        if (
+            data.success &&
+            data.contact
+        ) {
+
+            const contact =
+                data.contact;
+
+            document.getElementById(
+                "contactName"
+            ).textContent =
+                contact.name;
+
+            document.getElementById(
+                "contactPhone"
+            ).textContent =
+                contact.phone;
+
+            document.getElementById(
+                "alternatePhone"
+            ).textContent =
+                contact.alternatePhone ||
+                "Not added";
+
+            const contactStatus =
+                document.querySelector(
+                    ".status-item:nth-child(2) strong"
+                );
+
+            if (contactStatus) {
+
+                contactStatus.textContent =
+                    contact.name;
+
+            }
+
+        }
+
+    } catch (error) {
+
+        console.error(
+            "Unable to load emergency contact:",
+            error
+        );
+
+    }
+
+}
+// ========================================
+// LOAD CONTACT INTO SOS MODAL
+// ========================================
+
+async function loadSosEmergencyContact() {
+
+    const preview =
+        document.getElementById(
+            "sosContactPreview"
+        );
+
+    if (!preview) {
+        return;
+    }
+
+
+    try {
+
+        const savedUser =
+            localStorage.getItem(
+                "respiraUser"
+            );
+
+
+        if (!savedUser) {
+
+            preview.innerHTML =
+                `<div class="sos-contact-empty">
+                    <span>
+                        Please login to view your emergency contact.
+                    </span>
+                </div>`;
+
+            return;
+        }
+
+
+        const user =
+            JSON.parse(savedUser);
+
+
+        const response =
+            await fetch(
+                `http://localhost:5000/api/emergency-contact/${encodeURIComponent(user.email)}`
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            data.success &&
+            data.contact
+        ) {
+
+            const contact =
+                data.contact;
+
+
+            preview.innerHTML = `
+
+                <div class="sos-contact-saved">
+
+                    <div class="sos-contact-info">
+
+                        <strong>
+                            ${contact.name}
+                        </strong>
+
+                        <span>
+                            ${contact.phone}
+                        </span>
+
+                        ${
+                            contact.alternatePhone
+                                ? `<span>
+                                      Alternate:
+                                      ${contact.alternatePhone}
+                                   </span>`
+                                : ""
+                        }
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="sos-contact-call"
+                        id="sosContactCallButton">
+
+                        Call
+
+                    </button>
+
+                </div>
+
+            `;
+
+
+            const callButton =
+                document.getElementById(
+                    "sosContactCallButton"
+                );
+
+
+            if (callButton) {
+
+                callButton.addEventListener(
+                    "click",
+                    function () {
+
+                        const confirmed =
+                            confirm(
+                                `Call ${contact.name}?\n\n` +
+                                `Number: ${contact.phone}`
+                            );
+
+
+                        if (!confirmed) {
+                            return;
+                        }
+
+
+                        window.location.href =
+                            "tel:" + contact.phone;
+
+                    }
+                );
+
+            }
+
+        } else {
+
+            preview.innerHTML =
+                `<div class="sos-contact-empty">
+                    <span>
+                        No emergency contact configured
+                    </span>
+                </div>`;
+
+        }
+
+
+    } catch (error) {
+
+        console.error(
+            "Unable to load SOS emergency contact:",
+            error
+        );
+
+
+        preview.innerHTML =
+            `<div class="sos-contact-empty">
+                <span>
+                    Unable to load emergency contact.
+                </span>
+            </div>`;
+
+    }
+
+}
+// Load saved emergency contact when page opens
+loadEmergencyContact();
+</script>
+
+</body>
+
+</html>
