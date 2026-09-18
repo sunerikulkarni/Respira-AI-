@@ -6543,3 +6543,222 @@ body {
 .assistant-card .chat-messages {
     min-height: 180px;
 }
+/* =========================================
+   NOTIFICATION PANEL - FINAL STYLE
+   ========================================= */
+
+.notification-panel {
+    position: absolute;
+    top: 72px;
+    right: 0;
+    width: 360px;
+    max-width: calc(100vw - 30px);
+
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    box-shadow: 0 12px 30px rgba(19, 76, 72, 0.12);
+
+    z-index: 1000;
+
+    overflow: hidden;
+}
+
+.notification-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px 18px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.notification-panel-header h3 {
+    margin: 0;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    color: var(--text-primary);
+}
+
+.notification-panel-header span {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 11px;
+    color: var(--text-light);
+}
+
+.notification-panel-header button {
+    border: none;
+    background: transparent;
+
+    color: var(--primary);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    padding: 4px 6px;
+}
+
+.notification-list {
+    max-height: 360px;
+    overflow-y: auto;
+}
+
+.notification-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    padding: 16px 18px;
+
+    border-bottom: 1px solid var(--border);
+
+    background: #ffffff;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item-icon {
+    width: 32px;
+    height: 32px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.notification-item-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.notification-item-content {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.notification-item-content strong {
+    display: block;
+
+    margin: 0;
+
+    font-size: 12px;
+    line-height: 1.4;
+
+    color: var(--text-primary);
+}
+
+.notification-item-content span {
+    display: block;
+
+    font-size: 11px;
+    line-height: 1.5;
+
+    color: var(--text-secondary);
+}
+
+.notification-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 32px 20px;
+
+    text-align: center;
+}
+
+.notification-empty-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 10px;
+
+    border-radius: 50%;
+
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.notification-empty-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.notification-empty strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 12px;
+    color: var(--text-primary);
+}
+
+.notification-empty span {
+    font-size: 11px;
+    color: var(--text-light);
+}
+
+/* Notification panel visibility */
+
+.notification-panel {
+    display: none;
+}
+
+.notification-panel.show {
+    display: block;
+}
+
+/* Notification badge */
+
+.notification-badge {
+    position: absolute;
+
+    top: -4px;
+    right: -5px;
+
+    min-width: 17px;
+    height: 17px;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 4px;
+
+    border-radius: 50%;
+
+    background: var(--danger);
+    color: #ffffff;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+.notification-button {
+    position: relative;
+}

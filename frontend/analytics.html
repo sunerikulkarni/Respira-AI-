@@ -1705,6 +1705,354 @@ document.addEventListener("click", function (event) {
     }
 
 });
+// ========================================
+// RESPIRA NOTIFICATION SYSTEM
+// ========================================
+
+async function loadRespiraNotifications() {
+
+    const savedUser = localStorage.getItem("respiraUser");
+
+    if (!savedUser) return;
+
+    let user;
+
+    try {
+        user = JSON.parse(savedUser);
+    } catch (error) {
+        console.error("Unable to read Respira user:", error);
+        return;
+    }
+
+    if (!user.email) return;
+
+    const notifications = [];
+
+    // ----------------------------------------
+// LOAD MEDICATIONS
+// ----------------------------------------
+
+try {
+
+    const medicationResponse =
+        await fetch(
+            `http://localhost:5000/api/medications/${encodeURIComponent(user.email)}`
+        );
+
+    if (!medicationResponse.ok) {
+        throw new Error("Medication API request failed");
+    }
+
+    const medicationData =
+        await medicationResponse.json();
+
+    console.log(
+        "Respira medication notification data:",
+        medicationData
+    );
+
+    const medicationList =
+        Array.isArray(medicationData.medications)
+            ? medicationData.medications
+            : [];
+
+    medicationList.forEach(function (medication) {
+
+        // Missed medication
+        if (
+            String(medication.adherenceStatus || "")
+                .trim()
+                .toLowerCase() === "missed"
+        ) {
+
+            notifications.push({
+
+                type: "medication",
+
+                title: "Medication Missed",
+
+                message:
+                    `${medication.name} has been marked as missed.`
+
+            });
+
+        }
+
+        // Medication expiring within 7 days
+        if (medication.expiryDate) {
+
+            const today = new Date();
+
+            const expiryDate =
+                new Date(medication.expiryDate);
+
+            const daysRemaining =
+                Math.ceil(
+                    (
+                        expiryDate.getTime() -
+                        today.getTime()
+                    ) /
+                    (1000 * 60 * 60 * 24)
+                );
+
+            if (
+                daysRemaining >= 0 &&
+                daysRemaining <= 7
+            ) {
+
+                notifications.push({
+
+                    type: "expiry",
+
+                    title: "Medication Expiring Soon",
+
+                    message:
+                        `${medication.name} expires in ${daysRemaining} day${daysRemaining === 1 ? "" : "s"}.`
+
+                });
+
+            }
+
+        }
+
+    });
+
+} catch (error) {
+
+    console.error(
+        "Unable to load medication notifications:",
+        error
+    );
+
+}
+
+
+    // ----------------------------------------
+    // LOAD ATTACK LOGS
+    // ----------------------------------------
+
+    try {
+
+        const attackResponse =
+            await fetch(
+                `http://localhost:5000/api/attack-logs/${encodeURIComponent(user.email)}`
+            );
+
+        if (attackResponse.ok) {
+
+            const attacks =
+                await attackResponse.json();
+
+            if (Array.isArray(attacks) && attacks.length > 0) {
+
+                const sortedAttacks =
+                    [...attacks].sort(function (a, b) {
+
+                        return (
+                            new Date(b.date) -
+                            new Date(a.date)
+                        );
+
+                    });
+
+                const latestAttack =
+                    sortedAttacks[0];
+
+                const latestAttackDate =
+                    new Date(latestAttack.date);
+
+                const today =
+                    new Date();
+
+                const difference =
+                    today.getTime() -
+                    latestAttackDate.getTime();
+
+                const daysAgo =
+                    Math.floor(
+                        difference /
+                        (1000 * 60 * 60 * 24)
+                    );
+
+                // Recent episode
+                if (daysAgo >= 0 && daysAgo <= 7) {
+
+                    notifications.push({
+                        type: "attack",
+                        title: "Recent Respiratory Episode",
+                        message:
+                            "A respiratory episode was recorded within the last 7 days."
+                    });
+
+                }
+
+                // Severe episode
+                if (
+                    latestAttack.severity &&
+                    latestAttack.severity.toLowerCase() === "severe"
+                ) {
+
+                    notifications.push({
+                        type: "severe",
+                        title: "Severe Episode Recorded",
+                        message:
+                            "Your latest recorded respiratory episode was marked Severe."
+                    });
+
+                }
+
+            }
+
+        }
+
+    } catch (error) {
+
+        console.error(
+            "Unable to load attack notifications:",
+            error
+        );
+
+    }
+
+
+    // ----------------------------------------
+    // UPDATE NOTIFICATION PANEL
+    // ----------------------------------------
+
+    const notificationList =
+        document.getElementById(
+            "notificationList"
+        );
+
+    const notificationSummary =
+        document.getElementById(
+            "notificationSummary"
+        );
+
+    const notificationBadge =
+        document.getElementById(
+            "notificationBadge"
+        );
+
+
+    if (!notificationList) return;
+
+
+    // No notifications
+    if (notifications.length === 0) {
+
+        notificationList.innerHTML = `
+            <div class="notification-empty">
+
+                <div class="notification-empty-icon">
+
+                    <svg viewBox="0 0 24 24" fill="none">
+
+                        <path
+                            d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"
+                            stroke="currentColor"
+                            stroke-width="1.6"/>
+
+                        <path
+                            d="M10 21h4"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            stroke-linecap="round"/>
+
+                    </svg>
+
+                </div>
+
+                <strong>No notifications</strong>
+
+                <span>
+                    You're all caught up.
+                </span>
+
+            </div>
+        `;
+
+        if (notificationSummary) {
+            notificationSummary.textContent =
+                "No new notifications";
+        }
+
+        if (notificationBadge) {
+            notificationBadge.textContent = "0";
+            notificationBadge.style.display = "none";
+        }
+
+        return;
+    }
+
+
+    // Notifications available
+    if (notificationSummary) {
+
+        notificationSummary.textContent =
+            `${notifications.length} notification${notifications.length === 1 ? "" : "s"}`;
+
+    }
+
+
+    if (notificationBadge) {
+
+        notificationBadge.textContent =
+            notifications.length;
+
+        notificationBadge.style.display =
+            "flex";
+
+    }
+
+
+    notificationList.innerHTML =
+        notifications.map(function (notification) {
+
+            return `
+                <div class="notification-item">
+
+                    <div class="notification-item-icon">
+
+                        <svg viewBox="0 0 24 24" fill="none">
+
+                            <path
+                                d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"
+                                stroke="currentColor"
+                                stroke-width="1.6"/>
+
+                            <path
+                                d="M10 21h4"
+                                stroke="currentColor"
+                                stroke-width="1.6"
+                                stroke-linecap="round"/>
+
+                        </svg>
+
+                    </div>
+
+                    <div class="notification-item-content">
+
+                        <strong>
+                            ${notification.title}
+                        </strong>
+
+                        <span>
+                            ${notification.message}
+                        </span>
+
+                    </div>
+
+                </div>
+            `;
+
+        }).join("");
+
+}
+
+
+// Load notifications when page opens
+loadRespiraNotifications();
 
 </script>
 
