@@ -306,7 +306,7 @@
                         Respiratory Episodes
                     </h2>
 
-                    <p>
+                    <p id="trendDescription">
                         Number of recorded episodes over the past 7 days
                     </p>
 
@@ -1521,6 +1521,13 @@ if (trendPeriod) {
                 Number(
                     trendPeriod.value
                 );
+            const trendDescription =
+                document.getElementById("trendDescription");
+
+            if (trendDescription) {
+                trendDescription.textContent =
+                    `Number of recorded episodes over the past ${selectedTrendPeriod === 90 ? "3 months" : selectedTrendPeriod + " days"}`;
+            }
 
 
             updateTrendChart(

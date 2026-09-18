@@ -6458,3 +6458,88 @@ body {
 .medication-actions .edit-medication-btn {
     color: var(--primary);
 }
+/* =========================================
+   CALENDAR LEGEND
+   ========================================= */
+
+.calendar-legend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+
+    margin-top: 14px;
+    padding-top: 12px;
+
+    border-top: 1px solid var(--border);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: var(--text-secondary);
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.legend-dot {
+    width: 7px;
+    height: 7px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+}
+
+/* Today */
+.today-dot {
+    background: var(--primary);
+}
+
+/* Health Event */
+.event-dot {
+    background: #6b9ed6;
+}
+
+/* Attack */
+.attack-dot {
+    background: #d9534f;
+}
+
+/* Medication Expiry */
+.expiry-dot {
+    background: #d6a84f;
+}
+/* Calendar activity markers */
+
+.calendar-day.has-attack {
+    box-shadow: inset 0 -3px 0 #d9534f;
+}
+
+.calendar-day.has-expiry {
+    box-shadow: inset 0 -3px 0 #d6a84f;
+}
+
+.calendar-day.has-event {
+    box-shadow: inset 0 -3px 0 #6b9ed6;
+}
+/* =========================================
+   AIR QUALITY OVERVIEW - SPACING POLISH
+   ========================================= */
+
+.air-details-card .card-header {
+    margin-bottom: 8px;
+}
+
+.air-details-card .air-detail-row {
+    min-height: 60px;
+}
+/* =========================================
+   AI ASSISTANT CHAT - SPACING POLISH
+   ========================================= */
+
+.assistant-card .chat-messages {
+    min-height: 180px;
+}
