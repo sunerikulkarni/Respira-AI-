@@ -200,12 +200,20 @@
 
                 <button
                     class="notification-button"
-                    aria-label="Notifications">
+                    id="notificationButton"
+                    aria-label="Notifications"
+                    type="button">
 
                     <svg viewBox="0 0 24 24">
                         <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
                         <path d="M10 21h4"/>
                     </svg>
+
+                    <span
+                        class="notification-badge"
+                        id="notificationBadge">
+                        0
+                    </span>
 
                 </button>
 
@@ -215,6 +223,61 @@
                 </button>
 
             </div>
+            <!-- ========================================
+     NOTIFICATION PANEL
+======================================== -->
+<div class="notification-panel" id="notificationPanel">
+
+    <div class="notification-panel-header">
+
+        <div>
+            <h3>Notifications</h3>
+
+            <span id="notificationSummary">
+                No new notifications
+            </span>
+        </div>
+
+        <button type="button" id="clearNotificationsButton">
+            Clear
+        </button>
+
+    </div>
+
+    <div class="notification-list" id="notificationList">
+
+        <div class="notification-empty">
+
+            <div class="notification-empty-icon">
+
+                <svg viewBox="0 0 24 24" fill="none">
+
+                    <path
+                        d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"
+                        stroke="currentColor"
+                        stroke-width="1.6"/>
+
+                    <path
+                        d="M10 21h4"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"/>
+
+                </svg>
+
+            </div>
+
+            <strong>No notifications</strong>
+
+            <span>
+                You're all caught up.
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
 
         </header>
 
@@ -1766,6 +1829,106 @@ questionButtons.forEach(
 // ========================================
 
 loadHealthData();
+// ========================================
+// NOTIFICATION PANEL
+// ========================================
+
+const notificationButton =
+    document.getElementById("notificationButton");
+
+const notificationPanel =
+    document.getElementById("notificationPanel");
+
+const clearNotificationsButton =
+    document.getElementById("clearNotificationsButton");
+
+if (notificationButton && notificationPanel) {
+
+    notificationButton.addEventListener("click", function (event) {
+
+        event.stopPropagation();
+
+        notificationPanel.classList.toggle("show");
+
+    });
+
+}
+
+if (clearNotificationsButton && notificationPanel) {
+
+    clearNotificationsButton.addEventListener("click", function () {
+
+        const notificationList =
+            document.getElementById("notificationList");
+
+        const notificationSummary =
+            document.getElementById("notificationSummary");
+
+        const notificationBadge =
+            document.getElementById("notificationBadge");
+
+        if (notificationList) {
+
+            notificationList.innerHTML = `
+                <div class="notification-empty">
+
+                    <div class="notification-empty-icon">
+
+                        <svg viewBox="0 0 24 24" fill="none">
+
+                            <path
+                                d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"
+                                stroke="currentColor"
+                                stroke-width="1.6"/>
+
+                            <path
+                                d="M10 21h4"
+                                stroke="currentColor"
+                                stroke-width="1.6"
+                                stroke-linecap="round"/>
+
+                        </svg>
+
+                    </div>
+
+                    <strong>No notifications</strong>
+
+                    <span>
+                        You're all caught up.
+                    </span>
+
+                </div>
+            `;
+
+        }
+
+        if (notificationSummary) {
+            notificationSummary.textContent =
+                "No new notifications";
+        }
+
+        if (notificationBadge) {
+            notificationBadge.textContent = "0";
+            notificationBadge.style.display = "none";
+        }
+
+    });
+
+}
+
+// Close notification panel when clicking outside
+document.addEventListener("click", function (event) {
+
+    if (
+        notificationPanel &&
+        notificationButton &&
+        !notificationPanel.contains(event.target) &&
+        !notificationButton.contains(event.target)
+    ) {
+        notificationPanel.classList.remove("show");
+    }
+
+});
 
 </script>
 
